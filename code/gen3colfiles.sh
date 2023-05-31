@@ -11,7 +11,7 @@
 # 2) log missing inputs?
 # 3) zero padding for run number. fix at heudiconv conversion
 
-datadir=/data/projects/istart-data
+datadir=/data/projects/rf1-sra-data
 
 scriptdir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 maindir="$(dirname "$scriptdir")"

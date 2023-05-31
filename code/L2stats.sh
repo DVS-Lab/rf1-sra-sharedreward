@@ -10,7 +10,7 @@ type=$2
 task=sharedreward # edit if necessary
 sm=6 # edit if necessary
 logfile=$3
-model=2
+model=0
 
 MAINOUTPUT=${maindir}/derivatives/fsl/sub-${sub}
 

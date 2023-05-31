@@ -11,9 +11,9 @@ logs=$maindir/logs
 logfile=${logs}/rerunL1_date-`date +"%FT%H%M"`.log
 
 
-for ppi in 0 "VS_thr5"; do # # putting 0 first will indicate "activation"
-	for model in 2 3; do
-		for sub in `cat ${scriptdir}/newsubs.txt`; do
+for ppi in 0; do #"VS_thr5" # putting 0 first will indicate "activation"
+	for model in 0; do
+		for sub in 10478; do #`cat ${scriptdir}/newsubs.txt`; do
 	  		for run in `seq $nruns`; do
 
 			# some exceptions, hopefully temporary

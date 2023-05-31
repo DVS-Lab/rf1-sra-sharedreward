@@ -12,26 +12,26 @@
 # ensure paths are correct irrespective from where user runs the script
 scriptdir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 maindir="$(dirname "$scriptdir")"
-istartdatadir=/data/projects/istart-data #need to fix this upon release (no hard coding paths)
+sradatadir=/data/projects/rf1-sra-data #need to fix this upon release (no hard coding paths)
 
 # study-specific inputs
 TASK=sharedreward
 sm=6
-model=$2
-sub=$3
-run=$4
-ppi=$5 # 0 for activation, otherwise seed region or network
-logfile=$6
+model=$1
+sub=$2
+run=$3
+ppi=$4 # 0 for activation, otherwise seed region or network
+logfile=$5
 echo model: ${model} sub: ${sub} run: ${run} ppi: ${ppi} logfile: ${logfile}
 
 # set inputs and general outputs (should not need to chage across studies in Smith Lab)
 MAINOUTPUT=${maindir}/derivatives/fsl/sub-${sub}
 mkdir -p $MAINOUTPUT
-DATA=${istartdatadir}/derivatives/fmriprep/sub-${sub}/func/sub-${sub}_task-${TASK}_run-${run}_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz
+DATA=${sradatadir}/derivatives/fmriprep/sub-${sub}/func/sub-${sub}_task-${TASK}_run-${run}_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz
 NVOLUMES=`fslnvols $DATA`
-CONFOUNDEVS=${istartdatadir}/derivatives/fsl/confounds/sub-${sub}/sub-${sub}_task-${TASK}_run-${run}_desc-fslConfounds.tsv
+CONFOUNDEVS=${sradatadir}/derivatives/fsl/confounds/sub-${sub}/sub-${sub}_task-${TASK}_run-${run}_desc-fslConfounds.tsv
 if [ ! -e $CONFOUNDEVS ]; then
-	echo "missing confounds: $CONFOUNDEVS " >> $logfile
+	echo "missing confounds: $CONFOUNDEVS " >> ${logfile}
 	exit # exiting to ensure nothing gets run without confounds
 fi
 EVDIR=${maindir}/derivatives/fsl/EVfiles/sub-${sub}/${TASK}/run-${run}
@@ -43,24 +43,25 @@ if [ -e $EV_MISSED_TRIAL ]; then
 else
 	SHAPE_MISSED_TRIAL=10
 fi
-EV_COMPN=${EVDIR}_event_computer_neutral.txt
-if [ -e $EV_COMPN ]; then
-	SHAPE_COMPN=3
-else
-	SHAPE_COMPN=10
-fi
-EV_STRANGERN=${EVDIR}_event_stranger_neutral.txt
-if [ -e $EV_STRANGERN ]; then
-	SHAPE_STRANGERN=3
-else
-	SHAPE_STRANGERN=10
-fi
-EV_FRIENDN=${EVDIR}_event_friend_neutral.txt
-if [ -e $EV_FRIENDN ]; then
-	SHAPE_FRIENDN=3
-else
-	SHAPE_FRIENDN=10
-fi
+#EV_COMPN=${EVDIR}_event_computer_neutral.txt
+#if [ -e $EV_COMPN ]; then
+#	SHAPE_COMPN=3
+#else
+#	SHAPE_COMPN=10
+#fi
+#EV_STRANGERN=${EVDIR}_event_stranger_neutral.txt
+#if [ -e $EV_STRANGERN ]; then
+#	SHAPE_STRANGERN=3
+#else
+#	SHAPE_STRANGERN=10
+#fi
+#EV_FRIENDN=${EVDIR}_event_friend_neutral.txt
+#if [ -e $EV_FRIENDN ]; then
+#	SHAPE_FRIENDN=3
+#else
+#	SHAPE_FRIENDN=10
+#fi
+
 
 # if network (ecn or dmn), do nppi; otherwise, do activation or seed-based ppi
 if [ "$ppi" == "ecn" -o  "$ppi" == "dmn" ]; then
@@ -71,7 +72,7 @@ if [ "$ppi" == "ecn" -o  "$ppi" == "dmn" ]; then
 		echo "output $OUTPUT exists, skipping"
 		exit
 	else
-		echo "running: $OUTPUT " >> $logfile
+		echo "running: $OUTPUT " >> ${logfile}
 		rm -rf ${OUTPUT}.feat
 	fi
 
@@ -124,6 +125,9 @@ if [ "$ppi" == "ecn" -o  "$ppi" == "dmn" ]; then
 	-e 's@INPUT6@'$INPUT6'@g' \
 	-e 's@INPUT8@'$INPUT8'@g' \
 	-e 's@INPUT9@'$INPUT9'@g' \
+	-e 's@INPUT6@'$INPUT10'@g' \
+	-e 's@INPUT8@'$INPUT11'@g' \
+	-e 's@INPUT9@'$INPUT12'@g' \
 	-e 's@NVOLUMES@'$NVOLUMES'@g' \
 	<$ITEMPLATE> $OTEMPLATE
 	feat $OTEMPLATE
@@ -144,7 +148,7 @@ else # otherwise, do activation and seed-based ppi
 		echo "output $OUTPUT exists"
 		exit
 	else
-		echo "running: $OUTPUT " >> $logfile
+		echo "running: $OUTPUT " >> ${logfile}
 		rm -rf ${OUTPUT}.feat
 	fi
 
