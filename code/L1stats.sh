@@ -12,72 +12,48 @@
 # ensure paths are correct irrespective from where user runs the script
 scriptdir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 maindir="$(dirname "$scriptdir")"
-sradatadir=/data/projects/rf1-sra-data #need to fix this upon release (no hard coding paths)
+rf1datadir=/ZPOOL/data/projects/rf1-sra-data
 
 # study-specific inputs
-TASK=sharedreward
-sm=6
-model=$1
-sub=$2
-run=$3
-ppi=$4 # 0 for activation, otherwise seed region or network
-logfile=$5
-echo model: ${model} sub: ${sub} run: ${run} ppi: ${ppi} logfile: ${logfile}
+sm=5
+sub=$1
+run=$2
+ppi=$3 # 0 for activation, otherwise seed region or network
+TASK=$4
 
-# set inputs and general outputs (should not need to chage across studies in Smith Lab)
+# set inputs and general outputs (should not need to change across studies in Smith Lab)
 MAINOUTPUT=${maindir}/derivatives/fsl/sub-${sub}
 mkdir -p $MAINOUTPUT
-DATA=${sradatadir}/derivatives/fmriprep/sub-${sub}/func/sub-${sub}_task-${TASK}_run-${run}_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz
+DATA=${rf1datadir}/derivatives/fmriprep/sub-${sub}/func/sub-${sub}_task-${TASK}_run-${run}_space-MNI152NLin6Asym_desc-preproc_bold.nii.gz
 NVOLUMES=`fslnvols $DATA`
-CONFOUNDEVS=${sradatadir}/derivatives/fsl/confounds/sub-${sub}/sub-${sub}_task-${TASK}_run-${run}_desc-fslConfounds.tsv
+CONFOUNDEVS=${rf1datadir}/derivatives/fsl/confounds/sub-${sub}/sub-${sub}_task-${TASK}_run-${run}_desc-fslConfounds.tsv
 if [ ! -e $CONFOUNDEVS ]; then
-	echo "missing confounds: $CONFOUNDEVS " >> ${logfile}
+	echo "missing confounds: $CONFOUNDEVS " >> ${maindir}/re-runL1.log
 	exit # exiting to ensure nothing gets run without confounds
 fi
-EVDIR=${maindir}/derivatives/fsl/EVfiles/sub-${sub}/${TASK}/run-${run}
+EVDIR=${maindir}/derivatives/fsl/EVfiles/sub-${sub}/${TASK}/run-${run} #run-${run} #change to maindir TO FIX: no zero pad
 
 # empty EVs (specific to this study)
-EV_MISSED_TRIAL=${EVDIR}_missed_trial.txt
+EV_MISSED_TRIAL=${EVDIR}_decision-missed.txt
 if [ -e $EV_MISSED_TRIAL ]; then
 	SHAPE_MISSED_TRIAL=3
 else
 	SHAPE_MISSED_TRIAL=10
 fi
-#EV_COMPN=${EVDIR}_event_computer_neutral.txt
-#if [ -e $EV_COMPN ]; then
-#	SHAPE_COMPN=3
-#else
-#	SHAPE_COMPN=10
-#fi
-#EV_STRANGERN=${EVDIR}_event_stranger_neutral.txt
-#if [ -e $EV_STRANGERN ]; then
-#	SHAPE_STRANGERN=3
-#else
-#	SHAPE_STRANGERN=10
-#fi
-#EV_FRIENDN=${EVDIR}_event_friend_neutral.txt
-#if [ -e $EV_FRIENDN ]; then
-#	SHAPE_FRIENDN=3
-#else
-#	SHAPE_FRIENDN=10
-#fi
-
-
 # if network (ecn or dmn), do nppi; otherwise, do activation or seed-based ppi
 if [ "$ppi" == "ecn" -o  "$ppi" == "dmn" ]; then
 
 	# check for output and skip existing
-	OUTPUT=${MAINOUTPUT}/L1_task-${TASK}_model-${model}_type-nppi-${ppi}_run-${run}_sm-${sm}
+	OUTPUT=${MAINOUTPUT}/L1_task-${TASK}_model-1_type-nppi-${ppi}_run-${run}_sm-${sm}
 	if [ -e ${OUTPUT}.feat/cluster_mask_zstat1.nii.gz ]; then
-		echo "output $OUTPUT exists, skipping"
 		exit
 	else
-		echo "running: $OUTPUT " >> ${logfile}
+		echo "missing feat output 1: $OUTPUT " >> ${maindir}/re-runL1.log
 		rm -rf ${OUTPUT}.feat
 	fi
 
 	# network extraction. need to ensure you have run Level 1 activation
-	MASK=${MAINOUTPUT}/L1_task-${TASK}_model-${model}_type-act_run-${run}_sm-${sm}.feat/mask
+	MASK=${MAINOUTPUT}/L1_task-${TASK}_model-1_type-act_run-${run}_sm-${sm}.feat/mask
 	if [ ! -e ${MASK}.nii.gz ]; then
 		echo "cannot run nPPI because you're missing $MASK"
 		exit
@@ -101,19 +77,13 @@ if [ "$ppi" == "ecn" -o  "$ppi" == "dmn" ]; then
 	fi
 
 	# create template and run analyses
-	ITEMPLATE=${maindir}/templates/L1_task-${TASK}_model-${model}_type-nppi.fsf
-	OTEMPLATE=${MAINOUTPUT}/L1_task-${TASK}_model-${model}_seed-${ppi}_run-${run}.fsf
+	ITEMPLATE=${maindir}/templates/L1_task-${TASK}_model-1_type-nppi.fsf
+	OTEMPLATE=${MAINOUTPUT}/L1_task-${TASK}_model-1_seed-${ppi}_run-${run}.fsf
 	sed -e 's@OUTPUT@'$OUTPUT'@g' \
 	-e 's@DATA@'$DATA'@g' \
 	-e 's@EVDIR@'$EVDIR'@g' \
 	-e 's@EV_MISSED_TRIAL@'$EV_MISSED_TRIAL'@g' \
 	-e 's@SHAPE_MISSED_TRIAL@'$SHAPE_MISSED_TRIAL'@g' \
-	-e 's@EV_FRIENDN@'$EV_FRIENDN'@g' \
-	-e 's@SHAPE_FRIENDN@'$SHAPE_FRIENDN'@g' \
-	-e 's@EV_COMPN@'$EV_COMPN'@g' \
-	-e 's@SHAPE_COMPN@'$SHAPE_COMPN'@g' \
-	-e 's@EV_STRANGERN@'$EV_STRANGERN'@g' \
-	-e 's@SHAPE_STRANGERN@'$SHAPE_STRANGERN'@g' \
 	-e 's@CONFOUNDEVS@'$CONFOUNDEVS'@g' \
 	-e 's@MAINNET@'$MAINNET'@g' \
 	-e 's@OTHERNET@'$OTHERNET'@g' \
@@ -125,9 +95,6 @@ if [ "$ppi" == "ecn" -o  "$ppi" == "dmn" ]; then
 	-e 's@INPUT6@'$INPUT6'@g' \
 	-e 's@INPUT8@'$INPUT8'@g' \
 	-e 's@INPUT9@'$INPUT9'@g' \
-	-e 's@INPUT6@'$INPUT10'@g' \
-	-e 's@INPUT8@'$INPUT11'@g' \
-	-e 's@INPUT9@'$INPUT12'@g' \
 	-e 's@NVOLUMES@'$NVOLUMES'@g' \
 	<$ITEMPLATE> $OTEMPLATE
 	feat $OTEMPLATE
@@ -137,73 +104,61 @@ else # otherwise, do activation and seed-based ppi
 	# set output based in whether it is activation or ppi
 	if [ "$ppi" == "0" ]; then
 		TYPE=act
-		OUTPUT=${MAINOUTPUT}/L1_task-${TASK}_model-${model}_type-${TYPE}_run-${run}_sm-${sm}
+		OUTPUT=${MAINOUTPUT}/L1_task-${TASK}_model-1_type-${TYPE}_run-${run}_sm-${sm}
 	else
 		TYPE=ppi
-		OUTPUT=${MAINOUTPUT}/L1_task-${TASK}_model-${model}_type-${TYPE}_seed-${ppi}_run-${run}_sm-${sm}
+		OUTPUT=${MAINOUTPUT}/L1_task-${TASK}_model-1_type-${TYPE}_seed-${ppi}_run-${run}_sm-${sm}
 	fi
 
 	# check for output and skip existing
 	if [ -e ${OUTPUT}.feat/cluster_mask_zstat1.nii.gz ]; then
-		echo "output $OUTPUT exists"
 		exit
 	else
-		echo "running: $OUTPUT " >> ${logfile}
+		echo "missing feat output 2: $OUTPUT " >> ${maindir}/re-runL1.log
 		rm -rf ${OUTPUT}.feat
 	fi
 
 	# create template and run analyses
-	ITEMPLATE=${maindir}/templates/L1_task-${TASK}_model-${model}_type-${TYPE}.fsf
-	OTEMPLATE=${MAINOUTPUT}/L1_sub-${sub}_task-${TASK}_model-${model}_seed-${ppi}_run-${run}.fsf
+	ITEMPLATE=${maindir}/templates/L1_task-${TASK}_model-1_type-${TYPE}.fsf
+	OTEMPLATE=${MAINOUTPUT}/L1_sub-${sub}_task-${TASK}_model-1_type-${TYPE}_run-${run}.fsf
 	if [ "$ppi" == "0" ]; then
-		sed -e 's@OUTPUT@'$OUTPUT'@g' \
-		-e 's@DATA@'$DATA'@g' \
-		-e 's@EVDIR@'$EVDIR'@g' \
-		-e 's@EV_MISSED_TRIAL@'$EV_MISSED_TRIAL'@g' \
-		-e 's@SHAPE_MISSED_TRIAL@'$SHAPE_MISSED_TRIAL'@g' \
-		-e 's@EV_FRIENDN@'$EV_FRIENDN'@g' \
-		-e 's@SHAPE_FRIENDN@'$SHAPE_FRIENDN'@g' \
-		-e 's@EV_COMPN@'$EV_COMPN'@g' \
-		-e 's@SHAPE_COMPN@'$SHAPE_COMPN'@g' \
-		-e 's@EV_STRANGERN@'$EV_STRANGERN'@g' \
-		-e 's@SHAPE_STRANGERN@'$SHAPE_STRANGERN'@g' \
-		-e 's@SMOOTH@'$sm'@g' \
-		-e 's@CONFOUNDEVS@'$CONFOUNDEVS'@g' \
-		-e 's@NVOLUMES@'$NVOLUMES'@g' \
-		<$ITEMPLATE> $OTEMPLATE
-	else
-		PHYS=${MAINOUTPUT}/ts_task-${TASK}_mask-${ppi}_run-${run}.txt
-		MASK=${maindir}/masks/seed-${ppi}.nii.gz
-		fslmeants -i $DATA -o $PHYS -m $MASK
-		sed -e 's@OUTPUT@'$OUTPUT'@g' \
-		-e 's@DATA@'$DATA'@g' \
-		-e 's@EVDIR@'$EVDIR'@g' \
-		-e 's@EV_MISSED_TRIAL@'$EV_MISSED_TRIAL'@g' \
-		-e 's@SHAPE_MISSED_TRIAL@'$SHAPE_MISSED_TRIAL'@g' \
-		-e 's@EV_FRIENDN@'$EV_FRIENDN'@g' \
-		-e 's@SHAPE_FRIENDN@'$SHAPE_FRIENDN'@g' \
-		-e 's@EV_COMPN@'$EV_COMPN'@g' \
-		-e 's@SHAPE_COMPN@'$SHAPE_COMPN'@g' \
-		-e 's@EV_STRANGERN@'$EV_STRANGERN'@g' \
-		-e 's@SHAPE_STRANGERN@'$SHAPE_STRANGERN'@g' \
-		-e 's@PHYS@'$PHYS'@g' \
-		-e 's@SMOOTH@'$sm'@g' \
-		-e 's@CONFOUNDEVS@'$CONFOUNDEVS'@g' \
-		-e 's@NVOLUMES@'$NVOLUMES'@g' \
-		<$ITEMPLATE> $OTEMPLATE
+			sed -e 's@OUTPUT@'$OUTPUT'@g' \
+			-e 's@DATA@'$DATA'@g' \
+			-e 's@EVDIR@'$EVDIR'@g' \
+			-e 's@EV_MISSED_TRIAL@'$EV_MISSED_TRIAL'@g' \
+			-e 's@SHAPE_MISSED_TRIAL@'$SHAPE_MISSED_TRIAL'@g' \
+			-e 's@SMOOTH@'$sm'@g' \
+			-e 's@CONFOUNDEVS@'$CONFOUNDEVS'@g' \
+			-e 's@NVOLUMES@'$NVOLUMES'@g' \
+			<$ITEMPLATE> $OTEMPLATE
+		else
+			PHYS=${MAINOUTPUT}/ts_task-${TASK}_mask-${ppi}_run-${run}.txt
+			MASK=${maindir}/masks/seed-${ppi}.nii.gz
+			fslmeants -i $DATA -o $PHYS -m $MASK --eig
+			sed -e 's@OUTPUT@'$OUTPUT'@g' \
+			-e 's@DATA@'$DATA'@g' \
+			-e 's@EVDIR@'$EVDIR'@g' \
+			-e 's@EV_MISSED_TRIAL@'$EV_MISSED_TRIAL'@g' \
+			-e 's@SHAPE_MISSED_TRIAL@'$SHAPE_MISSED_TRIAL'@g' \
+			-e 's@PHYS@'$PHYS'@g' \
+			-e 's@SMOOTH@'$sm'@g' \
+			-e 's@CONFOUNDEVS@'$CONFOUNDEVS'@g' \
+			-e 's@NVOLUMES@'$NVOLUMES'@g' \
+			<$ITEMPLATE> $OTEMPLATE
+		fi
+		feat $OTEMPLATE
 	fi
-	feat $OTEMPLATE
-fi
 
-# fix registration as per NeuroStars post:
-# https://neurostars.org/t/performing-full-glm-analysis-with-fsl-on-the-bold-images-preprocessed-by-fmriprep-without-re-registering-the-data-to-the-mni-space/784/3
-mkdir -p ${OUTPUT}.feat/reg
-ln -s $FSLDIR/etc/flirtsch/ident.mat ${OUTPUT}.feat/reg/example_func2standard.mat
-ln -s $FSLDIR/etc/flirtsch/ident.mat ${OUTPUT}.feat/reg/standard2example_func.mat
-ln -s ${OUTPUT}.feat/mean_func.nii.gz ${OUTPUT}.feat/reg/standard.nii.gz
+	# fix registration as per NeuroStars post:
+	# https://neurostars.org/t/performing-full-glm-analysis-with-fsl-on-the-bold-images-preprocessed-by-fmriprep-without-re-registering-the-data-to-the-mni-space/784/3
+	mkdir -p ${OUTPUT}.feat/reg
+	ln -s $FSLDIR/etc/flirtsch/ident.mat ${OUTPUT}.feat/reg/example_func2standard.mat
+	ln -s $FSLDIR/etc/flirtsch/ident.mat ${OUTPUT}.feat/reg/standard2example_func.mat
+	ln -s ${OUTPUT}.feat/mean_func.nii.gz ${OUTPUT}.feat/reg/standard.nii.gz
 
-# delete unused files
-rm -rf ${OUTPUT}.feat/stats/res4d.nii.gz
-rm -rf ${OUTPUT}.feat/stats/corrections.nii.gz
-rm -rf ${OUTPUT}.feat/stats/threshac1.nii.gz
-rm -rf ${OUTPUT}.feat/filtered_func_data.nii.gz
+	# delete unused files
+	rm -rf ${OUTPUT}.feat/stats/res4d.nii.gz
+	rm -rf ${OUTPUT}.feat/stats/corrections.nii.gz
+	rm -rf ${OUTPUT}.feat/stats/threshac1.nii.gz
+	rm -rf ${OUTPUT}.feat/filtered_func_data.nii.gz
+#done

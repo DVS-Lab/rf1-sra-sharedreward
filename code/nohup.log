@@ -1,0 +1,131 @@
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10317/L1_task-sharedreward_model-1_type-act_run-1_sm-5.feat/report_log.html
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10317/L1_task-sharedreward_model-1_type-act_run-2_sm-5.feat/report_log.html
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10369/L1_task-sharedreward_model-1_type-act_run-1_sm-5.feat/report_log.html
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10369/L1_task-sharedreward_model-1_type-act_run-2_sm-5.feat/report_log.html
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10402/L1_task-sharedreward_model-1_type-act_run-1_sm-5.feat/report_log.html
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10402/L1_task-sharedreward_model-1_type-act_run-2_sm-5.feat/report_log.html
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10418/L1_task-sharedreward_model-1_type-act_run-1_sm-5.feat/report_log.html
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10418/L1_task-sharedreward_model-1_type-act_run-2_sm-5.feat/report_log.html
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10462/L1_task-sharedreward_model-1_type-act_run-1_sm-5.feat/report_log.html
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10478/L1_task-sharedreward_model-1_type-act_run-1_sm-5.feat/report_log.html
+child process exited abnormally
+    while executing
+"fsl:exec "${FSLDIR}/bin/feat_model design" $fmri(featModelOpts) -N feat0_model -l logs "
+    (procedure "firstLevelMaster" line 43)
+    invoked from within
+"firstLevelMaster $session"
+    invoked from within
+"if { $done_something == 0 } {
+
+    if { ! $fmri(inmelodic) } {
+       if { $fmri(level) == 1 } {
+	      for { set session 1 } { $session <= $fmri(mult..."
+    (file "/usr/local/fsl/bin/feat" line 390)
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10486/L1_task-sharedreward_model-1_type-act_run-1_sm-5.feat/report_log.html
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10486/L1_task-sharedreward_model-1_type-act_run-2_sm-5.feat/report_log.html
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10529/L1_task-sharedreward_model-1_type-act_run-1_sm-5.feat/report_log.html
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10529/L1_task-sharedreward_model-1_type-act_run-2_sm-5.feat/report_log.html
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10541/L1_task-sharedreward_model-1_type-act_run-1_sm-5.feat/report_log.html
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10541/L1_task-sharedreward_model-1_type-act_run-2_sm-5.feat/report_log.html
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10572/L1_task-sharedreward_model-1_type-act_run-1_sm-5.feat/report_log.html
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10572/L1_task-sharedreward_model-1_type-act_run-2_sm-5.feat/report_log.html
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10581/L1_task-sharedreward_model-1_type-act_run-1_sm-5.feat/report_log.html
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10581/L1_task-sharedreward_model-1_type-act_run-2_sm-5.feat/report_log.html
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10584/L1_task-sharedreward_model-1_type-act_run-1_sm-5.feat/report_log.html
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10585/L1_task-sharedreward_model-1_type-act_run-1_sm-5.feat/report_log.html
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10585/L1_task-sharedreward_model-1_type-act_run-2_sm-5.feat/report_log.html
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10589/L1_task-sharedreward_model-1_type-act_run-1_sm-5.feat/report_log.html
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10589/L1_task-sharedreward_model-1_type-act_run-2_sm-5.feat/report_log.html
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10590/L1_task-sharedreward_model-1_type-act_run-1_sm-5.feat/report_log.html
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10590/L1_task-sharedreward_model-1_type-act_run-2_sm-5.feat/report_log.html
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10596/L1_task-sharedreward_model-1_type-act_run-1_sm-5.feat/report_log.html
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10596/L1_task-sharedreward_model-1_type-act_run-2_sm-5.feat/report_log.html
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10603/L1_task-sharedreward_model-1_type-act_run-1_sm-5.feat/report_log.html
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10606/L1_task-sharedreward_model-1_type-act_run-1_sm-5.feat/report_log.html
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10606/L1_task-sharedreward_model-1_type-act_run-2_sm-5.feat/report_log.html
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10608/L1_task-sharedreward_model-1_type-act_run-1_sm-5.feat/report_log.html
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10608/L1_task-sharedreward_model-1_type-act_run-2_sm-5.feat/report_log.html
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10617/L1_task-sharedreward_model-1_type-act_run-1_sm-5.feat/report_log.html
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10636/L1_task-sharedreward_model-1_type-act_run-1_sm-5.feat/report_log.html
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10636/L1_task-sharedreward_model-1_type-act_run-2_sm-5.feat/report_log.html
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10638/L1_task-sharedreward_model-1_type-act_run-1_sm-5.feat/report_log.html
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10638/L1_task-sharedreward_model-1_type-act_run-2_sm-5.feat/report_log.html
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10641/L1_task-sharedreward_model-1_type-act_run-1_sm-5.feat/report_log.html
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10642/L1_task-sharedreward_model-1_type-act_run-1_sm-5.feat/report_log.html
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10642/L1_task-sharedreward_model-1_type-act_run-2_sm-5.feat/report_log.html
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10644/L1_task-sharedreward_model-1_type-act_run-1_sm-5.feat/report_log.html
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10644/L1_task-sharedreward_model-1_type-act_run-2_sm-5.feat/report_log.html
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10647/L1_task-sharedreward_model-1_type-act_run-1_sm-5.feat/report_log.html
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10647/L1_task-sharedreward_model-1_type-act_run-2_sm-5.feat/report_log.html
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10649/L1_task-sharedreward_model-1_type-act_run-1_sm-5.feat/report_log.html
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10649/L1_task-sharedreward_model-1_type-act_run-2_sm-5.feat/report_log.html
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10652/L1_task-sharedreward_model-1_type-act_run-1_sm-5.feat/report_log.html
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10652/L1_task-sharedreward_model-1_type-act_run-2_sm-5.feat/report_log.html
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10656/L1_task-sharedreward_model-1_type-act_run-1_sm-5.feat/report_log.html
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10656/L1_task-sharedreward_model-1_type-act_run-2_sm-5.feat/report_log.html
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10657/L1_task-sharedreward_model-1_type-act_run-1_sm-5.feat/report_log.html
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10657/L1_task-sharedreward_model-1_type-act_run-2_sm-5.feat/report_log.html
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10659/L1_task-sharedreward_model-1_type-act_run-1_sm-5.feat/report_log.html
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10659/L1_task-sharedreward_model-1_type-act_run-2_sm-5.feat/report_log.html
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10663/L1_task-sharedreward_model-1_type-act_run-1_sm-5.feat/report_log.html
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10663/L1_task-sharedreward_model-1_type-act_run-2_sm-5.feat/report_log.html
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10673/L1_task-sharedreward_model-1_type-act_run-1_sm-5.feat/report_log.html
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10673/L1_task-sharedreward_model-1_type-act_run-2_sm-5.feat/report_log.html
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10674/L1_task-sharedreward_model-1_type-act_run-1_sm-5.feat/report_log.html
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10674/L1_task-sharedreward_model-1_type-act_run-2_sm-5.feat/report_log.html
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10677/L1_task-sharedreward_model-1_type-act_run-1_sm-5.feat/report_log.html
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10677/L1_task-sharedreward_model-1_type-act_run-2_sm-5.feat/report_log.html
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10685/L1_task-sharedreward_model-1_type-act_run-1_sm-5.feat/report_log.html
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10685/L1_task-sharedreward_model-1_type-act_run-2_sm-5.feat/report_log.html
+child process exited abnormally
+    while executing
+"fsl:exec "${FSLDIR}/bin/feat_model design" $fmri(featModelOpts) -N feat0_model -l logs "
+    (procedure "firstLevelMaster" line 43)
+    invoked from within
+"firstLevelMaster $session"
+    invoked from within
+"if { $done_something == 0 } {
+
+    if { ! $fmri(inmelodic) } {
+       if { $fmri(level) == 1 } {
+	      for { set session 1 } { $session <= $fmri(mult..."
+    (file "/usr/local/fsl/bin/feat" line 390)
+child process exited abnormally
+    while executing
+"fsl:exec "${FSLDIR}/bin/feat_model design" $fmri(featModelOpts) -N feat0_model -l logs "
+    (procedure "firstLevelMaster" line 43)
+    invoked from within
+"firstLevelMaster $session"	
+    invoked from within
+"if { $done_something == 0 } {
+
+    if { ! $fmri(inmelodic) } {
+       if { $fmri(level) == 1 } {
+	      for { set session 1 } { $session <= $fmri(mult..."
+    (file "/usr/local/fsl/bin/feat" line 390)
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10691/L1_task-sharedreward_model-1_type-act_run-1_sm-5.feat/report_log.html
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10691/L1_task-sharedreward_model-1_type-act_run-2_sm-5.feat/report_log.html
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10700/L1_task-sharedreward_model-1_type-act_run-1_sm-5.feat/report_log.html
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10700/L1_task-sharedreward_model-1_type-act_run-2_sm-5.feat/report_log.html
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10701/L1_task-sharedreward_model-1_type-act_run-1_sm-5.feat/report_log.html
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10701/L1_task-sharedreward_model-1_type-act_run-2_sm-5.feat/report_log.html
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10716/L1_task-sharedreward_model-1_type-act_run-1_sm-5.feat/report_log.html
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10716/L1_task-sharedreward_model-1_type-act_run-2_sm-5.feat/report_log.html
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10720/L1_task-sharedreward_model-1_type-act_run-1_sm-5.feat/report_log.html
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10720/L1_task-sharedreward_model-1_type-act_run-2_sm-5.feat/report_log.html
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10723/L1_task-sharedreward_model-1_type-act_run-1_sm-5.feat/report_log.html
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10723/L1_task-sharedreward_model-1_type-act_run-2_sm-5.feat/report_log.html
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10741/L1_task-sharedreward_model-1_type-act_run-1_sm-5.feat/report_log.html
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10741/L1_task-sharedreward_model-1_type-act_run-2_sm-5.feat/report_log.html
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10774/L1_task-sharedreward_model-1_type-act_run-1_sm-5.feat/report_log.html
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10774/L1_task-sharedreward_model-1_type-act_run-2_sm-5.feat/report_log.html
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10777/L1_task-sharedreward_model-1_type-act_run-1_sm-5.feat/report_log.html
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10777/L1_task-sharedreward_model-1_type-act_run-2_sm-5.feat/report_log.html
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10781/L1_task-sharedreward_model-1_type-act_run-1_sm-5.feat/report_log.html
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10781/L1_task-sharedreward_model-1_type-act_run-2_sm-5.feat/report_log.html
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10783/L1_task-sharedreward_model-1_type-act_run-1_sm-5.feat/report_log.html
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10783/L1_task-sharedreward_model-1_type-act_run-2_sm-5.feat/report_log.html
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10800/L1_task-sharedreward_model-1_type-act_run-1_sm-5.feat/report_log.html
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10800/L1_task-sharedreward_model-1_type-act_run-2_sm-5.feat/report_log.html
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10804/L1_task-sharedreward_model-1_type-act_run-1_sm-5.feat/report_log.html
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10804/L1_task-sharedreward_model-1_type-act_run-2_sm-5.feat/report_log.html

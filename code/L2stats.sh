@@ -8,12 +8,12 @@ maindir="$(dirname "$scriptdir")"
 sub=$1
 type=$2
 task=sharedreward # edit if necessary
-sm=6 # edit if necessary
+sm=5 # edit if necessary # used 6 but named as 5
 logfile=$3
-model=0
 
 MAINOUTPUT=${maindir}/derivatives/fsl/sub-${sub}
-
+NCOPES=30
+model=1
 
 # --- start EDIT HERE start: exceptions and conditionals for the task
 
@@ -27,7 +27,7 @@ if [ $sub -eq 1002 ] || [ $sub -eq 1253 ] ; then # bad data
 	echo "skipping sub-${sub} for task-${task}"
 	exit
 fi
-NCOPES=23
+
 
 # ppi has more contrasts than act (phys), so need a different L2 template
 if [ "${type}" == "act" ]; then

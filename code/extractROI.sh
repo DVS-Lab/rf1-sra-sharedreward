@@ -6,7 +6,7 @@ maindir="$(dirname "$scriptdir")"
 
 for sub in `cat ${maindir}/code/newsubs.txt`; do	
 	# ROI name and other path information
-	for ROI in seed-VS_thr5; do
+	for ROI in mask81017; do
 		for TASK in sharedreward; do
 			for run in 1 2; do
 				MASK=${maindir}/masks/${ROI}.nii.gz

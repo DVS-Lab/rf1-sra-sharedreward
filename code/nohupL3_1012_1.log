@@ -1,0 +1,34 @@
+/ZPOOL/data/projects/rf1-sra-sharedreward/code/L3stats.sh: line 29: type: =: not found
+/ZPOOL/data/projects/rf1-sra-sharedreward/code/L3stats.sh: line 29: type: type-act: not found
+/ZPOOL/data/projects/rf1-sra-sharedreward/code/L3stats.sh: line 36: template: command not found
+/ZPOOL/data/projects/rf1-sra-sharedreward/code/L3stats.sh: line 55: $logfile: ambiguous redirect
+sed: read error on stdin: Is a directory
+invalid command name "toplevel"
+    while executing
+"toplevel .prompt -borderwidth 5"
+    (procedure "MxPause" line 4)
+    invoked from within
+"MxPause "FEAT setup file is too old to load - sorry!""
+    (procedure "feat5:load" line 74)
+    invoked from within
+"feat5:load -1 1 ${fsfroot}.fsf"
+    (file "/usr/local/fsl/bin/feat" line 309)
+/ZPOOL/data/projects/rf1-sra-sharedreward/code/L3stats.sh: line 68: syntax error near unexpected token `fi'
+/ZPOOL/data/projects/rf1-sra-sharedreward/code/L3stats.sh: line 68: `fi'
+/ZPOOL/data/projects/rf1-sra-sharedreward/code/L3stats.sh: line 29: type: =: not found
+/ZPOOL/data/projects/rf1-sra-sharedreward/code/L3stats.sh: line 29: type: type-act: not found
+/ZPOOL/data/projects/rf1-sra-sharedreward/code/L3stats.sh: line 36: template: command not found
+/ZPOOL/data/projects/rf1-sra-sharedreward/code/L3stats.sh: line 55: $logfile: ambiguous redirect
+sed: read error on stdin: Is a directory
+invalid command name "toplevel"
+    while executing
+"toplevel .prompt -borderwidth 5"
+    (procedure "MxPause" line 4)
+    invoked from within
+"MxPause "FEAT setup file is too old to load - sorry!""
+    (procedure "feat5:load" line 74)
+    invoked from within
+"feat5:load -1 1 ${fsfroot}.fsf"
+    (file "/usr/local/fsl/bin/feat" line 309)
+/ZPOOL/data/projects/rf1-sra-sharedreward/code/L3stats.sh: line 68: syntax error near unexpected token `fi'
+/ZPOOL/data/projects/rf1-sra-sharedreward/code/L3stats.sh: line 68: `fi'
