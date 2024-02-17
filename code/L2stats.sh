@@ -12,7 +12,7 @@ sm=5 # edit if necessary # used 6 but named as 5
 logfile=$3
 
 MAINOUTPUT=${maindir}/derivatives/fsl/sub-${sub}
-NCOPES=30
+NCOPES=34
 model=1
 
 # --- start EDIT HERE start: exceptions and conditionals for the task

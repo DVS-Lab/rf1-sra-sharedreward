@@ -17,9 +17,8 @@ for analysis in act; do # act ppi_seed-VS_thr5 ppi_seed-NAcc act nppi-dmn nppi-e
 	analysistype=type-${analysis}
 
 #	 these define the cope number (copenum) and cope name (copename)
-#	 do L3 for all contrasts
-#	for copeinfo in "1 C_pun" "2 C_rew" "3 F_pun" "4 F_rew" "5 S_pun" "6 S_rew" "7 C_neu" "8 F_neu" "9 S_neu" "10 rew-pun" "11 F-S" "12 F-C" "13 FS-C" "14 rew-pun_F-S" "15 rew-pun_S-C" "16 rew-pun_F-C" "17 rew_F-S" "18 rew_S-C" "19 rew_F-C" "20 rew-neu_F-S" "21 rew-neu_S-C" "22 reu-neu_F-C" "23 F-SC" "24 rew_F-SC" "25 pun_F-SC" "26 rew_pun_F-SC" "27 F_dec" "28 S_dec" "29 C_dec" "30 Face-NonFace"; do
-	for copeinfo in "20 rew-neu_F-S" "21 rew-neu_S-C" "22 reu-neu_F-C"; do
+#	for copeinfo in "1 C_pun" "2 C_rew" "3 F_pun" "4 F_rew" "5 S_pun" "6 S_rew" "7 C_neu" "8 F_neu" "9 S_neu" "10 rew-pun" "11 F-S" "12 F-C" "13 FS-C" "14 rew-pun_F-S" "15 rew-pun_S-C" "16 rew-pun_F-C" "17 rew_F-S" "18 rew_S-C" "19 rew_F-C" "20 rew-neu_F-S" "21 rew-neu_S-C" "22 reu-neu_F-C" "23 F-SC" "24 rew_F-SC" "25 pun_F-SC" "26 rew_pun_F-SC" "27 F_dec" "28 S_dec" "29 C_dec" "30 Face-NonFace" "31 pun_F-S" "32 pun_F-C" "33 dec_F-S" "34 dec_F-C"; do
+	for copeinfo in "1 C_pun" "2 C_rew" "3 F_pun" "4 F_rew" "5 S_pun" "6 S_rew" "7 C_neu" "8 F_neu" "9 S_neu" "10 rew-pun" "11 F-S" "12 F-C" "13 FS-C" "14 rew-pun_F-S" "15 rew-pun_S-C" "16 rew-pun_F-C" "17 rew_F-S" "18 rew_S-C" "19 rew_F-C" "20 rew-neu_F-S" "21 rew-neu_S-C" "22 reu-neu_F-C" "23 F-SC" "24 rew_F-SC" "25 pun_F-SC" "26 rew_pun_F-SC" "27 F_dec" "28 S_dec" "29 C_dec" "30 Face-NonFace"; do
 
 		# split copeinfo variable
 		set -- $copeinfo
