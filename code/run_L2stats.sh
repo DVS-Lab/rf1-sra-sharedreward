@@ -9,12 +9,13 @@ logs=$maindir/logs
 logfile=${logs}/rerunL2_date-`date +"%FT%H%M"`.log
 
 # the "type" variable below is setting a path inside the main script
-for type in "act"; do # "act" "ppi_seed-VS_thr5"
-	for sub in `cat ${scriptdir}/sublist_sfn.txt`; do
-
+#for type in "act"; do # "act" "ppi_seed-VS_thr5"
+for type in "ppi_seed-NAcc-bin"; do
+	for sub in `cat ${scriptdir}/sublist_sfn_final_no10774.txt`; do
+#	for sub in 10317; do
 		# Manages the number of jobs and cores
   	SCRIPTNAME=${maindir}/code/L2stats.sh
-  	NCORES=10
+  	NCORES=20
   	while [ $(ps -ef | grep -v grep | grep $SCRIPTNAME | wc -l) -ge $NCORES ]; do
     		sleep 1s
   	done
@@ -22,4 +23,5 @@ for type in "act"; do # "act" "ppi_seed-VS_thr5"
   	sleep 1s
 
 	done
+	echo "complete ${sub}"
 done

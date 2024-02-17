@@ -8,26 +8,14 @@ maindir="$(dirname "$scriptdir")"
 sub=$1
 type=$2
 task=sharedreward # edit if necessary
-sm=5 # edit if necessary # used 6 but named as 5
+sm=6 # edit if necessary # used 6 but named as 5
 logfile=$3
 
 MAINOUTPUT=${maindir}/derivatives/fsl/sub-${sub}
-NCOPES=23
-model=1
+NCOPES=34
+model=0
 
 # --- start EDIT HERE start: exceptions and conditionals for the task
-
-if [ $sub -eq 1240 ] || [ $sub -eq 1245 ] || [ $sub -eq 1247 ] || [ $sub -eq 1002 ] || [ $sub -eq 1003 ] || [ $sub -eq 3186 ]; then # bad data
-	echo "skipping sub-${sub} for task-${task}"
-	exit
-fi
-
-# hopefully temporary:
-if [ $sub -eq 1002 ] || [ $sub -eq 1253 ] ; then # bad data
-	echo "skipping sub-${sub} for task-${task}"
-	exit
-fi
-
 
 # ppi has more contrasts than act (phys), so need a different L2 template
 if [ "${type}" == "act" ]; then
@@ -48,7 +36,7 @@ OUTPUT=${MAINOUTPUT}/L2_task-${task}_model-${model}_type-${type}_sm-${sm}
 if [ -e ${OUTPUT}.gfeat/cope${NCOPES}.feat/cluster_mask_zstat1.nii.gz ]; then # check last (act) or penultimate (ppi) cope
 	echo "skipping existing output"
 else
-	echo "running: ${OUTPUT}" >> $logfile
+#	echo "running: ${OUTPUT}" >> $logfile
 	rm -rf ${OUTPUT}.gfeat
 
 	# set output template and run template-specific analyses

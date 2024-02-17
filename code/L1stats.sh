@@ -15,7 +15,8 @@ maindir="$(dirname "$scriptdir")"
 rf1datadir=/ZPOOL/data/projects/rf1-sra-data
 
 # study-specific inputs
-sm=5
+#sm=5
+sm=6 # changed to 6 according to L1 design.fsf
 sub=$1
 run=$2
 ppi=$3 # 0 for activation, otherwise seed region or network
@@ -63,6 +64,7 @@ if [ "$ppi" == "ecn" -o  "$ppi" == "dmn" ]; then
 		TSFILE=${MAINOUTPUT}/ts_task-${TASK}_net000${net}_nppi-${ppi}_run-${run}.txt
 		fsl_glm -i $DATA -d $NET -o $TSFILE --demean -m $MASK
 		eval INPUT${net}=$TSFILE
+		echo "Successfully extracted ${sub} ${TASK} ${NET}"
 	done
 
 	# set names for network ppi (we generally only care about ECN and DMN)
@@ -78,7 +80,7 @@ if [ "$ppi" == "ecn" -o  "$ppi" == "dmn" ]; then
 
 	# create template and run analyses
 	ITEMPLATE=${maindir}/templates/L1_task-${TASK}_model-1_type-nppi.fsf
-	OTEMPLATE=${MAINOUTPUT}/L1_task-${TASK}_model-1_seed-${ppi}_run-${run}.fsf
+	OTEMPLATE=${MAINOUTPUT}/L1_task-${TASK}_model-0_seed-${ppi}_run-${run}.fsf
 	sed -e 's@OUTPUT@'$OUTPUT'@g' \
 	-e 's@DATA@'$DATA'@g' \
 	-e 's@EVDIR@'$EVDIR'@g' \
@@ -107,7 +109,8 @@ else # otherwise, do activation and seed-based ppi
 		OUTPUT=${MAINOUTPUT}/L1_task-${TASK}_model-1_type-${TYPE}_run-${run}_sm-${sm}
 	else
 		TYPE=ppi
-		OUTPUT=${MAINOUTPUT}/L1_task-${TASK}_model-1_type-${TYPE}_seed-${ppi}_run-${run}_sm-${sm}
+#		OUTPUT=${MAINOUTPUT}/L1_task-${TASK}_model-2_type-${TYPE}_seed-${ppi}_run-${run}_sm-${sm}
+		OUTPUT=${MAINOUTPUT}/L1_task-${TASK}_model-0_type-${TYPE}_seed-${ppi}_run-${run}_sm-${sm}
 	fi
 
 	# check for output and skip existing
