@@ -1,0 +1,94 @@
+#!/usr/bin/env bash
+
+# ensure paths are correct irrespective from where user runs the script
+scriptdir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+maindir="$(dirname "$scriptdir")"
+
+# ROI name and other path information
+#for ROI in cope10_win-lose_striatum_L_roi; do
+#for ROI in cnum31_cov15-3_533 cnum31_cov15-2_533 cnum31_cov15-1_533; do
+#for ROI in cnum31_cov11-3_533 cnum31_cov11-2_533 cnum31_cov11-1_533; do
+
+
+### ppi with zero COV
+for ROI in n5151_cnum-17_con-8_cluster-1; do
+	MASK=${maindir}/masks/brain_images/FourthYear/${ROI}.nii.gz # for group mean
+	TASK=sharedreward # remember to change according to the model
+	TYPE=ppi # remember to change according to the model
+	N=5151 # remember to change according to the model
+	model_N=0 # remember to change according to the model
+	outputdir=${maindir}/derivatives/group_means/FourthYear
+	mkdir -p $outputdir
+#	for COPENUM in 10; do
+	for COPENUM in {15..20}; do
+#	for COPENUM in {7..9}; do
+		cnum_padded=`zeropad ${COPENUM} 2`
+		MAINOUTPUT=${maindir}/derivatives/fsl/L3_task-${TASK}_model-${model_N}_type-${TYPE}_n${N}
+		DATA=`ls -1 ${MAINOUTPUT}/L3_task-${TASK}_type-${TYPE}_*cnum-${cnum_padded}_*onegroup.gfeat/cope1.feat/filtered_func_data.nii.gz`
+		#DATA=`ls -1 ${MAINOUTPUT}/L3_task-${TASK}_type-${TYPE}_cnum-${COPENUM}_*onegroup.gfeat/cope1.feat/filtered_func_data.nii.gz`
+		fslmeants -i $DATA -o ${outputdir}/${ROI}_type-${TYPE}_cope-${cnum_padded}.txt -m ${MASK}
+
+	done
+done
+
+### ppi with OAFEM as COV
+for ROI in n5152_cnum-12_con-7_cluster-1; do
+	MASK=${maindir}/masks/brain_images/FourthYear/${ROI}.nii.gz # for group mean
+	TASK=sharedreward # remember to change according to the model
+	TYPE=ppi # remember to change according to the model
+	N=5152 # remember to change according to the model
+	model_N=0 # remember to change according to the model
+	outputdir=${maindir}/derivatives/group_means/FourthYear
+	mkdir -p $outputdir
+#	for COPENUM in 10; do
+	for COPENUM in {15..20}; do
+#	for COPENUM in {7..9}; do
+		cnum_padded=`zeropad ${COPENUM} 2`
+		MAINOUTPUT=${maindir}/derivatives/fsl/L3_task-${TASK}_model-${model_N}_type-${TYPE}_n${N}
+		DATA=`ls -1 ${MAINOUTPUT}/L3_task-${TASK}_type-${TYPE}_*cnum-${cnum_padded}_*onegroup.gfeat/cope1.feat/filtered_func_data.nii.gz`
+		#DATA=`ls -1 ${MAINOUTPUT}/L3_task-${TASK}_type-${TYPE}_cnum-${COPENUM}_*onegroup.gfeat/cope1.feat/filtered_func_data.nii.gz`
+		fslmeants -i $DATA -o ${outputdir}/${ROI}_type-${TYPE}_cope-${cnum_padded}.txt -m ${MASK}
+
+	done
+done
+
+### ppi with EORS SelfImprove as COV
+for ROI in n5153_cnum-13_con-8_cluster-1 n5153_cnum-13_con-8_cluster-2 ; do
+	MASK=${maindir}/masks/brain_images/FourthYear/${ROI}.nii.gz # for group mean
+	TASK=sharedreward # remember to change according to the model
+	TYPE=ppi # remember to change according to the model
+	N=5153 # remember to change according to the model
+	model_N=0 # remember to change according to the model
+	outputdir=${maindir}/derivatives/group_means/FourthYear
+	mkdir -p $outputdir
+#	for COPENUM in 10; do
+	for COPENUM in {15..20}; do
+#	for COPENUM in {7..9}; do
+		cnum_padded=`zeropad ${COPENUM} 2`
+		MAINOUTPUT=${maindir}/derivatives/fsl/L3_task-${TASK}_model-${model_N}_type-${TYPE}_n${N}
+		DATA=`ls -1 ${MAINOUTPUT}/L3_task-${TASK}_type-${TYPE}_*cnum-${cnum_padded}_*onegroup.gfeat/cope1.feat/filtered_func_data.nii.gz`
+		#DATA=`ls -1 ${MAINOUTPUT}/L3_task-${TASK}_type-${TYPE}_cnum-${COPENUM}_*onegroup.gfeat/cope1.feat/filtered_func_data.nii.gz`
+		fslmeants -i $DATA -o ${outputdir}/${ROI}_type-${TYPE}_cope-${cnum_padded}.txt -m ${MASK}
+
+	done
+done
+
+### ppi with EORS OthersWorsen as COV
+for ROI in n5154_cnum-14_con-8_cluster-1; do
+	MASK=${maindir}/masks/brain_images/FourthYear/${ROI}.nii.gz # for group mean
+	TASK=sharedreward # remember to change according to the model
+	TYPE=ppi # remember to change according to the model
+	N=5154 # remember to change according to the model
+	model_N=0 # remember to change according to the model
+	outputdir=${maindir}/derivatives/group_means/FourthYear
+#	for COPENUM in 10; do
+	for COPENUM in {15..20}; do
+#	for COPENUM in {7..9}; do
+		cnum_padded=`zeropad ${COPENUM} 2`
+		MAINOUTPUT=${maindir}/derivatives/fsl/L3_task-${TASK}_model-${model_N}_type-${TYPE}_n${N}
+		DATA=`ls -1 ${MAINOUTPUT}/L3_task-${TASK}_type-${TYPE}_*cnum-${cnum_padded}_*onegroup.gfeat/cope1.feat/filtered_func_data.nii.gz`
+		#DATA=`ls -1 ${MAINOUTPUT}/L3_task-${TASK}_type-${TYPE}_cnum-${COPENUM}_*onegroup.gfeat/cope1.feat/filtered_func_data.nii.gz`
+		fslmeants -i $DATA -o ${outputdir}/${ROI}_type-${TYPE}_cope-${cnum_padded}.txt -m ${MASK}
+
+	done
+done

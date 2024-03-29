@@ -1,0 +1,15 @@
+extractROI_grouplevel_scatterplot_0109.sh: line 7: ROI: command not found
+Image Exception : #63 :: No image files match: /ZPOOL/data/projects/rf1-sra-sharedreward/masks/brain_images/ppi_oafem_51_cope16_contrast3_cluster1
+Image Exception : #22 :: Failed to read volume /ZPOOL/data/projects/rf1-sra-sharedreward/masks/brain_images/ppi_oafem_51_cope16_contrast3_cluster1.nii.gz
+Error : No image files match: /ZPOOL/data/projects/rf1-sra-sharedreward/masks/brain_images/ppi_oafem_51_cope16_contrast3_cluster1
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Failed to read volume /ZPOOL/data/projects/rf1-sra-sharedreward/masks/brain_images/ppi_oafem_51_cope16_contrast3_cluster1.nii.gz
+Error : No image files match: /ZPOOL/data/projects/rf1-sra-sharedreward/masks/brain_images/ppi_oafem_51_cope16_contrast3_cluster1
+/usr/local/fsl/share/fsl/bin/fslmeants: line 2: 1244818 Aborted                 (core dumped) /usr/local/fsl/bin/fslmeants "$@"
+Image Exception : #63 :: No image files match: /ZPOOL/data/projects/rf1-sra-sharedreward/masks/brain_images/ppi_oafem_51_cope16_contrast4_cluster1
+Image Exception : #22 :: Failed to read volume /ZPOOL/data/projects/rf1-sra-sharedreward/masks/brain_images/ppi_oafem_51_cope16_contrast4_cluster1.nii.gz
+Error : No image files match: /ZPOOL/data/projects/rf1-sra-sharedreward/masks/brain_images/ppi_oafem_51_cope16_contrast4_cluster1
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Failed to read volume /ZPOOL/data/projects/rf1-sra-sharedreward/masks/brain_images/ppi_oafem_51_cope16_contrast4_cluster1.nii.gz
+Error : No image files match: /ZPOOL/data/projects/rf1-sra-sharedreward/masks/brain_images/ppi_oafem_51_cope16_contrast4_cluster1
+/usr/local/fsl/share/fsl/bin/fslmeants: line 2: 1244858 Aborted                 (core dumped) /usr/local/fsl/bin/fslmeants "$@"

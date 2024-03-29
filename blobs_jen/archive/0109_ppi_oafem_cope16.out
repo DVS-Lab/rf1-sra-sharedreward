@@ -1,0 +1,9 @@
+extractROI_grouplevel_scatterplot_0109.sh: line 7: ROI: command not found
+ls: cannot access '/ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/L3_task-sharedreward_model-0_type-ppi_n513/L3_task-sharedreward_type-ppi_cnum-16_*onegroup.gfeat/cope1.feat/filtered_func_data.nii.gz': No such file or directory
+terminate called after throwing an instance of 'Utilities::X_OptionError'
+  what():  /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/group_means/ppi_oafem_51_cope16_contrast3_cluster1/ppi_oafem_51_cope16_contrast3_cluster1_type-ppi_cope-16.txt:  is an unrecognised token!
+/usr/local/fsl/share/fsl/bin/fslmeants: line 2: 1243077 Aborted                 (core dumped) /usr/local/fsl/bin/fslmeants "$@"
+ls: cannot access '/ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/L3_task-sharedreward_model-0_type-ppi_n513/L3_task-sharedreward_type-ppi_cnum-16_*onegroup.gfeat/cope1.feat/filtered_func_data.nii.gz': No such file or directory
+terminate called after throwing an instance of 'Utilities::X_OptionError'
+  what():  /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/group_means/ppi_oafem_51_cope16_contrast4_cluster1/ppi_oafem_51_cope16_contrast4_cluster1_type-ppi_cope-16.txt:  is an unrecognised token!
+/usr/local/fsl/share/fsl/bin/fslmeants: line 2: 1243093 Aborted                 (core dumped) /usr/local/fsl/bin/fslmeants "$@"

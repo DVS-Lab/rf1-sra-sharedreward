@@ -1,0 +1,35 @@
+# 11_cname-F-S_onegroup.gfeat/cope1.feat/cluster_zstat4_std.html
+fslmaths /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/L3_task-sharedreward_model-1_type-act_n530/L3_task-sharedreward_type-act_cnum-11_cname-F-S_onegroup.gfeat/cope1.feat/cluster_mask_zstat4.nii.gz -thr 1 -uthr 1 -bin /ZPOOL/data/projects/rf1-sra-sharedreward/masks/brain_images/cname11_z4_c1.nii.gz
+
+# 28_cname-S_dec_onegroup.gfeat/cope1.feat/cluster_zstat4_std.html
+fslmaths /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/L3_task-sharedreward_model-1_type-act_n530/L3_task-sharedreward_type-act_cnum-28_cname-S_dec_onegroup.gfeat/cope1.feat/cluster_mask_zstat4.nii.gz -thr 1 -uthr 1 -bin /ZPOOL/data/projects/rf1-sra-sharedreward/masks/
+brain_images/cname28_z4_c1.nii.gz
+
+# 03_cname-F_pun_onegroup.gfeat/cope1.feat/cluster_zstat3_std.html
+fslmaths /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/L3_task-sharedreward_model-1_type-act_n5300/L3_task-sharedreward_type-act_cnum-03_cname-F_pun_onegroup.gfeat/cope1.feat/cluster_mask_zstat3.nii.gz -thr 1 -uthr 1 -bin /ZPOOL/data/projects/rf1-sra-sharedreward/masks/brain_images/cname03_z3_c1.nii.gz
+
+# 11_cname-F-S_onegroup.gfeat/cope1.feat/cluster_zstat3_std.html
+fslmaths /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/L3_task-sharedreward_model-1_type-act_n5300/L3_task-sharedreward_type-act_cnum-11_cname-F-S_onegroup.gfeat/cope1.feat/cluster_mask_zstat3.nii.gz -thr 1 -uthr 1 -bin /ZPOOL/data/projects/rf1-sra-sharedreward/masks/brain_images/cname11_z3_c1.nii.gz
+
+# 18_cname-rew_S-C_onegroup.gfeat/cope1.feat/cluster_zstat4_std.html
+fslmaths /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/L3_task-sharedreward_model-1_type-act_n5300/L3_task-sharedreward_type-act_cnum-18_cname-rew_S-C_onegroup.gfeat/cope1.feat/cluster_mask_zstat4.nii.gz -thr 1 -uthr 1 -bin /ZPOOL/data/projects/rf1-sra-sharedreward/masks/brain_images/cname18_z4_c1.nii.gz
+
+
+# 20_cname-rew-neu_F-S_onegroup.gfeat/cope1.feat/cluster_zstat3_std.html
+fslmaths /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/L3_task-sharedreward_model-1_type-act_n5300/L3_task-sharedreward_type-act_cnum-20_cname-rew-neu_F-S_onegroup.gfeat/cope1.feat/cluster_mask_zstat3.nii.gz -thr 2 -uthr 2 -bin /ZPOOL/data/projects/rf1-sra-sharedreward/masks/brain_images/cname20_z3_c2.nii.gz
+
+
+
+
+# 25_cname-pun_F-SC_onegroup.gfeat/cope1.feat/cluster_zstat3_std.html
+fslmaths /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/L3_task-sharedreward_model-1_type-act_n5300/L3_task-sharedreward_type-act_cnum-25_*.gfeat/cope1.feat/cluster_mask_zstat3.nii.gz -thr 1 -uthr 1 -bin /ZPOOL/data/projects/rf1-sra-sharedreward/masks/brain_images/cname25_z3_c1.nii.gz
+
+# 27_cname-F_dec_onegroup.gfeat/cope1.feat/cluster_zstat3_std.html
+fslmaths /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/L3_task-sharedreward_model-1_type-act_n5300/L3_task-sharedreward_type-act_cnum-27_cname-F_dec_onegroup.gfeat/cope1.feat/cluster_mask_zstat3.nii.gz -thr 1 -uthr 1 -bin /ZPOOL/data/projects/rf1-sra-sharedreward/masks/brain_images/cname27_z4_c1.nii.gz
+
+# 29_cname-C_dec_onegroup.gfeat/cope1.feat/cluster_zstat3_std.html
+fslmaths /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/L3_task-sharedreward_model-1_type-act_n5300/L3_task-sharedreward_type-act_cnum-29_cname-C_dec_onegroup.gfeat/cope1.feat/cluster_mask_zstat3.nii.gz -thr 1 -uthr 1 -bin 
+/ZPOOL/data/projects/rf1-sra-sharedreward/masks/brain_images/cname29_z3_c1.nii.gz
+
+# 34_cname-dec_F-C_onegroup.gfeat/cope1.feat/cluster_zstat7_std.html
+fslmaths /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/L3_task-sharedreward_model-1_type-act_n53001/L3_task-sharedreward_type-act_cnum-34_cname-dec_F-C_onegroup.gfeat/cope1.feat/cluster_mask_zstat7.nii.gz -thr 1 -uthr 1 -bin /ZPOOL/data/projects/rf1-sra-sharedreward/masks/brain_images/cname34_z7_c1.nii.gz
