@@ -8,12 +8,12 @@ maindir="$(dirname "$scriptdir")"
 sub=$1
 type=$2
 task=sharedreward # edit if necessary
-sm=6 # edit if necessary # used 6 but named as 5
+sm=6 # edit if necessary # some analyses used smooth 6 but named as 5
 logfile=$3
 
 MAINOUTPUT=${maindir}/derivatives/fsl/sub-${sub}
 NCOPES=34
-model=0
+model=1
 
 # --- start EDIT HERE start: exceptions and conditionals for the task
 

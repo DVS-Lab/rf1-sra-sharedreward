@@ -1,0 +1,692 @@
+complete 10317 1
+complete 10317 2
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10317/L1_task-sharedreward_model-1_type-act_run-1_sm-6.feat/report_log.html
+complete 10369 1
+complete 10369 2
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10317/L1_task-sharedreward_model-1_type-act_run-2_sm-6.feat/report_log.html
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10369/L1_task-sharedreward_model-1_type-act_run-1_sm-6.feat/report_log.html
+complete 10402 1
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10369/L1_task-sharedreward_model-1_type-act_run-2_sm-6.feat/report_log.html
+complete 10402 2
+complete 10418 1
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10402/L1_task-sharedreward_model-1_type-act_run-1_sm-6.feat/report_log.html
+complete 10418 2
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10402/L1_task-sharedreward_model-1_type-act_run-2_sm-6.feat/report_log.html
+complete 10478 1
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10418/L1_task-sharedreward_model-1_type-act_run-1_sm-6.feat/report_log.html
+complete 10478 2
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10418/L1_task-sharedreward_model-1_type-act_run-2_sm-6.feat/report_log.html
+child process exited abnormally
+    while executing
+"fsl:exec "${FSLDIR}/bin/feat_model design" $fmri(featModelOpts) -N feat0_model -l logs "
+    (procedure "firstLevelMaster" line 43)
+    invoked from within
+"firstLevelMaster $session"
+    invoked from within
+"if { $done_something == 0 } {
+
+    if { ! $fmri(inmelodic) } {
+       if { $fmri(level) == 1 } {
+	      for { set session 1 } { $session <= $fmri(mult..."
+    (file "/usr/local/fsl/bin/feat" line 390)
+complete 10486 1
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10478/L1_task-sharedreward_model-1_type-act_run-1_sm-6.feat/report_log.html
+complete 10486 2
+complete 10529 1
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10486/L1_task-sharedreward_model-1_type-act_run-1_sm-6.feat/report_log.html
+complete 10529 2
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10486/L1_task-sharedreward_model-1_type-act_run-2_sm-6.feat/report_log.html
+complete 10541 1
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10529/L1_task-sharedreward_model-1_type-act_run-1_sm-6.feat/report_log.html
+complete 10541 2
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10529/L1_task-sharedreward_model-1_type-act_run-2_sm-6.feat/report_log.html
+complete 10555 1
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10541/L1_task-sharedreward_model-1_type-act_run-1_sm-6.feat/report_log.html
+complete 10555 2
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10541/L1_task-sharedreward_model-1_type-act_run-2_sm-6.feat/report_log.html
+complete 10559 1
+complete 10559 2
+child process exited abnormally
+    while executing
+"fsl:exec "${FSLDIR}/bin/feat_model design" $fmri(featModelOpts) -N feat0_model -l logs "
+    (procedure "firstLevelMaster" line 43)
+    invoked from within
+"firstLevelMaster $session"
+    invoked from within
+"if { $done_something == 0 } {
+
+    if { ! $fmri(inmelodic) } {
+       if { $fmri(level) == 1 } {
+	      for { set session 1 } { $session <= $fmri(mult..."
+    (file "/usr/local/fsl/bin/feat" line 390)
+complete 10572 1
+child process exited abnormally
+    while executing
+"fsl:exec "${FSLDIR}/bin/feat_model design" $fmri(featModelOpts) -N feat0_model -l logs "
+    (procedure "firstLevelMaster" line 43)
+    invoked from within
+"firstLevelMaster $session"
+    invoked from within
+"if { $done_something == 0 } {
+
+    if { ! $fmri(inmelodic) } {
+       if { $fmri(level) == 1 } {
+	      for { set session 1 } { $session <= $fmri(mult..."
+    (file "/usr/local/fsl/bin/feat" line 390)
+complete 10572 2
+complete 10581 1
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10572/L1_task-sharedreward_model-1_type-act_run-1_sm-6.feat/report_log.html
+complete 10581 2
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10572/L1_task-sharedreward_model-1_type-act_run-2_sm-6.feat/report_log.html
+complete 10585 1
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10581/L1_task-sharedreward_model-1_type-act_run-1_sm-6.feat/report_log.html
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10581/L1_task-sharedreward_model-1_type-act_run-2_sm-6.feat/report_log.html
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10585/L1_task-sharedreward_model-1_type-act_run-1_sm-6.feat/report_log.html
+complete 10585 2
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10585/L1_task-sharedreward_model-1_type-act_run-2_sm-6.feat/report_log.html
+complete 10589 1
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10589/L1_task-sharedreward_model-1_type-act_run-1_sm-6.feat/report_log.html
+complete 10589 2
+complete 10590 1
+complete 10590 2
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10589/L1_task-sharedreward_model-1_type-act_run-2_sm-6.feat/report_log.html
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10590/L1_task-sharedreward_model-1_type-act_run-1_sm-6.feat/report_log.html
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10590/L1_task-sharedreward_model-1_type-act_run-2_sm-6.feat/report_log.html
+complete 10596 1
+complete 10596 2
+complete 10606 1
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10596/L1_task-sharedreward_model-1_type-act_run-1_sm-6.feat/report_log.html
+complete 10606 2
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10596/L1_task-sharedreward_model-1_type-act_run-2_sm-6.feat/report_log.html
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10606/L1_task-sharedreward_model-1_type-act_run-1_sm-6.feat/report_log.html
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10606/L1_task-sharedreward_model-1_type-act_run-2_sm-6.feat/report_log.html
+complete 10608 1
+complete 10608 2
+complete 10636 1
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10608/L1_task-sharedreward_model-1_type-act_run-1_sm-6.feat/report_log.html
+complete 10636 2
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10608/L1_task-sharedreward_model-1_type-act_run-2_sm-6.feat/report_log.html
+complete 10638 1
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10636/L1_task-sharedreward_model-1_type-act_run-1_sm-6.feat/report_log.html
+complete 10638 2
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10636/L1_task-sharedreward_model-1_type-act_run-2_sm-6.feat/report_log.html
+complete 10640 1
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10638/L1_task-sharedreward_model-1_type-act_run-1_sm-6.feat/report_log.html
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10638/L1_task-sharedreward_model-1_type-act_run-2_sm-6.feat/report_log.html
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10640/L1_task-sharedreward_model-1_type-act_run-1_sm-6.feat/report_log.html
+complete 10640 2
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10640/L1_task-sharedreward_model-1_type-act_run-2_sm-6.feat/report_log.html
+complete 10642 1
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10642/L1_task-sharedreward_model-1_type-act_run-1_sm-6.feat/report_log.html
+complete 10642 2
+complete 10644 1
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10642/L1_task-sharedreward_model-1_type-act_run-2_sm-6.feat/report_log.html
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10644/L1_task-sharedreward_model-1_type-act_run-1_sm-6.feat/report_log.html
+complete 10644 2
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10644/L1_task-sharedreward_model-1_type-act_run-2_sm-6.feat/report_log.html
+complete 10647 1
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10647/L1_task-sharedreward_model-1_type-act_run-1_sm-6.feat/report_log.html
+complete 10647 2
+complete 10649 1
+complete 10649 2
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10647/L1_task-sharedreward_model-1_type-act_run-2_sm-6.feat/report_log.html
+complete 10652 1
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10649/L1_task-sharedreward_model-1_type-act_run-1_sm-6.feat/report_log.html
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10649/L1_task-sharedreward_model-1_type-act_run-2_sm-6.feat/report_log.html
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10652/L1_task-sharedreward_model-1_type-act_run-1_sm-6.feat/report_log.html
+complete 10652 2
+complete 10656 1
+complete 10656 2
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10652/L1_task-sharedreward_model-1_type-act_run-2_sm-6.feat/report_log.html
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10656/L1_task-sharedreward_model-1_type-act_run-1_sm-6.feat/report_log.html
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10656/L1_task-sharedreward_model-1_type-act_run-2_sm-6.feat/report_log.html
+complete 10657 1
+complete 10657 2
+complete 10659 1
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10657/L1_task-sharedreward_model-1_type-act_run-1_sm-6.feat/report_log.html
+complete 10659 2
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10657/L1_task-sharedreward_model-1_type-act_run-2_sm-6.feat/report_log.html
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10659/L1_task-sharedreward_model-1_type-act_run-1_sm-6.feat/report_log.html
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10659/L1_task-sharedreward_model-1_type-act_run-2_sm-6.feat/report_log.html
+complete 10661 1
+child process exited abnormally
+    while executing
+"fsl:exec "${FSLDIR}/bin/feat_model design" $fmri(featModelOpts) -N feat0_model -l logs "
+    (procedure "firstLevelMaster" line 43)
+    invoked from within
+"firstLevelMaster $session"
+    invoked from within
+"if { $done_something == 0 } {
+
+    if { ! $fmri(inmelodic) } {
+       if { $fmri(level) == 1 } {
+	      for { set session 1 } { $session <= $fmri(mult..."
+    (file "/usr/local/fsl/bin/feat" line 390)
+complete 10661 2
+child process exited abnormally
+    while executing
+"fsl:exec "${FSLDIR}/bin/feat_model design" $fmri(featModelOpts) -N feat0_model -l logs "
+    (procedure "firstLevelMaster" line 43)
+    invoked from within
+"firstLevelMaster $session"
+    invoked from within
+"if { $done_something == 0 } {
+
+    if { ! $fmri(inmelodic) } {
+       if { $fmri(level) == 1 } {
+	      for { set session 1 } { $session <= $fmri(mult..."
+    (file "/usr/local/fsl/bin/feat" line 390)
+complete 10663 1
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10663/L1_task-sharedreward_model-1_type-act_run-1_sm-6.feat/report_log.html
+complete 10663 2
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10663/L1_task-sharedreward_model-1_type-act_run-2_sm-6.feat/report_log.html
+complete 10673 1
+complete 10673 2
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10673/L1_task-sharedreward_model-1_type-act_run-1_sm-6.feat/report_log.html
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10673/L1_task-sharedreward_model-1_type-act_run-2_sm-6.feat/report_log.html
+complete 10674 1
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10674/L1_task-sharedreward_model-1_type-act_run-1_sm-6.feat/report_log.html
+complete 10674 2
+complete 10677 1
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10674/L1_task-sharedreward_model-1_type-act_run-2_sm-6.feat/report_log.html
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10677/L1_task-sharedreward_model-1_type-act_run-1_sm-6.feat/report_log.html
+complete 10677 2
+complete 10685 1
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10677/L1_task-sharedreward_model-1_type-act_run-2_sm-6.feat/report_log.html
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10685/L1_task-sharedreward_model-1_type-act_run-1_sm-6.feat/report_log.html
+complete 10685 2
+complete 10690 1
+complete 10690 2
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10685/L1_task-sharedreward_model-1_type-act_run-2_sm-6.feat/report_log.html
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10690/L1_task-sharedreward_model-1_type-act_run-1_sm-6.feat/report_log.html
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10690/L1_task-sharedreward_model-1_type-act_run-2_sm-6.feat/report_log.html
+complete 10691 1
+complete 10691 2
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10691/L1_task-sharedreward_model-1_type-act_run-1_sm-6.feat/report_log.html
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10691/L1_task-sharedreward_model-1_type-act_run-2_sm-6.feat/report_log.html
+complete 10700 1
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10700/L1_task-sharedreward_model-1_type-act_run-1_sm-6.feat/report_log.html
+complete 10700 2
+complete 10701 1
+complete 10701 2
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10700/L1_task-sharedreward_model-1_type-act_run-2_sm-6.feat/report_log.html
+complete 10713 1
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10701/L1_task-sharedreward_model-1_type-act_run-1_sm-6.feat/report_log.html
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10701/L1_task-sharedreward_model-1_type-act_run-2_sm-6.feat/report_log.html
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10713/L1_task-sharedreward_model-1_type-act_run-1_sm-6.feat/report_log.html
+complete 10713 2
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10713/L1_task-sharedreward_model-1_type-act_run-2_sm-6.feat/report_log.html
+complete 10716 1
+complete 10716 2
+complete 10718 1
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10716/L1_task-sharedreward_model-1_type-act_run-1_sm-6.feat/report_log.html
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10716/L1_task-sharedreward_model-1_type-act_run-2_sm-6.feat/report_log.html
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10718/L1_task-sharedreward_model-1_type-act_run-1_sm-6.feat/report_log.html
+complete 10718 2
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10718/L1_task-sharedreward_model-1_type-act_run-2_sm-6.feat/report_log.html
+complete 10720 1
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10720/L1_task-sharedreward_model-1_type-act_run-1_sm-6.feat/report_log.html
+complete 10720 2
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10720/L1_task-sharedreward_model-1_type-act_run-2_sm-6.feat/report_log.html
+complete 10723 1
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10723/L1_task-sharedreward_model-1_type-act_run-1_sm-6.feat/report_log.html
+complete 10723 2
+complete 10741 1
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10723/L1_task-sharedreward_model-1_type-act_run-2_sm-6.feat/report_log.html
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10741/L1_task-sharedreward_model-1_type-act_run-1_sm-6.feat/report_log.html
+complete 10741 2
+complete 10748 1
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10741/L1_task-sharedreward_model-1_type-act_run-2_sm-6.feat/report_log.html
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10748/L1_task-sharedreward_model-1_type-act_run-1_sm-6.feat/report_log.html
+complete 10748 2
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10748/L1_task-sharedreward_model-1_type-act_run-2_sm-6.feat/report_log.html
+complete 10767 1
+complete 10767 2
+complete 10770 1
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10767/L1_task-sharedreward_model-1_type-act_run-1_sm-6.feat/report_log.html
+complete 10770 2
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10767/L1_task-sharedreward_model-1_type-act_run-2_sm-6.feat/report_log.html
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10770/L1_task-sharedreward_model-1_type-act_run-1_sm-6.feat/report_log.html
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10770/L1_task-sharedreward_model-1_type-act_run-2_sm-6.feat/report_log.html
+complete 10774 1
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10774/L1_task-sharedreward_model-1_type-act_run-1_sm-6.feat/report_log.html
+complete 10774 2
+complete 10777 1
+complete 10777 2
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10774/L1_task-sharedreward_model-1_type-act_run-2_sm-6.feat/report_log.html
+complete 10781 1
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10777/L1_task-sharedreward_model-1_type-act_run-1_sm-6.feat/report_log.html
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10777/L1_task-sharedreward_model-1_type-act_run-2_sm-6.feat/report_log.html
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10781/L1_task-sharedreward_model-1_type-act_run-1_sm-6.feat/report_log.html
+complete 10781 2
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10781/L1_task-sharedreward_model-1_type-act_run-2_sm-6.feat/report_log.html
+complete 10783 1
+complete 10783 2
+complete 10785 1
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10783/L1_task-sharedreward_model-1_type-act_run-1_sm-6.feat/report_log.html
+complete 10785 2
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10783/L1_task-sharedreward_model-1_type-act_run-2_sm-6.feat/report_log.html
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10785/L1_task-sharedreward_model-1_type-act_run-1_sm-6.feat/report_log.html
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10785/L1_task-sharedreward_model-1_type-act_run-2_sm-6.feat/report_log.html
+complete 10794 1
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10794/L1_task-sharedreward_model-1_type-act_run-1_sm-6.feat/report_log.html
+complete 10794 2
+complete 10800 1
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10794/L1_task-sharedreward_model-1_type-act_run-2_sm-6.feat/report_log.html
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10800/L1_task-sharedreward_model-1_type-act_run-1_sm-6.feat/report_log.html
+complete 10800 2
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10800/L1_task-sharedreward_model-1_type-act_run-2_sm-6.feat/report_log.html
+complete 10801 1
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10801/L1_task-sharedreward_model-1_type-act_run-1_sm-6.feat/report_log.html
+complete 10801 2
+complete 10802 1
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10801/L1_task-sharedreward_model-1_type-act_run-2_sm-6.feat/report_log.html
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10802/L1_task-sharedreward_model-1_type-act_run-1_sm-6.feat/report_log.html
+complete 10802 2
+complete 10804 1
+complete 10804 2
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10802/L1_task-sharedreward_model-1_type-act_run-2_sm-6.feat/report_log.html
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10804/L1_task-sharedreward_model-1_type-act_run-1_sm-6.feat/report_log.html
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10804/L1_task-sharedreward_model-1_type-act_run-2_sm-6.feat/report_log.html
+complete 10806 1
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10806/L1_task-sharedreward_model-1_type-act_run-1_sm-6.feat/report_log.html
+complete 10806 2
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10806/L1_task-sharedreward_model-1_type-act_run-2_sm-6.feat/report_log.html
+complete 10807 1
+complete 10807 2
+complete 10809 1
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10807/L1_task-sharedreward_model-1_type-act_run-1_sm-6.feat/report_log.html
+complete 10809 2
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10807/L1_task-sharedreward_model-1_type-act_run-2_sm-6.feat/report_log.html
+child process exited abnormally
+    while executing
+"fsl:exec "${FSLDIR}/bin/feat_model design" $fmri(featModelOpts) -N feat0_model -l logs "
+    (procedure "firstLevelMaster" line 43)
+    invoked from within
+"firstLevelMaster $session"
+    invoked from within
+"if { $done_something == 0 } {
+
+    if { ! $fmri(inmelodic) } {
+       if { $fmri(level) == 1 } {
+	      for { set session 1 } { $session <= $fmri(mult..."
+    (file "/usr/local/fsl/bin/feat" line 390)
+complete 10810 1
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10809/L1_task-sharedreward_model-1_type-act_run-1_sm-6.feat/report_log.html
+child process exited abnormally
+    while executing
+"fsl:exec "${FSLDIR}/bin/feat_model design" $fmri(featModelOpts) -N feat0_model -l logs "
+    (procedure "firstLevelMaster" line 43)
+    invoked from within
+"firstLevelMaster $session"
+    invoked from within
+"if { $done_something == 0 } {
+
+    if { ! $fmri(inmelodic) } {
+       if { $fmri(level) == 1 } {
+	      for { set session 1 } { $session <= $fmri(mult..."
+    (file "/usr/local/fsl/bin/feat" line 390)
+complete 10810 2
+child process exited abnormally
+    while executing
+"fsl:exec "${FSLDIR}/bin/feat_model design" $fmri(featModelOpts) -N feat0_model -l logs "
+    (procedure "firstLevelMaster" line 43)
+    invoked from within
+"firstLevelMaster $session"
+    invoked from within
+"if { $done_something == 0 } {
+
+    if { ! $fmri(inmelodic) } {
+       if { $fmri(level) == 1 } {
+	      for { set session 1 } { $session <= $fmri(mult..."
+    (file "/usr/local/fsl/bin/feat" line 390)
+complete 10812 1
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10812/L1_task-sharedreward_model-1_type-act_run-1_sm-6.feat/report_log.html
+complete 10812 2
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10812/L1_task-sharedreward_model-1_type-act_run-2_sm-6.feat/report_log.html
+complete 10817 1
+child process exited abnormally
+    while executing
+"fsl:exec "${FSLDIR}/bin/feat_model design" $fmri(featModelOpts) -N feat0_model -l logs "
+    (procedure "firstLevelMaster" line 43)
+    invoked from within
+"firstLevelMaster $session"
+    invoked from within
+"if { $done_something == 0 } {
+
+    if { ! $fmri(inmelodic) } {
+       if { $fmri(level) == 1 } {
+	      for { set session 1 } { $session <= $fmri(mult..."
+    (file "/usr/local/fsl/bin/feat" line 390)
+complete 10817 2
+child process exited abnormally
+    while executing
+"fsl:exec "${FSLDIR}/bin/feat_model design" $fmri(featModelOpts) -N feat0_model -l logs "
+    (procedure "firstLevelMaster" line 43)
+    invoked from within
+"firstLevelMaster $session"
+    invoked from within
+"if { $done_something == 0 } {
+
+    if { ! $fmri(inmelodic) } {
+       if { $fmri(level) == 1 } {
+	      for { set session 1 } { $session <= $fmri(mult..."
+    (file "/usr/local/fsl/bin/feat" line 390)
+complete 10827 1
+child process exited abnormally
+    while executing
+"fsl:exec "${FSLDIR}/bin/feat_model design" $fmri(featModelOpts) -N feat0_model -l logs "
+    (procedure "firstLevelMaster" line 43)
+    invoked from within
+"firstLevelMaster $session"
+    invoked from within
+"if { $done_something == 0 } {
+
+    if { ! $fmri(inmelodic) } {
+       if { $fmri(level) == 1 } {
+	      for { set session 1 } { $session <= $fmri(mult..."
+    (file "/usr/local/fsl/bin/feat" line 390)
+complete 10827 2
+child process exited abnormally
+    while executing
+"fsl:exec "${FSLDIR}/bin/feat_model design" $fmri(featModelOpts) -N feat0_model -l logs "
+    (procedure "firstLevelMaster" line 43)
+    invoked from within
+"firstLevelMaster $session"
+    invoked from within
+"if { $done_something == 0 } {
+
+    if { ! $fmri(inmelodic) } {
+       if { $fmri(level) == 1 } {
+	      for { set session 1 } { $session <= $fmri(mult..."
+    (file "/usr/local/fsl/bin/feat" line 390)
+complete 10831 1
+complete 10831 2
+complete 10834 1
+child process exited abnormally
+    while executing
+"fsl:exec "${FSLDIR}/bin/feat_model design" $fmri(featModelOpts) -N feat0_model -l logs "
+    (procedure "firstLevelMaster" line 43)
+    invoked from within
+"firstLevelMaster $session"
+    invoked from within
+"if { $done_something == 0 } {
+
+    if { ! $fmri(inmelodic) } {
+       if { $fmri(level) == 1 } {
+	      for { set session 1 } { $session <= $fmri(mult..."
+    (file "/usr/local/fsl/bin/feat" line 390)
+complete 10834 2
+complete 10838 1
+child process exited abnormally
+    while executing
+"fsl:exec "${FSLDIR}/bin/feat_model design" $fmri(featModelOpts) -N feat0_model -l logs "
+    (procedure "firstLevelMaster" line 43)
+    invoked from within
+"firstLevelMaster $session"
+    invoked from within
+"if { $done_something == 0 } {
+
+    if { ! $fmri(inmelodic) } {
+       if { $fmri(level) == 1 } {
+	      for { set session 1 } { $session <= $fmri(mult..."
+    (file "/usr/local/fsl/bin/feat" line 390)
+child process exited abnormally
+    while executing
+"fsl:exec "${FSLDIR}/bin/feat_model design" $fmri(featModelOpts) -N feat0_model -l logs "
+    (procedure "firstLevelMaster" line 43)
+    invoked from within
+"firstLevelMaster $session"
+    invoked from within
+"if { $done_something == 0 } {
+
+    if { ! $fmri(inmelodic) } {
+       if { $fmri(level) == 1 } {
+	      for { set session 1 } { $session <= $fmri(mult..."
+    (file "/usr/local/fsl/bin/feat" line 390)
+complete 10838 2
+child process exited abnormally
+    while executing
+"fsl:exec "${FSLDIR}/bin/feat_model design" $fmri(featModelOpts) -N feat0_model -l logs "
+    (procedure "firstLevelMaster" line 43)
+    invoked from within
+"firstLevelMaster $session"
+    invoked from within
+"if { $done_something == 0 } {
+
+    if { ! $fmri(inmelodic) } {
+       if { $fmri(level) == 1 } {
+	      for { set session 1 } { $session <= $fmri(mult..."
+    (file "/usr/local/fsl/bin/feat" line 390)
+complete 10843 1
+child process exited abnormally
+    while executing
+"fsl:exec "${FSLDIR}/bin/feat_model design" $fmri(featModelOpts) -N feat0_model -l logs "
+    (procedure "firstLevelMaster" line 43)
+    invoked from within
+"firstLevelMaster $session"
+    invoked from within
+"if { $done_something == 0 } {
+
+    if { ! $fmri(inmelodic) } {
+       if { $fmri(level) == 1 } {
+	      for { set session 1 } { $session <= $fmri(mult..."
+    (file "/usr/local/fsl/bin/feat" line 390)
+complete 10843 2
+child process exited abnormally
+    while executing
+"fsl:exec "${FSLDIR}/bin/feat_model design" $fmri(featModelOpts) -N feat0_model -l logs "
+    (procedure "firstLevelMaster" line 43)
+    invoked from within
+"firstLevelMaster $session"
+    invoked from within
+"if { $done_something == 0 } {
+
+    if { ! $fmri(inmelodic) } {
+       if { $fmri(level) == 1 } {
+	      for { set session 1 } { $session <= $fmri(mult..."
+    (file "/usr/local/fsl/bin/feat" line 390)
+complete 10850 1
+child process exited abnormally
+    while executing
+"fsl:exec "${FSLDIR}/bin/feat_model design" $fmri(featModelOpts) -N feat0_model -l logs "
+    (procedure "firstLevelMaster" line 43)
+    invoked from within
+"firstLevelMaster $session"
+    invoked from within
+"if { $done_something == 0 } {
+
+    if { ! $fmri(inmelodic) } {
+       if { $fmri(level) == 1 } {
+	      for { set session 1 } { $session <= $fmri(mult..."
+    (file "/usr/local/fsl/bin/feat" line 390)
+complete 10850 2
+child process exited abnormally
+    while executing
+"fsl:exec "${FSLDIR}/bin/feat_model design" $fmri(featModelOpts) -N feat0_model -l logs "
+    (procedure "firstLevelMaster" line 43)
+    invoked from within
+"firstLevelMaster $session"
+    invoked from within
+"if { $done_something == 0 } {
+
+    if { ! $fmri(inmelodic) } {
+       if { $fmri(level) == 1 } {
+	      for { set session 1 } { $session <= $fmri(mult..."
+    (file "/usr/local/fsl/bin/feat" line 390)
+complete 10854 1
+child process exited abnormally
+    while executing
+"fsl:exec "${FSLDIR}/bin/feat_model design" $fmri(featModelOpts) -N feat0_model -l logs "
+    (procedure "firstLevelMaster" line 43)
+    invoked from within
+"firstLevelMaster $session"
+    invoked from within
+"if { $done_something == 0 } {
+
+    if { ! $fmri(inmelodic) } {
+       if { $fmri(level) == 1 } {
+	      for { set session 1 } { $session <= $fmri(mult..."
+    (file "/usr/local/fsl/bin/feat" line 390)
+complete 10854 2
+child process exited abnormally
+    while executing
+"fsl:exec "${FSLDIR}/bin/feat_model design" $fmri(featModelOpts) -N feat0_model -l logs "
+    (procedure "firstLevelMaster" line 43)
+    invoked from within
+"firstLevelMaster $session"
+    invoked from within
+"if { $done_something == 0 } {
+
+    if { ! $fmri(inmelodic) } {
+       if { $fmri(level) == 1 } {
+	      for { set session 1 } { $session <= $fmri(mult..."
+    (file "/usr/local/fsl/bin/feat" line 390)
+complete 10857 1
+child process exited abnormally
+    while executing
+"fsl:exec "${FSLDIR}/bin/feat_model design" $fmri(featModelOpts) -N feat0_model -l logs "
+    (procedure "firstLevelMaster" line 43)
+    invoked from within
+"firstLevelMaster $session"
+    invoked from within
+"if { $done_something == 0 } {
+
+    if { ! $fmri(inmelodic) } {
+       if { $fmri(level) == 1 } {
+	      for { set session 1 } { $session <= $fmri(mult..."
+    (file "/usr/local/fsl/bin/feat" line 390)
+complete 10857 2
+child process exited abnormally
+    while executing
+"fsl:exec "${FSLDIR}/bin/feat_model design" $fmri(featModelOpts) -N feat0_model -l logs "
+    (procedure "firstLevelMaster" line 43)
+    invoked from within
+"firstLevelMaster $session"
+    invoked from within
+"if { $done_something == 0 } {
+
+    if { ! $fmri(inmelodic) } {
+       if { $fmri(level) == 1 } {
+	      for { set session 1 } { $session <= $fmri(mult..."
+    (file "/usr/local/fsl/bin/feat" line 390)
+complete 10858 1
+complete 10858 2
+complete 10860 1
+child process exited abnormally
+    while executing
+"fsl:exec "${FSLDIR}/bin/feat_model design" $fmri(featModelOpts) -N feat0_model -l logs "
+    (procedure "firstLevelMaster" line 43)
+    invoked from within
+"firstLevelMaster $session"
+    invoked from within
+"if { $done_something == 0 } {
+
+    if { ! $fmri(inmelodic) } {
+       if { $fmri(level) == 1 } {
+	      for { set session 1 } { $session <= $fmri(mult..."
+    (file "/usr/local/fsl/bin/feat" line 390)
+complete 10860 2
+child process exited abnormally
+    while executing
+"fsl:exec "${FSLDIR}/bin/feat_model design" $fmri(featModelOpts) -N feat0_model -l logs "
+    (procedure "firstLevelMaster" line 43)
+    invoked from within
+"firstLevelMaster $session"
+    invoked from within
+"if { $done_something == 0 } {
+
+    if { ! $fmri(inmelodic) } {
+       if { $fmri(level) == 1 } {
+	      for { set session 1 } { $session <= $fmri(mult..."
+    (file "/usr/local/fsl/bin/feat" line 390)
+complete 10862 1
+child process exited abnormally
+    while executing
+"fsl:exec "${FSLDIR}/bin/feat_model design" $fmri(featModelOpts) -N feat0_model -l logs "
+    (procedure "firstLevelMaster" line 43)
+    invoked from within
+"firstLevelMaster $session"
+    invoked from within
+"if { $done_something == 0 } {
+
+    if { ! $fmri(inmelodic) } {
+       if { $fmri(level) == 1 } {
+	      for { set session 1 } { $session <= $fmri(mult..."
+    (file "/usr/local/fsl/bin/feat" line 390)
+complete 10862 2
+child process exited abnormally
+    while executing
+"fsl:exec "${FSLDIR}/bin/feat_model design" $fmri(featModelOpts) -N feat0_model -l logs "
+    (procedure "firstLevelMaster" line 43)
+    invoked from within
+"firstLevelMaster $session"
+    invoked from within
+"if { $done_something == 0 } {
+
+    if { ! $fmri(inmelodic) } {
+       if { $fmri(level) == 1 } {
+	      for { set session 1 } { $session <= $fmri(mult..."
+    (file "/usr/local/fsl/bin/feat" line 390)
+complete 10863 1
+child process exited abnormally
+    while executing
+"fsl:exec "${FSLDIR}/bin/feat_model design" $fmri(featModelOpts) -N feat0_model -l logs "
+    (procedure "firstLevelMaster" line 43)
+    invoked from within
+"firstLevelMaster $session"
+    invoked from within
+"if { $done_something == 0 } {
+
+    if { ! $fmri(inmelodic) } {
+       if { $fmri(level) == 1 } {
+	      for { set session 1 } { $session <= $fmri(mult..."
+    (file "/usr/local/fsl/bin/feat" line 390)
+complete 10863 2
+child process exited abnormally
+    while executing
+"fsl:exec "${FSLDIR}/bin/feat_model design" $fmri(featModelOpts) -N feat0_model -l logs "
+    (procedure "firstLevelMaster" line 43)
+    invoked from within
+"firstLevelMaster $session"
+    invoked from within
+"if { $done_something == 0 } {
+
+    if { ! $fmri(inmelodic) } {
+       if { $fmri(level) == 1 } {
+	      for { set session 1 } { $session <= $fmri(mult..."
+    (file "/usr/local/fsl/bin/feat" line 390)
+complete 10866 1
+child process exited abnormally
+    while executing
+"fsl:exec "${FSLDIR}/bin/feat_model design" $fmri(featModelOpts) -N feat0_model -l logs "
+    (procedure "firstLevelMaster" line 43)
+    invoked from within
+"firstLevelMaster $session"
+    invoked from within
+"if { $done_something == 0 } {
+
+    if { ! $fmri(inmelodic) } {
+       if { $fmri(level) == 1 } {
+	      for { set session 1 } { $session <= $fmri(mult..."
+    (file "/usr/local/fsl/bin/feat" line 390)
+complete 10866 2
+child process exited abnormally
+    while executing
+"fsl:exec "${FSLDIR}/bin/feat_model design" $fmri(featModelOpts) -N feat0_model -l logs "
+    (procedure "firstLevelMaster" line 43)
+    invoked from within
+"firstLevelMaster $session"
+    invoked from within
+"if { $done_something == 0 } {
+
+    if { ! $fmri(inmelodic) } {
+       if { $fmri(level) == 1 } {
+	      for { set session 1 } { $session <= $fmri(mult..."
+    (file "/usr/local/fsl/bin/feat" line 390)
+complete 10875 1
+complete 10875 2
+complete 10887 1
+complete 10887 2
+complete 10940 1
+complete 10940 2

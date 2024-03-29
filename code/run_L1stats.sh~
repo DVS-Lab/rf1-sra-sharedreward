@@ -9,9 +9,8 @@ nruns=2
 for task in sharedreward; do
 	for ppi in 0; do # putting 0 first will indicate "activation"
 #	for ppi in VS_rew-pun; do
-		for sub in `cat ${basedir}/code/sublist_all_sharedreward.txt`; do
-#		for sub in 10317; do
-#		for sub in 10812; do
+		# for sub in `cat ${basedir}/code/sub_all.txt`; do
+		for sub in 10940; do
 	  		for run in `seq $nruns`; do
 #			for run in 1; do
 		  		# Manages the number of jobs and cores

@@ -13,7 +13,7 @@ logfile=$3
 
 MAINOUTPUT=${maindir}/derivatives/fsl/sub-${sub}
 NCOPES=34
-model=0
+model=1 # change model number according to template 
 
 # --- start EDIT HERE start: exceptions and conditionals for the task
 

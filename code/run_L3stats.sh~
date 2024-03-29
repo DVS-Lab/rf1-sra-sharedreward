@@ -36,7 +36,7 @@ maindir="$(dirname "$scriptdir")"
 			continues
 		fi
 
-		NCORES=5
+		NCORES=20
 		SCRIPTNAME=${maindir}/code/L3stats.sh
 		while [ $(ps -ef | grep -v grep | grep $SCRIPTNAME | wc -l) -ge $NCORES ]; do
 			sleep 1s

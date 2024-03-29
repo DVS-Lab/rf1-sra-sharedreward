@@ -1,0 +1,284 @@
+complete 1 C_pun type-act
+complete 2 C_rew type-act
+complete 3 F_pun type-act
+complete 4 F_rew type-act
+complete 5 S_pun type-act
+complete 6 S_rew type-act
+complete 7 C_neu type-act
+complete 8 F_neu type-act
+complete 9 S_neu type-act
+complete 10 rew-pun type-act
+complete 11 F-S type-act
+complete 12 F-C type-act
+complete 13 FS-C type-act
+complete 14 rew-pun_F-S type-act
+complete 15 rew-pun_S-C type-act
+complete 16 rew-pun_F-C type-act
+complete 17 rew_F-S type-act
+complete 18 rew_S-C type-act
+complete 19 rew_F-C type-act
+complete 20 rew-neu_F-S type-act
+child process exited abnormally
+    while executing
+"fsl:exec "${FSLDIR}/bin/feat ${fsfroot}.fsf -D $FD -gfeatprep" -b 60 -N feat2_pre -l logs "
+    invoked from within
+"if { $done_something == 0 } {
+
+    if { ! $fmri(inmelodic) } {
+       if { $fmri(level) == 1 } {
+	      for { set session 1 } { $session <= $fmri(mult..."
+    (file "/usr/local/fsl/bin/feat" line 390)
+complete 21 rew-neu_S-C type-act
+child process exited abnormally
+    while executing
+"fsl:exec "${FSLDIR}/bin/feat ${fsfroot}.fsf -D $FD -gfeatprep" -b 60 -N feat2_pre -l logs "
+    invoked from within
+"if { $done_something == 0 } {
+
+    if { ! $fmri(inmelodic) } {
+       if { $fmri(level) == 1 } {
+	      for { set session 1 } { $session <= $fmri(mult..."
+    (file "/usr/local/fsl/bin/feat" line 390)
+complete 22 reu-neu_F-C type-act
+child process exited abnormally
+    while executing
+"fsl:exec "${FSLDIR}/bin/feat ${fsfroot}.fsf -D $FD -gfeatprep" -b 60 -N feat2_pre -l logs "
+    invoked from within
+"if { $done_something == 0 } {
+
+    if { ! $fmri(inmelodic) } {
+       if { $fmri(level) == 1 } {
+	      for { set session 1 } { $session <= $fmri(mult..."
+    (file "/usr/local/fsl/bin/feat" line 390)
+child process exited abnormally
+    while executing
+"fsl:exec "${FSLDIR}/bin/feat ${fsfroot}.fsf -D $FD -gfeatprep" -b 60 -N feat2_pre -l logs "
+    invoked from within
+"if { $done_something == 0 } {
+
+    if { ! $fmri(inmelodic) } {
+       if { $fmri(level) == 1 } {
+	      for { set session 1 } { $session <= $fmri(mult..."
+    (file "/usr/local/fsl/bin/feat" line 390)
+child process exited abnormally
+    while executing
+"fsl:exec "${FSLDIR}/bin/feat ${fsfroot}.fsf -D $FD -gfeatprep" -b 60 -N feat2_pre -l logs "
+    invoked from within
+"if { $done_something == 0 } {
+
+    if { ! $fmri(inmelodic) } {
+       if { $fmri(level) == 1 } {
+	      for { set session 1 } { $session <= $fmri(mult..."
+    (file "/usr/local/fsl/bin/feat" line 390)
+child process exited abnormally
+    while executing
+"fsl:exec "${FSLDIR}/bin/feat ${fsfroot}.fsf -D $FD -gfeatprep" -b 60 -N feat2_pre -l logs "
+    invoked from within
+"if { $done_something == 0 } {
+
+    if { ! $fmri(inmelodic) } {
+       if { $fmri(level) == 1 } {
+	      for { set session 1 } { $session <= $fmri(mult..."
+    (file "/usr/local/fsl/bin/feat" line 390)
+child process exited abnormally
+    while executing
+"fsl:exec "${FSLDIR}/bin/feat ${fsfroot}.fsf -D $FD -gfeatprep" -b 60 -N feat2_pre -l logs "
+    invoked from within
+"if { $done_something == 0 } {
+
+    if { ! $fmri(inmelodic) } {
+       if { $fmri(level) == 1 } {
+	      for { set session 1 } { $session <= $fmri(mult..."
+    (file "/usr/local/fsl/bin/feat" line 390)
+child process exited abnormally
+    while executing
+"fsl:exec "${FSLDIR}/bin/feat ${fsfroot}.fsf -D $FD -gfeatprep" -b 60 -N feat2_pre -l logs "
+    invoked from within
+"if { $done_something == 0 } {
+
+    if { ! $fmri(inmelodic) } {
+       if { $fmri(level) == 1 } {
+	      for { set session 1 } { $session <= $fmri(mult..."
+    (file "/usr/local/fsl/bin/feat" line 390)
+complete 23 F-SC type-act
+child process exited abnormally
+    while executing
+"fsl:exec "${FSLDIR}/bin/feat ${fsfroot}.fsf -D $FD -gfeatprep" -b 60 -N feat2_pre -l logs "
+    invoked from within
+"if { $done_something == 0 } {
+
+    if { ! $fmri(inmelodic) } {
+       if { $fmri(level) == 1 } {
+	      for { set session 1 } { $session <= $fmri(mult..."
+    (file "/usr/local/fsl/bin/feat" line 390)
+child process exited abnormally
+    while executing
+"fsl:exec "${FSLDIR}/bin/feat ${fsfroot}.fsf -D $FD -gfeatprep" -b 60 -N feat2_pre -l logs "
+    invoked from within
+"if { $done_something == 0 } {
+
+    if { ! $fmri(inmelodic) } {
+       if { $fmri(level) == 1 } {
+	      for { set session 1 } { $session <= $fmri(mult..."
+    (file "/usr/local/fsl/bin/feat" line 390)
+child process exited abnormally
+    while executing
+"fsl:exec "${FSLDIR}/bin/feat ${fsfroot}.fsf -D $FD -gfeatprep" -b 60 -N feat2_pre -l logs "
+    invoked from within
+"if { $done_something == 0 } {
+
+    if { ! $fmri(inmelodic) } {
+       if { $fmri(level) == 1 } {
+	      for { set session 1 } { $session <= $fmri(mult..."
+    (file "/usr/local/fsl/bin/feat" line 390)
+complete 24 rew_F-SC type-act
+child process exited abnormally
+    while executing
+"fsl:exec "${FSLDIR}/bin/feat ${fsfroot}.fsf -D $FD -gfeatprep" -b 60 -N feat2_pre -l logs "
+    invoked from within
+"if { $done_something == 0 } {
+
+    if { ! $fmri(inmelodic) } {
+       if { $fmri(level) == 1 } {
+	      for { set session 1 } { $session <= $fmri(mult..."
+    (file "/usr/local/fsl/bin/feat" line 390)
+child process exited abnormally
+    while executing
+"fsl:exec "${FSLDIR}/bin/feat ${fsfroot}.fsf -D $FD -gfeatprep" -b 60 -N feat2_pre -l logs "
+    invoked from within
+"if { $done_something == 0 } {
+
+    if { ! $fmri(inmelodic) } {
+       if { $fmri(level) == 1 } {
+	      for { set session 1 } { $session <= $fmri(mult..."
+    (file "/usr/local/fsl/bin/feat" line 390)
+complete 25 pun_F-SC type-act
+child process exited abnormally
+    while executing
+"fsl:exec "${FSLDIR}/bin/feat ${fsfroot}.fsf -D $FD -gfeatprep" -b 60 -N feat2_pre -l logs "
+    invoked from within
+"if { $done_something == 0 } {
+
+    if { ! $fmri(inmelodic) } {
+       if { $fmri(level) == 1 } {
+	      for { set session 1 } { $session <= $fmri(mult..."
+    (file "/usr/local/fsl/bin/feat" line 390)
+child process exited abnormally
+    while executing
+"fsl:exec "${FSLDIR}/bin/feat ${fsfroot}.fsf -D $FD -gfeatprep" -b 60 -N feat2_pre -l logs "
+    invoked from within
+"if { $done_something == 0 } {
+
+    if { ! $fmri(inmelodic) } {
+       if { $fmri(level) == 1 } {
+	      for { set session 1 } { $session <= $fmri(mult..."
+    (file "/usr/local/fsl/bin/feat" line 390)
+child process exited abnormally
+    while executing
+"fsl:exec "${FSLDIR}/bin/feat ${fsfroot}.fsf -D $FD -gfeatprep" -b 60 -N feat2_pre -l logs "
+    invoked from within
+"if { $done_something == 0 } {
+
+    if { ! $fmri(inmelodic) } {
+       if { $fmri(level) == 1 } {
+	      for { set session 1 } { $session <= $fmri(mult..."
+    (file "/usr/local/fsl/bin/feat" line 390)
+complete 26 rew_pun_F-SC type-act
+child process exited abnormally
+    while executing
+"fsl:exec "${FSLDIR}/bin/feat ${fsfroot}.fsf -D $FD -gfeatprep" -b 60 -N feat2_pre -l logs "
+    invoked from within
+"if { $done_something == 0 } {
+
+    if { ! $fmri(inmelodic) } {
+       if { $fmri(level) == 1 } {
+	      for { set session 1 } { $session <= $fmri(mult..."
+    (file "/usr/local/fsl/bin/feat" line 390)
+child process exited abnormally
+    while executing
+"fsl:exec "${FSLDIR}/bin/feat ${fsfroot}.fsf -D $FD -gfeatprep" -b 60 -N feat2_pre -l logs "
+    invoked from within
+"if { $done_something == 0 } {
+
+    if { ! $fmri(inmelodic) } {
+       if { $fmri(level) == 1 } {
+	      for { set session 1 } { $session <= $fmri(mult..."
+    (file "/usr/local/fsl/bin/feat" line 390)
+complete 27 F_dec type-act
+child process exited abnormally
+    while executing
+"fsl:exec "${FSLDIR}/bin/feat ${fsfroot}.fsf -D $FD -gfeatprep" -b 60 -N feat2_pre -l logs "
+    invoked from within
+"if { $done_something == 0 } {
+
+    if { ! $fmri(inmelodic) } {
+       if { $fmri(level) == 1 } {
+	      for { set session 1 } { $session <= $fmri(mult..."
+    (file "/usr/local/fsl/bin/feat" line 390)
+complete 28 S_dec type-act
+complete 29 C_dec type-act
+complete 30 Face-NonFace type-act
+complete 31 pun_F-S type-act
+complete 32 pun_F-C type-act
+complete 33 dec_F-S type-act
+complete 34 dec_F-C type-act
+child process exited abnormally
+    while executing
+"fsl:exec "${FSLDIR}/bin/feat ${fsfroot}.fsf -D $FD -gfeatprep" -b 60 -N feat2_pre -l logs "
+    invoked from within
+"if { $done_something == 0 } {
+
+    if { ! $fmri(inmelodic) } {
+       if { $fmri(level) == 1 } {
+	      for { set session 1 } { $session <= $fmri(mult..."
+    (file "/usr/local/fsl/bin/feat" line 390)
+child process exited abnormally
+    while executing
+"fsl:exec "${FSLDIR}/bin/feat ${fsfroot}.fsf -D $FD -gfeatprep" -b 60 -N feat2_pre -l logs "
+    invoked from within
+"if { $done_something == 0 } {
+
+    if { ! $fmri(inmelodic) } {
+       if { $fmri(level) == 1 } {
+	      for { set session 1 } { $session <= $fmri(mult..."
+    (file "/usr/local/fsl/bin/feat" line 390)
+child process exited abnormally
+    while executing
+"fsl:exec "${FSLDIR}/bin/feat ${fsfroot}.fsf -D $FD -gfeatprep" -b 60 -N feat2_pre -l logs "
+    invoked from within
+"if { $done_something == 0 } {
+
+    if { ! $fmri(inmelodic) } {
+       if { $fmri(level) == 1 } {
+	      for { set session 1 } { $session <= $fmri(mult..."
+    (file "/usr/local/fsl/bin/feat" line 390)
+child process exited abnormally
+    while executing
+"fsl:exec "${FSLDIR}/bin/feat ${fsfroot}.fsf -D $FD -gfeatprep" -b 60 -N feat2_pre -l logs "
+    invoked from within
+"if { $done_something == 0 } {
+
+    if { ! $fmri(inmelodic) } {
+       if { $fmri(level) == 1 } {
+	      for { set session 1 } { $session <= $fmri(mult..."
+    (file "/usr/local/fsl/bin/feat" line 390)
+child process exited abnormally
+    while executing
+"fsl:exec "${FSLDIR}/bin/feat ${fsfroot}.fsf -D $FD -gfeatprep" -b 60 -N feat2_pre -l logs "
+    invoked from within
+"if { $done_something == 0 } {
+
+    if { ! $fmri(inmelodic) } {
+       if { $fmri(level) == 1 } {
+	      for { set session 1 } { $session <= $fmri(mult..."
+    (file "/usr/local/fsl/bin/feat" line 390)
+child process exited abnormally
+    while executing
+"fsl:exec "${FSLDIR}/bin/feat ${fsfroot}.fsf -D $FD -gfeatprep" -b 60 -N feat2_pre -l logs "
+    invoked from within
+"if { $done_something == 0 } {
+
+    if { ! $fmri(inmelodic) } {
+       if { $fmri(level) == 1 } {
+	      for { set session 1 } { $session <= $fmri(mult..."
+    (file "/usr/local/fsl/bin/feat" line 390)

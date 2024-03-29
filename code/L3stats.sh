@@ -21,45 +21,8 @@ maindir="$(dirname "$scriptdir")"
 # study-specific inputs and general output folder
 task=sharedreward
 
-# N=43
-
-#N=51 # cleaned sub list for ppi and eros
-#N=511 # ppi, age * oafem
-#N=512 # ppi, age
-#N=513 # ppi, oafem
-
-#N=5141 # ppi, eros, self improve
-#N=5142 # ppi, eros, self worsen
-#N=5143 # ppi, eros, others improve
-#N=5144 # ppi, eros, others worsen
-
-#N=5151 # ppi, eros, self improve * age
-#N=5152 # ppi, eros, self worsen * age
-#N=5153 # ppi, act eros, others improve * age
-N=5154 # ppi, eros, others worsen * age
-
-#N=42 # executive(tabcat)
-
-#N=530 #oafem as only covariate
-#N=5300 # age as only covariate
-#N=53001  # age*ios_FvS
-#N=53002 # age*ios_FvC
-#N=53003 # age*kbit
-#N=53004 # age*har
-#N=53005 # age*oafem
-#N=53006 # age + oafem
-
-# N = # ios#_FvS
-# N = # ios_FvC
-
-
-# N=531 # ios_FvS * age * kbit
-# N=532 # ios_FvS * age * har
-# N=533 # ios_FvS * age * oafem
-# N=5312 # ios_FvC * age * kbit
-# N=5322 # ios_FvC * age * har
-#N=5332 # ios_FvC * age * oafem
-
+N=86
+model_N=2
 
 copenum=$1
 copenum_thresh_randomise=999 # actual contrasts start here. no need to do randomise main effects (e.g., reward > nothing/fixation/baseline)
@@ -67,9 +30,9 @@ copename=$2
 REPLACEME=$3 # this defines the parts of the path that differ across analyses
 logfile=$4
 
-#MAINOUTPUT=${maindir}/derivatives/fsl/L3_task-${task}_model-1_type-act_n${N} # for activation
+MAINOUTPUT=${maindir}/derivatives/fsl/L3_task-${task}_model-${model_N}_type-act_n${N} # for activation
 #MAINOUTPUT=${maindir}/derivatives/fsl/L3_task-${task}_model-2_type-act_n${N} # for activation math
-MAINOUTPUT=${maindir}/derivatives/fsl/L3_task-${task}_model-3_type-act_n${N} # for activation eros
+#MAINOUTPUT=${maindir}/derivatives/fsl/L3_task-${task}_model-3_type-act_n${N} # for activation eros
 #MAINOUTPUT=${maindir}/derivatives/fsl/L3_task-${task}_model-4_type-act_n${N} # for activation executive
 #MAINOUTPUT=${maindir}/derivatives/fsl/L3_task-${task}_model-0_type-ppi_n${N} # for ppi
 mkdir -p $MAINOUTPUT
@@ -168,9 +131,9 @@ else # try to run feat and clean up previous effort with partial output
 	rm -rf ${OUTPUT}.gfeat
 
 #	 create template and run FEAT analyses
-	#ITEMPLATE=${maindir}/templates/L3_template_task-sharedreward_model-1_n${N}.fsf # for activation
+	ITEMPLATE=${maindir}/templates/L3_template_task-sharedreward_model-${model_N}_n${N}.fsf # for activation
 	#ITEMPLATE=${maindir}/templates/L3_template_task-sharedreward_model-2_n${N}.fsf # for activation math
-	ITEMPLATE=${maindir}/templates/L3_template_task-sharedreward_model-3_n${N}.fsf # for activation eros
+#	ITEMPLATE=${maindir}/templates/L3_template_task-sharedreward_model-3_n${N}.fsf # for activation eros
 #	ITEMPLATE=${maindir}/templates/L3_template_task-sharedreward_model-4_n${N}.fsf # for activation executive
 #	ITEMPLATE=${maindir}/templates/L3_template_task-sharedreward_model-0_type-ppi_n${N}.fsf
 	
