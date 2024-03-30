@@ -5,13 +5,12 @@ scriptdir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 basedir="$(dirname "$scriptdir")"
 nruns=2
 
-#for task in socialdoors; do
+
 for task in sharedreward; do
-#	for ppi in "eyeball_left" "eyeball_right"; do # putting 0 first will indicate "activation"
-	for ppi in 0; do # putting 0 first will indicate "activation"
-#	for ppi in VS_rew-pun; do
+	for ppi in 0; do  putting 0 first will indicate "activation"
+	for ppi in "dmn"; do # 0 "VS_thr5" "dmn"; do # putting 0 first will indicate "activation"
 #		for sub in `cat ${basedir}/code/sub_all.txt`; do
-		for sub in 10928; do
+		for sub in 10317; do
 	  		for run in `seq $nruns`; do
 #			for run in 2; do
 		  		# Manages the number of jobs and cores
