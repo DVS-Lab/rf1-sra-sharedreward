@@ -30,13 +30,13 @@ set fmri(featwatcher_yn) 0
 set fmri(sscleanup_yn) 0
 
 # Output directory
-set fmri(outputdir) "/ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10317/L1_task-sharedreward_model-1_type-act_run-1_sm-6"
+set fmri(outputdir) "OUTPUT"
 
 # TR(s)
 set fmri(tr) 1.615
 
 # Total volumes
-set fmri(npts) 255
+set fmri(npts) NVOLUMES
 
 # Delete volumes
 set fmri(ndelete) 0
@@ -273,13 +273,13 @@ set fmri(totalVoxels) 54942300
 set fmri(ncopeinputs) 0
 
 # 4D AVW data or FEAT directory (1)
-set feat_files(1) "/ZPOOL/data/projects/rf1-sra-data/derivatives/fmriprep/sub-10317/func/sub-10317_task-sharedreward_run-1_space-MNI152NLin6Asym_desc-preproc_bold"
+set feat_files(1) "DATA"
 
 # Add confound EVs text file
 set fmri(confoundevs) 1
 
 # Confound EVs text file for analysis 1
-set confoundev_files(1) "/ZPOOL/data/projects/rf1-sra-data/derivatives/fsl/confounds/sub-10317/sub-10317_task-sharedreward_run-1_desc-fslConfounds.tsv"
+set confoundev_files(1) "CONFOUNDEVS"
 
 # EV 1 title
 set fmri(evtitle1) "C_pun"
@@ -314,7 +314,7 @@ set fmri(tempfilt_yn1) 0
 set fmri(deriv_yn1) 0
 
 # Custom EV file (EV 1)
-set fmri(custom1) "/ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/EVfiles/sub-10317/sharedreward/run-1_event_computer_punish.txt"
+set fmri(custom1) "EVDIR_event_computer_punish.txt"
 
 # Orthogonalise EV 1 wrt EV 0
 set fmri(ortho1.0) 0
@@ -460,7 +460,7 @@ set fmri(tempfilt_yn2) 0
 set fmri(deriv_yn2) 0
 
 # Custom EV file (EV 2)
-set fmri(custom2) "/ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/EVfiles/sub-10317/sharedreward/run-1_event_computer_reward.txt"
+set fmri(custom2) "EVDIR_event_computer_reward.txt"
 
 # Orthogonalise EV 2 wrt EV 0
 set fmri(ortho2.0) 0
@@ -606,7 +606,7 @@ set fmri(tempfilt_yn3) 0
 set fmri(deriv_yn3) 0
 
 # Custom EV file (EV 3)
-set fmri(custom3) "/ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/EVfiles/sub-10317/sharedreward/run-1_event_friend_punish.txt"
+set fmri(custom3) "EVDIR_event_friend_punish.txt"
 
 # Orthogonalise EV 3 wrt EV 0
 set fmri(ortho3.0) 0
@@ -752,7 +752,7 @@ set fmri(tempfilt_yn4) 0
 set fmri(deriv_yn4) 0
 
 # Custom EV file (EV 4)
-set fmri(custom4) "/ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/EVfiles/sub-10317/sharedreward/run-1_event_friend_reward.txt"
+set fmri(custom4) "EVDIR_event_friend_reward.txt"
 
 # Orthogonalise EV 4 wrt EV 0
 set fmri(ortho4.0) 0
@@ -898,7 +898,7 @@ set fmri(tempfilt_yn5) 0
 set fmri(deriv_yn5) 0
 
 # Custom EV file (EV 5)
-set fmri(custom5) "/ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/EVfiles/sub-10317/sharedreward/run-1_event_stranger_punish.txt"
+set fmri(custom5) "EVDIR_event_stranger_punish.txt"
 
 # Orthogonalise EV 5 wrt EV 0
 set fmri(ortho5.0) 0
@@ -1044,7 +1044,7 @@ set fmri(tempfilt_yn6) 0
 set fmri(deriv_yn6) 0
 
 # Custom EV file (EV 6)
-set fmri(custom6) "/ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/EVfiles/sub-10317/sharedreward/run-1_event_stranger_reward.txt"
+set fmri(custom6) "EVDIR_event_stranger_reward.txt"
 
 # Orthogonalise EV 6 wrt EV 0
 set fmri(ortho6.0) 0
@@ -1190,7 +1190,7 @@ set fmri(tempfilt_yn7) 1
 set fmri(deriv_yn7) 0
 
 # Custom EV file (EV 7)
-set fmri(custom7) "/ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/EVfiles/sub-10317/sharedreward/run-1_event_computer_neutral.txt"
+set fmri(custom7) "EVDIR_event_computer_neutral.txt"
 
 # Orthogonalise EV 7 wrt EV 0
 set fmri(ortho7.0) 0
@@ -1336,7 +1336,7 @@ set fmri(tempfilt_yn8) 0
 set fmri(deriv_yn8) 0
 
 # Custom EV file (EV 8)
-set fmri(custom8) "/ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/EVfiles/sub-10317/sharedreward/run-1_event_friend_neutral.txt"
+set fmri(custom8) "EVDIR_event_friend_neutral.txt"
 
 # Orthogonalise EV 8 wrt EV 0
 set fmri(ortho8.0) 0
@@ -1482,7 +1482,7 @@ set fmri(tempfilt_yn9) 0
 set fmri(deriv_yn9) 0
 
 # Custom EV file (EV 9)
-set fmri(custom9) "/ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/EVfiles/sub-10317/sharedreward/run-1_event_stranger_neutral.txt"
+set fmri(custom9) "EVDIR_event_stranger_neutral.txt"
 
 # Orthogonalise EV 9 wrt EV 0
 set fmri(ortho9.0) 0
@@ -1605,7 +1605,7 @@ set fmri(evtitle10) "miss"
 # 3 : Custom (3 column format)
 # 4 : Interaction
 # 10 : Empty (all zeros)
-set fmri(shape10) 10
+set fmri(shape10) SHAPE_MISSED_TRIAL
 
 # Convolution (EV 10)
 # 0 : None
@@ -1626,6 +1626,9 @@ set fmri(tempfilt_yn10) 0
 
 # Add temporal derivative (EV 10)
 set fmri(deriv_yn10) 0
+
+# Custom EV file (EV 10)
+set fmri(custom10) "EV_MISSED_TRIAL"
 
 # Orthogonalise EV 10 wrt EV 0
 set fmri(ortho10.0) 0
@@ -1771,7 +1774,7 @@ set fmri(tempfilt_yn11) 0
 set fmri(deriv_yn11) 0
 
 # Custom EV file (EV 11)
-set fmri(custom11) "/ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/EVfiles/sub-10317/sharedreward/run-1_friend_face.txt"
+set fmri(custom11) "EVDIR_friend_face.txt"
 
 # Orthogonalise EV 11 wrt EV 0
 set fmri(ortho11.0) 0
@@ -1917,7 +1920,7 @@ set fmri(tempfilt_yn12) 0
 set fmri(deriv_yn12) 0
 
 # Custom EV file (EV 12)
-set fmri(custom12) "/ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/EVfiles/sub-10317/sharedreward/run-1_stranger_face.txt"
+set fmri(custom12) "EVDIR_stranger_face.txt"
 
 # Orthogonalise EV 12 wrt EV 0
 set fmri(ortho12.0) 0
@@ -2063,7 +2066,7 @@ set fmri(tempfilt_yn13) 0
 set fmri(deriv_yn13) 0
 
 # Custom EV file (EV 13)
-set fmri(custom13) "/ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/EVfiles/sub-10317/sharedreward/run-1_computer_non-face.txt"
+set fmri(custom13) "EVDIR_computer_non-face.txt"
 
 # Orthogonalise EV 13 wrt EV 0
 set fmri(ortho13.0) 0
@@ -2209,7 +2212,7 @@ set fmri(tempfilt_yn14) 1
 set fmri(deriv_yn14) 1
 
 # Custom EV file (EV 14)
-set fmri(custom14) "/ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10317/sub-10317_task-sharedreward_run-1_seed-rvol0003.txt"
+set fmri(custom14) "MAINNET"
 
 # Orthogonalise EV 14 wrt EV 0
 set fmri(ortho14.0) 0
@@ -2355,7 +2358,7 @@ set fmri(tempfilt_yn15) 1
 set fmri(deriv_yn15) 1
 
 # Custom EV file (EV 15)
-set fmri(custom15) "/ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10317/sub-10317_task-sharedreward_run-1_seed-rvol0007.txt"
+set fmri(custom15) "OTHERNET"
 
 # Orthogonalise EV 15 wrt EV 0
 set fmri(ortho15.0) 0
@@ -2469,7 +2472,7 @@ set fmri(ortho15.35) 0
 set fmri(ortho15.36) 0
 
 # EV 16 title
-set fmri(evtitle16) "nppi0"
+set fmri(evtitle16) "input0"
 
 # Basic waveform shape (EV 16)
 # 0 : Square
@@ -2501,7 +2504,7 @@ set fmri(tempfilt_yn16) 1
 set fmri(deriv_yn16) 1
 
 # Custom EV file (EV 16)
-set fmri(custom16) "/ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10317/sub-10317_task-sharedreward_run-1_seed-rvol0000.txt"
+set fmri(custom16) "INPUT0"
 
 # Orthogonalise EV 16 wrt EV 0
 set fmri(ortho16.0) 0
@@ -2615,7 +2618,7 @@ set fmri(ortho16.35) 0
 set fmri(ortho16.36) 0
 
 # EV 17 title
-set fmri(evtitle17) "nppi1"
+set fmri(evtitle17) "input1"
 
 # Basic waveform shape (EV 17)
 # 0 : Square
@@ -2647,7 +2650,7 @@ set fmri(tempfilt_yn17) 1
 set fmri(deriv_yn17) 1
 
 # Custom EV file (EV 17)
-set fmri(custom17) "/ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10317/sub-10317_task-sharedreward_run-1_seed-rvol0001.txt"
+set fmri(custom17) "INPUT1"
 
 # Orthogonalise EV 17 wrt EV 0
 set fmri(ortho17.0) 0
@@ -2761,7 +2764,7 @@ set fmri(ortho17.35) 0
 set fmri(ortho17.36) 0
 
 # EV 18 title
-set fmri(evtitle18) "nppi2"
+set fmri(evtitle18) "input2"
 
 # Basic waveform shape (EV 18)
 # 0 : Square
@@ -2793,7 +2796,7 @@ set fmri(tempfilt_yn18) 1
 set fmri(deriv_yn18) 1
 
 # Custom EV file (EV 18)
-set fmri(custom18) "/ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10317/sub-10317_task-sharedreward_run-1_seed-rvol0002.txt"
+set fmri(custom18) "INPUT2"
 
 # Orthogonalise EV 18 wrt EV 0
 set fmri(ortho18.0) 0
@@ -2907,7 +2910,7 @@ set fmri(ortho18.35) 0
 set fmri(ortho18.36) 0
 
 # EV 19 title
-set fmri(evtitle19) "nppi4"
+set fmri(evtitle19) "input4"
 
 # Basic waveform shape (EV 19)
 # 0 : Square
@@ -2939,7 +2942,7 @@ set fmri(tempfilt_yn19) 1
 set fmri(deriv_yn19) 1
 
 # Custom EV file (EV 19)
-set fmri(custom19) "/ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10317/sub-10317_task-sharedreward_run-1_seed-rvol0004.txt"
+set fmri(custom19) "INPUT4"
 
 # Orthogonalise EV 19 wrt EV 0
 set fmri(ortho19.0) 0
@@ -3053,7 +3056,7 @@ set fmri(ortho19.35) 0
 set fmri(ortho19.36) 0
 
 # EV 20 title
-set fmri(evtitle20) "nppi5"
+set fmri(evtitle20) "input5"
 
 # Basic waveform shape (EV 20)
 # 0 : Square
@@ -3085,7 +3088,7 @@ set fmri(tempfilt_yn20) 1
 set fmri(deriv_yn20) 1
 
 # Custom EV file (EV 20)
-set fmri(custom20) "/ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10317/sub-10317_task-sharedreward_run-1_seed-rvol0005.txt"
+set fmri(custom20) "INPUT5"
 
 # Orthogonalise EV 20 wrt EV 0
 set fmri(ortho20.0) 0
@@ -3199,7 +3202,7 @@ set fmri(ortho20.35) 0
 set fmri(ortho20.36) 0
 
 # EV 21 title
-set fmri(evtitle21) "nppi6"
+set fmri(evtitle21) "input6"
 
 # Basic waveform shape (EV 21)
 # 0 : Square
@@ -3231,7 +3234,7 @@ set fmri(tempfilt_yn21) 1
 set fmri(deriv_yn21) 1
 
 # Custom EV file (EV 21)
-set fmri(custom21) "/ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10317/sub-10317_task-sharedreward_run-1_seed-rvol0006.txt"
+set fmri(custom21) "INPUT6"
 
 # Orthogonalise EV 21 wrt EV 0
 set fmri(ortho21.0) 0
@@ -3345,7 +3348,7 @@ set fmri(ortho21.35) 0
 set fmri(ortho21.36) 0
 
 # EV 22 title
-set fmri(evtitle22) "nppi8"
+set fmri(evtitle22) "input8"
 
 # Basic waveform shape (EV 22)
 # 0 : Square
@@ -3377,7 +3380,7 @@ set fmri(tempfilt_yn22) 1
 set fmri(deriv_yn22) 1
 
 # Custom EV file (EV 22)
-set fmri(custom22) "/ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10317/sub-10317_task-sharedreward_run-1_seed-rvol0008.txt"
+set fmri(custom22) "INPUT8"
 
 # Orthogonalise EV 22 wrt EV 0
 set fmri(ortho22.0) 0
@@ -3491,7 +3494,7 @@ set fmri(ortho22.35) 0
 set fmri(ortho22.36) 0
 
 # EV 23 title
-set fmri(evtitle23) "nppi9"
+set fmri(evtitle23) "input9"
 
 # Basic waveform shape (EV 23)
 # 0 : Square
@@ -3523,7 +3526,7 @@ set fmri(tempfilt_yn23) 1
 set fmri(deriv_yn23) 1
 
 # Custom EV file (EV 23)
-set fmri(custom23) "/ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10317/sub-10317_task-sharedreward_run-1_seed-rvol0009.txt"
+set fmri(custom23) "INPUT9"
 
 # Orthogonalise EV 23 wrt EV 0
 set fmri(ortho23.0) 0
