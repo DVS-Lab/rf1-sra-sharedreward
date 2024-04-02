@@ -9,21 +9,22 @@ maindir="$(dirname "$scriptdir")"
 #for ROI in cnum31_cov15-3_533 cnum31_cov15-2_533 cnum31_cov15-1_533; do
 #for ROI in cnum31_cov11-3_533 cnum31_cov11-2_533 cnum31_cov11-1_533; do
 
-for ROI in math_cope26_contrast4_cluster1 math_cope30_contrast4_cluster1 math_cope30_contrast5_cluster1; do
-	MASK=${maindir}/masks/brain_images/${ROI}.nii.gz # for group mean
+for ROI in thr_seed-VS; do
+#	MASK=${maindir}/masks/brain_images/${ROI}.nii.gz # for group mean
+	MASK=${maindir}/masks/${ROI}.nii.gz # for group mean
 	TASK=sharedreward # remember to change according to the model
 	TYPE=act # remember to change according to the model
 	
-	N=53 # remember to change according to the model
-	model_N=2 # remember to change according to the model
-	outputdir=${maindir}/derivatives/group_means
+	N=93 # remember to change according to the model
+	model_N=13 # remember to change according to the model
+	outputdir=${maindir}/derivatives/group_means/SANS/${TYPE}-model_-${model_N}_n${N}
 	mkdir -p $outputdir
 #	for COPENUM in 10; do
 	for COPENUM in {1..6}; do ### if TYPE is ppi, cope number should change!
 #	for COPENUM in {7..9}; do
 		cnum_padded=`zeropad ${COPENUM} 2`
 		MAINOUTPUT=${maindir}/derivatives/fsl/L3_task-${TASK}_model-${model_N}_type-${TYPE}_n${N}
-		DATA=`ls -1 ${MAINOUTPUT}/L3_task-${TASK}_type-${TYPE}_*cnum-${cnum_padded}_*onegroup.gfeat/cope1.feat/filtered_func_data.nii.gz`
+		DATA=`ls -1 ${MAINOUTPUT}/L3_task-${TASK}_type-c_*cnum-${cnum_padded}_*onegroup.gfeat/cope1.feat/filtered_func_data.nii.gz`
 		#DATA=`ls -1 ${MAINOUTPUT}/L3_task-${TASK}_type-${TYPE}_cnum-${COPENUM}_*onegroup.gfeat/cope1.feat/filtered_func_data.nii.gz`
 		fslmeants -i $DATA -o ${outputdir}/${ROI}_type-${TYPE}_cope-${cnum_padded}.txt -m ${MASK}
 

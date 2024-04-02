@@ -22,9 +22,9 @@ maindir="$(dirname "$scriptdir")"
 task=sharedreward
 
 N=93
-#model_N=1
+model_N=1
 #model_N=11 # age*IOS*self improve
-model_N=12 # age*IOS*self worsen
+#model_N=12 # age*IOS*self worsen
 #model_N=13 # age*IOS*others improve
 #model_N=14 # age*IOS*others worsen
 
@@ -34,9 +34,9 @@ copename=$2
 REPLACEME=$3 # this defines the parts of the path that differ across analyses
 logfile=$4
 
-#MAINOUTPUT=${maindir}/derivatives/fsl/L3_task-${task}_model-${model_N}_type-act_n${N} # for activation
+MAINOUTPUT=${maindir}/derivatives/fsl/L3_task-${task}_model-${model_N}_type-act_n${N} # for activation
 #MAINOUTPUT=${maindir}/derivatives/fsl/L3_task-${task}_model-${model_N}_type-ppi_n${N} # for ppi
-MAINOUTPUT=${maindir}/derivatives/fsl/L3_task-${task}_model-${model_N}_type-nppi-dmn_n${N} # for nppi
+#MAINOUTPUT=${maindir}/derivatives/fsl/L3_task-${task}_model-${model_N}_type-nppi-dmn_n${N} # for nppi
 
 mkdir -p $MAINOUTPUT
 

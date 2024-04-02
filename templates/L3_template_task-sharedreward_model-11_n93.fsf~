@@ -1581,7 +1581,7 @@ set fmri(evg92.3) 1.731182796
 set fmri(evg93.3) 0.731182796
 
 # EV 4 title
-set fmri(evtitle4) "self_improve"
+set fmri(evtitle4) "others_improve"
 
 # Basic waveform shape (EV 4)
 # 0 : Square
@@ -2263,7 +2263,7 @@ set fmri(evg92.5) -17.36878946
 set fmri(evg93.5) -2.020187305
 
 # EV 6 title
-set fmri(evtitle6) "age_self_improve"
+set fmri(evtitle6) "age_others_improve"
 
 # Basic waveform shape (EV 6)
 # 0 : Square
@@ -2604,7 +2604,7 @@ set fmri(evg92.6) -10.63703503
 set fmri(evg93.6) 1.675567118
 
 # EV 7 title
-set fmri(evtitle7) "IOS_self_improve"
+set fmri(evtitle7) "IOS_others_improve"
 
 # Basic waveform shape (EV 7)
 # 0 : Square
@@ -2945,7 +2945,7 @@ set fmri(evg92.7) 1.835426061
 set fmri(evg93.7) -0.443426986
 
 # EV 8 title
-set fmri(evtitle8) "age_IOS_self_improve"
+set fmri(evtitle8) "age_IOS_others_improve"
 
 # Basic waveform shape (EV 8)
 # 0 : Square
@@ -3757,7 +3757,7 @@ set fmri(con_real6.8) 0
 set fmri(conpic_real.7) 1
 
 # Title for contrast_real 7
-set fmri(conname_real.7) "self_improve_pos"
+set fmri(conname_real.7) "others_improve_pos"
 
 # Real contrast_real vector 7 element 1
 set fmri(con_real7.1) 0
@@ -3787,7 +3787,7 @@ set fmri(con_real7.8) 0
 set fmri(conpic_real.8) 1
 
 # Title for contrast_real 8
-set fmri(conname_real.8) "self_improve_neg"
+set fmri(conname_real.8) "others_improve_neg"
 
 # Real contrast_real vector 8 element 1
 set fmri(con_real8.1) 0
@@ -3877,7 +3877,7 @@ set fmri(con_real10.8) 0
 set fmri(conpic_real.11) 1
 
 # Title for contrast_real 11
-set fmri(conname_real.11) "age_self_improve_pos"
+set fmri(conname_real.11) "age_others_improve_pos"
 
 # Real contrast_real vector 11 element 1
 set fmri(con_real11.1) 0
@@ -3907,7 +3907,7 @@ set fmri(con_real11.8) 0
 set fmri(conpic_real.12) 1
 
 # Title for contrast_real 12
-set fmri(conname_real.12) "age_self_improve_neg"
+set fmri(conname_real.12) "age_others_improve_neg"
 
 # Real contrast_real vector 12 element 1
 set fmri(con_real12.1) 0
@@ -3937,7 +3937,7 @@ set fmri(con_real12.8) 0
 set fmri(conpic_real.13) 1
 
 # Title for contrast_real 13
-set fmri(conname_real.13) "IOS_self_improve_pos"
+set fmri(conname_real.13) "IOS_others_improve_pos"
 
 # Real contrast_real vector 13 element 1
 set fmri(con_real13.1) 0
@@ -3967,7 +3967,7 @@ set fmri(con_real13.8) 0
 set fmri(conpic_real.14) 1
 
 # Title for contrast_real 14
-set fmri(conname_real.14) "IOS_self_improve_neg"
+set fmri(conname_real.14) "IOS_others_improve_neg"
 
 # Real contrast_real vector 14 element 1
 set fmri(con_real14.1) 0
@@ -3997,7 +3997,7 @@ set fmri(con_real14.8) 0
 set fmri(conpic_real.15) 1
 
 # Title for contrast_real 15
-set fmri(conname_real.15) "age_IOS_self_improve_pos"
+set fmri(conname_real.15) "age_IOS_others_improve_pos"
 
 # Real contrast_real vector 15 element 1
 set fmri(con_real15.1) 0
@@ -4027,7 +4027,7 @@ set fmri(con_real15.8) 1.0
 set fmri(conpic_real.16) 1
 
 # Title for contrast_real 16
-set fmri(conname_real.16) "age_IOS_self_improve_neg"
+set fmri(conname_real.16) "age_IOS_others_improve_neg"
 
 # Real contrast_real vector 16 element 1
 set fmri(con_real16.1) 0
