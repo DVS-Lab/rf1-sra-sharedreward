@@ -7,23 +7,23 @@ nruns=2
 
 
 for task in sharedreward; do
-	for ppi in 0; do  putting 0 first will indicate "activation"
+#	for ppi in 0; do  putting 0 first will indicate "activation"
 	for ppi in "dmn"; do # 0 "VS_thr5" "dmn"; do # putting 0 first will indicate "activation"
 #		for sub in `cat ${basedir}/code/sub_all.txt`; do
-		for sub in 10317; do
-	  		for run in `seq $nruns`; do
-#			for run in 2; do
+		for sub in 10926; do
+#	  		for run in `seq $nruns`; do
+			for run in 1; do
 		  		# Manages the number of jobs and cores
 		  		SCRIPTNAME=${basedir}/code/L1stats.sh
 	  			NCORES=4
 	  			while [ $(ps -ef | grep -v grep | grep $SCRIPTNAME | wc -l) -ge $NCORES ]; do
 	    			sleep 5s
 	  			done
-	  			echo "complete ${sub} ${run}"
+	  			
 
 	  		bash $SCRIPTNAME $sub $run $ppi $task &
 	  		sleep 1s
-
+			echo "complete ${sub} ${run}"
 			done	  	
 	  	done
 	done

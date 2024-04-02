@@ -1,0 +1,3 @@
+run_L1stats.sh: line 10: putting: command not found
+complete 10926 1
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10926/L1_task-sharedreward_model-1_type-act_run-1_sm-6.feat/report_log.html

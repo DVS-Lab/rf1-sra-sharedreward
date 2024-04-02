@@ -1,4 +1,4 @@
-#!/bin/bash
+ #!/bin/bash
 
 # This script will perform Level 3 statistics in FSL.
 # Rather than having multiple scripts, we are merging three analyses
@@ -21,8 +21,12 @@ maindir="$(dirname "$scriptdir")"
 # study-specific inputs and general output folder
 task=sharedreward
 
-N=86
-model_N=2
+N=93
+#model_N=1
+#model_N=11 # age*IOS*self improve
+model_N=12 # age*IOS*self worsen
+#model_N=13 # age*IOS*others improve
+#model_N=14 # age*IOS*others worsen
 
 copenum=$1
 copenum_thresh_randomise=999 # actual contrasts start here. no need to do randomise main effects (e.g., reward > nothing/fixation/baseline)
@@ -30,11 +34,10 @@ copename=$2
 REPLACEME=$3 # this defines the parts of the path that differ across analyses
 logfile=$4
 
-MAINOUTPUT=${maindir}/derivatives/fsl/L3_task-${task}_model-${model_N}_type-act_n${N} # for activation
-#MAINOUTPUT=${maindir}/derivatives/fsl/L3_task-${task}_model-2_type-act_n${N} # for activation math
-#MAINOUTPUT=${maindir}/derivatives/fsl/L3_task-${task}_model-3_type-act_n${N} # for activation eros
-#MAINOUTPUT=${maindir}/derivatives/fsl/L3_task-${task}_model-4_type-act_n${N} # for activation executive
-#MAINOUTPUT=${maindir}/derivatives/fsl/L3_task-${task}_model-0_type-ppi_n${N} # for ppi
+#MAINOUTPUT=${maindir}/derivatives/fsl/L3_task-${task}_model-${model_N}_type-act_n${N} # for activation
+#MAINOUTPUT=${maindir}/derivatives/fsl/L3_task-${task}_model-${model_N}_type-ppi_n${N} # for ppi
+MAINOUTPUT=${maindir}/derivatives/fsl/L3_task-${task}_model-${model_N}_type-nppi-dmn_n${N} # for nppi
+
 mkdir -p $MAINOUTPUT
 
 
@@ -131,11 +134,7 @@ else # try to run feat and clean up previous effort with partial output
 	rm -rf ${OUTPUT}.gfeat
 
 #	 create template and run FEAT analyses
-	ITEMPLATE=${maindir}/templates/L3_template_task-sharedreward_model-${model_N}_n${N}.fsf # for activation
-	#ITEMPLATE=${maindir}/templates/L3_template_task-sharedreward_model-2_n${N}.fsf # for activation math
-#	ITEMPLATE=${maindir}/templates/L3_template_task-sharedreward_model-3_n${N}.fsf # for activation eros
-#	ITEMPLATE=${maindir}/templates/L3_template_task-sharedreward_model-4_n${N}.fsf # for activation executive
-#	ITEMPLATE=${maindir}/templates/L3_template_task-sharedreward_model-0_type-ppi_n${N}.fsf
+	ITEMPLATE=${maindir}/templates/L3_template_task-sharedreward_model-${model_N}_n${N}.fsf
 	
 	
 	OTEMPLATE=${MAINOUTPUT}/L3_task-${task}_${REPLACEME}_copenum-${copenum}.fsf

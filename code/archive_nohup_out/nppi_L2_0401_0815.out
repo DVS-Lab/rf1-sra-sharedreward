@@ -1,0 +1,673 @@
+/ZPOOL/data/projects/rf1-sra-sharedreward/code/L2stats.sh: line 46: /ZPOOL/data/projects/rf1-sra-sharedreward/templates/L2_task-sharedreward_model-1_type-nppi.fsf: No such file or directory
+grep: /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10317/L2_task-sharedreward_model-1_type-nppi-dmn.fsf: No such file or directory
+    while executing
+"exec sh -c "grep -a 'fmri(inmelodic)' $filename | tail -n 1 | awk '{ print \$3 }'" "
+    (procedure "feat5:load" line 5)
+    invoked from within
+"feat5:load -1 1 ${fsfroot}.fsf"
+    (file "/usr/local/fsl/bin/feat" line 309)
+/ZPOOL/data/projects/rf1-sra-sharedreward/code/L2stats.sh: line 46: /ZPOOL/data/projects/rf1-sra-sharedreward/templates/L2_task-sharedreward_model-1_type-nppi.fsf: No such file or directory
+grep: /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10402/L2_task-sharedreward_model-1_type-nppi-dmn.fsf: No such file or directory
+    while executing
+"exec sh -c "grep -a 'fmri(inmelodic)' $filename | tail -n 1 | awk '{ print \$3 }'" "
+    (procedure "feat5:load" line 5)
+    invoked from within
+"feat5:load -1 1 ${fsfroot}.fsf"
+    (file "/usr/local/fsl/bin/feat" line 309)
+/ZPOOL/data/projects/rf1-sra-sharedreward/code/L2stats.sh: line 46: /ZPOOL/data/projects/rf1-sra-sharedreward/templates/L2_task-sharedreward_model-1_type-nppi.fsf: No such file or directory
+grep: /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10418/L2_task-sharedreward_model-1_type-nppi-dmn.fsf: No such file or directory
+    while executing
+"exec sh -c "grep -a 'fmri(inmelodic)' $filename | tail -n 1 | awk '{ print \$3 }'" "
+    (procedure "feat5:load" line 5)
+    invoked from within
+"feat5:load -1 1 ${fsfroot}.fsf"
+    (file "/usr/local/fsl/bin/feat" line 309)
+/ZPOOL/data/projects/rf1-sra-sharedreward/code/L2stats.sh: line 46: /ZPOOL/data/projects/rf1-sra-sharedreward/templates/L2_task-sharedreward_model-1_type-nppi.fsf: No such file or directory
+grep: /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10486/L2_task-sharedreward_model-1_type-nppi-dmn.fsf: No such file or directory
+    while executing
+"exec sh -c "grep -a 'fmri(inmelodic)' $filename | tail -n 1 | awk '{ print \$3 }'" "
+    (procedure "feat5:load" line 5)
+    invoked from within
+"feat5:load -1 1 ${fsfroot}.fsf"
+    (file "/usr/local/fsl/bin/feat" line 309)
+/ZPOOL/data/projects/rf1-sra-sharedreward/code/L2stats.sh: line 46: /ZPOOL/data/projects/rf1-sra-sharedreward/templates/L2_task-sharedreward_model-1_type-nppi.fsf: No such file or directory
+grep: /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10529/L2_task-sharedreward_model-1_type-nppi-dmn.fsf: No such file or directory
+    while executing
+"exec sh -c "grep -a 'fmri(inmelodic)' $filename | tail -n 1 | awk '{ print \$3 }'" "
+    (procedure "feat5:load" line 5)
+    invoked from within
+"feat5:load -1 1 ${fsfroot}.fsf"
+    (file "/usr/local/fsl/bin/feat" line 309)
+/ZPOOL/data/projects/rf1-sra-sharedreward/code/L2stats.sh: line 46: /ZPOOL/data/projects/rf1-sra-sharedreward/templates/L2_task-sharedreward_model-1_type-nppi.fsf: No such file or directory
+grep: /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10541/L2_task-sharedreward_model-1_type-nppi-dmn.fsf: No such file or directory
+    while executing
+"exec sh -c "grep -a 'fmri(inmelodic)' $filename | tail -n 1 | awk '{ print \$3 }'" "
+    (procedure "feat5:load" line 5)
+    invoked from within
+"feat5:load -1 1 ${fsfroot}.fsf"
+    (file "/usr/local/fsl/bin/feat" line 309)
+/ZPOOL/data/projects/rf1-sra-sharedreward/code/L2stats.sh: line 46: /ZPOOL/data/projects/rf1-sra-sharedreward/templates/L2_task-sharedreward_model-1_type-nppi.fsf: No such file or directory
+grep: /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10559/L2_task-sharedreward_model-1_type-nppi-dmn.fsf: No such file or directory
+    while executing
+"exec sh -c "grep -a 'fmri(inmelodic)' $filename | tail -n 1 | awk '{ print \$3 }'" "
+    (procedure "feat5:load" line 5)
+    invoked from within
+"feat5:load -1 1 ${fsfroot}.fsf"
+    (file "/usr/local/fsl/bin/feat" line 309)
+/ZPOOL/data/projects/rf1-sra-sharedreward/code/L2stats.sh: line 46: /ZPOOL/data/projects/rf1-sra-sharedreward/templates/L2_task-sharedreward_model-1_type-nppi.fsf: No such file or directory
+grep: /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10572/L2_task-sharedreward_model-1_type-nppi-dmn.fsf: No such file or directory
+    while executing
+"exec sh -c "grep -a 'fmri(inmelodic)' $filename | tail -n 1 | awk '{ print \$3 }'" "
+    (procedure "feat5:load" line 5)
+    invoked from within
+"feat5:load -1 1 ${fsfroot}.fsf"
+    (file "/usr/local/fsl/bin/feat" line 309)
+/ZPOOL/data/projects/rf1-sra-sharedreward/code/L2stats.sh: line 46: /ZPOOL/data/projects/rf1-sra-sharedreward/templates/L2_task-sharedreward_model-1_type-nppi.fsf: No such file or directory
+grep: /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10581/L2_task-sharedreward_model-1_type-nppi-dmn.fsf: No such file or directory
+    while executing
+"exec sh -c "grep -a 'fmri(inmelodic)' $filename | tail -n 1 | awk '{ print \$3 }'" "
+    (procedure "feat5:load" line 5)
+    invoked from within
+"feat5:load -1 1 ${fsfroot}.fsf"
+    (file "/usr/local/fsl/bin/feat" line 309)
+/ZPOOL/data/projects/rf1-sra-sharedreward/code/L2stats.sh: line 46: /ZPOOL/data/projects/rf1-sra-sharedreward/templates/L2_task-sharedreward_model-1_type-nppi.fsf: No such file or directory
+grep: /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10585/L2_task-sharedreward_model-1_type-nppi-dmn.fsf: No such file or directory
+    while executing
+"exec sh -c "grep -a 'fmri(inmelodic)' $filename | tail -n 1 | awk '{ print \$3 }'" "
+    (procedure "feat5:load" line 5)
+    invoked from within
+"feat5:load -1 1 ${fsfroot}.fsf"
+    (file "/usr/local/fsl/bin/feat" line 309)
+/ZPOOL/data/projects/rf1-sra-sharedreward/code/L2stats.sh: line 46: /ZPOOL/data/projects/rf1-sra-sharedreward/templates/L2_task-sharedreward_model-1_type-nppi.fsf: No such file or directory
+grep: /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10589/L2_task-sharedreward_model-1_type-nppi-dmn.fsf: No such file or directory
+    while executing
+"exec sh -c "grep -a 'fmri(inmelodic)' $filename | tail -n 1 | awk '{ print \$3 }'" "
+    (procedure "feat5:load" line 5)
+    invoked from within
+"feat5:load -1 1 ${fsfroot}.fsf"
+    (file "/usr/local/fsl/bin/feat" line 309)
+/ZPOOL/data/projects/rf1-sra-sharedreward/code/L2stats.sh: line 46: /ZPOOL/data/projects/rf1-sra-sharedreward/templates/L2_task-sharedreward_model-1_type-nppi.fsf: No such file or directory
+grep: /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10590/L2_task-sharedreward_model-1_type-nppi-dmn.fsf: No such file or directory
+    while executing
+"exec sh -c "grep -a 'fmri(inmelodic)' $filename | tail -n 1 | awk '{ print \$3 }'" "
+    (procedure "feat5:load" line 5)
+    invoked from within
+"feat5:load -1 1 ${fsfroot}.fsf"
+    (file "/usr/local/fsl/bin/feat" line 309)
+/ZPOOL/data/projects/rf1-sra-sharedreward/code/L2stats.sh: line 46: /ZPOOL/data/projects/rf1-sra-sharedreward/templates/L2_task-sharedreward_model-1_type-nppi.fsf: No such file or directory
+grep: /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10596/L2_task-sharedreward_model-1_type-nppi-dmn.fsf: No such file or directory
+    while executing
+"exec sh -c "grep -a 'fmri(inmelodic)' $filename | tail -n 1 | awk '{ print \$3 }'" "
+    (procedure "feat5:load" line 5)
+    invoked from within
+"feat5:load -1 1 ${fsfroot}.fsf"
+    (file "/usr/local/fsl/bin/feat" line 309)
+/ZPOOL/data/projects/rf1-sra-sharedreward/code/L2stats.sh: line 46: /ZPOOL/data/projects/rf1-sra-sharedreward/templates/L2_task-sharedreward_model-1_type-nppi.fsf: No such file or directory
+grep: /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10606/L2_task-sharedreward_model-1_type-nppi-dmn.fsf: No such file or directory
+    while executing
+"exec sh -c "grep -a 'fmri(inmelodic)' $filename | tail -n 1 | awk '{ print \$3 }'" "
+    (procedure "feat5:load" line 5)
+    invoked from within
+"feat5:load -1 1 ${fsfroot}.fsf"
+    (file "/usr/local/fsl/bin/feat" line 309)
+/ZPOOL/data/projects/rf1-sra-sharedreward/code/L2stats.sh: line 46: /ZPOOL/data/projects/rf1-sra-sharedreward/templates/L2_task-sharedreward_model-1_type-nppi.fsf: No such file or directory
+grep: /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10608/L2_task-sharedreward_model-1_type-nppi-dmn.fsf: No such file or directory
+    while executing
+"exec sh -c "grep -a 'fmri(inmelodic)' $filename | tail -n 1 | awk '{ print \$3 }'" "
+    (procedure "feat5:load" line 5)
+    invoked from within
+"feat5:load -1 1 ${fsfroot}.fsf"
+    (file "/usr/local/fsl/bin/feat" line 309)
+/ZPOOL/data/projects/rf1-sra-sharedreward/code/L2stats.sh: line 46: /ZPOOL/data/projects/rf1-sra-sharedreward/templates/L2_task-sharedreward_model-1_type-nppi.fsf: No such file or directory
+grep: /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10636/L2_task-sharedreward_model-1_type-nppi-dmn.fsf: No such file or directory
+    while executing
+"exec sh -c "grep -a 'fmri(inmelodic)' $filename | tail -n 1 | awk '{ print \$3 }'" "
+    (procedure "feat5:load" line 5)
+    invoked from within
+"feat5:load -1 1 ${fsfroot}.fsf"
+    (file "/usr/local/fsl/bin/feat" line 309)
+/ZPOOL/data/projects/rf1-sra-sharedreward/code/L2stats.sh: line 46: /ZPOOL/data/projects/rf1-sra-sharedreward/templates/L2_task-sharedreward_model-1_type-nppi.fsf: No such file or directory
+grep: /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10638/L2_task-sharedreward_model-1_type-nppi-dmn.fsf: No such file or directory
+    while executing
+"exec sh -c "grep -a 'fmri(inmelodic)' $filename | tail -n 1 | awk '{ print \$3 }'" "
+    (procedure "feat5:load" line 5)
+    invoked from within
+"feat5:load -1 1 ${fsfroot}.fsf"
+    (file "/usr/local/fsl/bin/feat" line 309)
+/ZPOOL/data/projects/rf1-sra-sharedreward/code/L2stats.sh: line 46: /ZPOOL/data/projects/rf1-sra-sharedreward/templates/L2_task-sharedreward_model-1_type-nppi.fsf: No such file or directory
+grep: /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10640/L2_task-sharedreward_model-1_type-nppi-dmn.fsf: No such file or directory
+    while executing
+"exec sh -c "grep -a 'fmri(inmelodic)' $filename | tail -n 1 | awk '{ print \$3 }'" "
+    (procedure "feat5:load" line 5)
+    invoked from within
+"feat5:load -1 1 ${fsfroot}.fsf"
+    (file "/usr/local/fsl/bin/feat" line 309)
+/ZPOOL/data/projects/rf1-sra-sharedreward/code/L2stats.sh: line 46: /ZPOOL/data/projects/rf1-sra-sharedreward/templates/L2_task-sharedreward_model-1_type-nppi.fsf: No such file or directory
+grep: /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10642/L2_task-sharedreward_model-1_type-nppi-dmn.fsf: No such file or directory
+    while executing
+"exec sh -c "grep -a 'fmri(inmelodic)' $filename | tail -n 1 | awk '{ print \$3 }'" "
+    (procedure "feat5:load" line 5)
+    invoked from within
+"feat5:load -1 1 ${fsfroot}.fsf"
+    (file "/usr/local/fsl/bin/feat" line 309)
+/ZPOOL/data/projects/rf1-sra-sharedreward/code/L2stats.sh: line 46: /ZPOOL/data/projects/rf1-sra-sharedreward/templates/L2_task-sharedreward_model-1_type-nppi.fsf: No such file or directory
+grep: /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10644/L2_task-sharedreward_model-1_type-nppi-dmn.fsf: No such file or directory
+    while executing
+"exec sh -c "grep -a 'fmri(inmelodic)' $filename | tail -n 1 | awk '{ print \$3 }'" "
+    (procedure "feat5:load" line 5)
+    invoked from within
+"feat5:load -1 1 ${fsfroot}.fsf"
+    (file "/usr/local/fsl/bin/feat" line 309)
+/ZPOOL/data/projects/rf1-sra-sharedreward/code/L2stats.sh: line 46: /ZPOOL/data/projects/rf1-sra-sharedreward/templates/L2_task-sharedreward_model-1_type-nppi.fsf: No such file or directory
+grep: /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10647/L2_task-sharedreward_model-1_type-nppi-dmn.fsf: No such file or directory
+    while executing
+"exec sh -c "grep -a 'fmri(inmelodic)' $filename | tail -n 1 | awk '{ print \$3 }'" "
+    (procedure "feat5:load" line 5)
+    invoked from within
+"feat5:load -1 1 ${fsfroot}.fsf"
+    (file "/usr/local/fsl/bin/feat" line 309)
+/ZPOOL/data/projects/rf1-sra-sharedreward/code/L2stats.sh: line 46: /ZPOOL/data/projects/rf1-sra-sharedreward/templates/L2_task-sharedreward_model-1_type-nppi.fsf: No such file or directory
+grep: /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10649/L2_task-sharedreward_model-1_type-nppi-dmn.fsf: No such file or directory
+    while executing
+"exec sh -c "grep -a 'fmri(inmelodic)' $filename | tail -n 1 | awk '{ print \$3 }'" "
+    (procedure "feat5:load" line 5)
+    invoked from within
+"feat5:load -1 1 ${fsfroot}.fsf"
+    (file "/usr/local/fsl/bin/feat" line 309)
+/ZPOOL/data/projects/rf1-sra-sharedreward/code/L2stats.sh: line 46: /ZPOOL/data/projects/rf1-sra-sharedreward/templates/L2_task-sharedreward_model-1_type-nppi.fsf: No such file or directory
+grep: /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10652/L2_task-sharedreward_model-1_type-nppi-dmn.fsf: No such file or directory
+    while executing
+"exec sh -c "grep -a 'fmri(inmelodic)' $filename | tail -n 1 | awk '{ print \$3 }'" "
+    (procedure "feat5:load" line 5)
+    invoked from within
+"feat5:load -1 1 ${fsfroot}.fsf"
+    (file "/usr/local/fsl/bin/feat" line 309)
+/ZPOOL/data/projects/rf1-sra-sharedreward/code/L2stats.sh: line 46: /ZPOOL/data/projects/rf1-sra-sharedreward/templates/L2_task-sharedreward_model-1_type-nppi.fsf: No such file or directory
+grep: /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10656/L2_task-sharedreward_model-1_type-nppi-dmn.fsf: No such file or directory
+    while executing
+"exec sh -c "grep -a 'fmri(inmelodic)' $filename | tail -n 1 | awk '{ print \$3 }'" "
+    (procedure "feat5:load" line 5)
+    invoked from within
+"feat5:load -1 1 ${fsfroot}.fsf"
+    (file "/usr/local/fsl/bin/feat" line 309)
+/ZPOOL/data/projects/rf1-sra-sharedreward/code/L2stats.sh: line 46: /ZPOOL/data/projects/rf1-sra-sharedreward/templates/L2_task-sharedreward_model-1_type-nppi.fsf: No such file or directory
+grep: /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10657/L2_task-sharedreward_model-1_type-nppi-dmn.fsf: No such file or directory
+    while executing
+"exec sh -c "grep -a 'fmri(inmelodic)' $filename | tail -n 1 | awk '{ print \$3 }'" "
+    (procedure "feat5:load" line 5)
+    invoked from within
+"feat5:load -1 1 ${fsfroot}.fsf"
+    (file "/usr/local/fsl/bin/feat" line 309)
+/ZPOOL/data/projects/rf1-sra-sharedreward/code/L2stats.sh: line 46: /ZPOOL/data/projects/rf1-sra-sharedreward/templates/L2_task-sharedreward_model-1_type-nppi.fsf: No such file or directory
+grep: /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10659/L2_task-sharedreward_model-1_type-nppi-dmn.fsf: No such file or directory
+    while executing
+"exec sh -c "grep -a 'fmri(inmelodic)' $filename | tail -n 1 | awk '{ print \$3 }'" "
+    (procedure "feat5:load" line 5)
+    invoked from within
+"feat5:load -1 1 ${fsfroot}.fsf"
+    (file "/usr/local/fsl/bin/feat" line 309)
+/ZPOOL/data/projects/rf1-sra-sharedreward/code/L2stats.sh: line 46: /ZPOOL/data/projects/rf1-sra-sharedreward/templates/L2_task-sharedreward_model-1_type-nppi.fsf: No such file or directory
+grep: /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10661/L2_task-sharedreward_model-1_type-nppi-dmn.fsf: No such file or directory
+    while executing
+"exec sh -c "grep -a 'fmri(inmelodic)' $filename | tail -n 1 | awk '{ print \$3 }'" "
+    (procedure "feat5:load" line 5)
+    invoked from within
+"feat5:load -1 1 ${fsfroot}.fsf"
+    (file "/usr/local/fsl/bin/feat" line 309)
+/ZPOOL/data/projects/rf1-sra-sharedreward/code/L2stats.sh: line 46: /ZPOOL/data/projects/rf1-sra-sharedreward/templates/L2_task-sharedreward_model-1_type-nppi.fsf: No such file or directory
+grep: /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10663/L2_task-sharedreward_model-1_type-nppi-dmn.fsf: No such file or directory
+    while executing
+"exec sh -c "grep -a 'fmri(inmelodic)' $filename | tail -n 1 | awk '{ print \$3 }'" "
+    (procedure "feat5:load" line 5)
+    invoked from within
+"feat5:load -1 1 ${fsfroot}.fsf"
+    (file "/usr/local/fsl/bin/feat" line 309)
+/ZPOOL/data/projects/rf1-sra-sharedreward/code/L2stats.sh: line 46: /ZPOOL/data/projects/rf1-sra-sharedreward/templates/L2_task-sharedreward_model-1_type-nppi.fsf: No such file or directory
+grep: /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10673/L2_task-sharedreward_model-1_type-nppi-dmn.fsf: No such file or directory
+    while executing
+"exec sh -c "grep -a 'fmri(inmelodic)' $filename | tail -n 1 | awk '{ print \$3 }'" "
+    (procedure "feat5:load" line 5)
+    invoked from within
+"feat5:load -1 1 ${fsfroot}.fsf"
+    (file "/usr/local/fsl/bin/feat" line 309)
+/ZPOOL/data/projects/rf1-sra-sharedreward/code/L2stats.sh: line 46: /ZPOOL/data/projects/rf1-sra-sharedreward/templates/L2_task-sharedreward_model-1_type-nppi.fsf: No such file or directory
+grep: /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10674/L2_task-sharedreward_model-1_type-nppi-dmn.fsf: No such file or directory
+    while executing
+"exec sh -c "grep -a 'fmri(inmelodic)' $filename | tail -n 1 | awk '{ print \$3 }'" "
+    (procedure "feat5:load" line 5)
+    invoked from within
+"feat5:load -1 1 ${fsfroot}.fsf"
+    (file "/usr/local/fsl/bin/feat" line 309)
+/ZPOOL/data/projects/rf1-sra-sharedreward/code/L2stats.sh: line 46: /ZPOOL/data/projects/rf1-sra-sharedreward/templates/L2_task-sharedreward_model-1_type-nppi.fsf: No such file or directory
+grep: /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10677/L2_task-sharedreward_model-1_type-nppi-dmn.fsf: No such file or directory
+    while executing
+"exec sh -c "grep -a 'fmri(inmelodic)' $filename | tail -n 1 | awk '{ print \$3 }'" "
+    (procedure "feat5:load" line 5)
+    invoked from within
+"feat5:load -1 1 ${fsfroot}.fsf"
+    (file "/usr/local/fsl/bin/feat" line 309)
+/ZPOOL/data/projects/rf1-sra-sharedreward/code/L2stats.sh: line 46: /ZPOOL/data/projects/rf1-sra-sharedreward/templates/L2_task-sharedreward_model-1_type-nppi.fsf: No such file or directory
+grep: /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10685/L2_task-sharedreward_model-1_type-nppi-dmn.fsf: No such file or directory
+    while executing
+"exec sh -c "grep -a 'fmri(inmelodic)' $filename | tail -n 1 | awk '{ print \$3 }'" "
+    (procedure "feat5:load" line 5)
+    invoked from within
+"feat5:load -1 1 ${fsfroot}.fsf"
+    (file "/usr/local/fsl/bin/feat" line 309)
+/ZPOOL/data/projects/rf1-sra-sharedreward/code/L2stats.sh: line 46: /ZPOOL/data/projects/rf1-sra-sharedreward/templates/L2_task-sharedreward_model-1_type-nppi.fsf: No such file or directory
+grep: /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10690/L2_task-sharedreward_model-1_type-nppi-dmn.fsf: No such file or directory
+    while executing
+"exec sh -c "grep -a 'fmri(inmelodic)' $filename | tail -n 1 | awk '{ print \$3 }'" "
+    (procedure "feat5:load" line 5)
+    invoked from within
+"feat5:load -1 1 ${fsfroot}.fsf"
+    (file "/usr/local/fsl/bin/feat" line 309)
+/ZPOOL/data/projects/rf1-sra-sharedreward/code/L2stats.sh: line 46: /ZPOOL/data/projects/rf1-sra-sharedreward/templates/L2_task-sharedreward_model-1_type-nppi.fsf: No such file or directory
+grep: /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10691/L2_task-sharedreward_model-1_type-nppi-dmn.fsf: No such file or directory
+    while executing
+"exec sh -c "grep -a 'fmri(inmelodic)' $filename | tail -n 1 | awk '{ print \$3 }'" "
+    (procedure "feat5:load" line 5)
+    invoked from within
+"feat5:load -1 1 ${fsfroot}.fsf"
+    (file "/usr/local/fsl/bin/feat" line 309)
+/ZPOOL/data/projects/rf1-sra-sharedreward/code/L2stats.sh: line 46: /ZPOOL/data/projects/rf1-sra-sharedreward/templates/L2_task-sharedreward_model-1_type-nppi.fsf: No such file or directory
+grep: /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10700/L2_task-sharedreward_model-1_type-nppi-dmn.fsf: No such file or directory
+    while executing
+"exec sh -c "grep -a 'fmri(inmelodic)' $filename | tail -n 1 | awk '{ print \$3 }'" "
+    (procedure "feat5:load" line 5)
+    invoked from within
+"feat5:load -1 1 ${fsfroot}.fsf"
+    (file "/usr/local/fsl/bin/feat" line 309)
+/ZPOOL/data/projects/rf1-sra-sharedreward/code/L2stats.sh: line 46: /ZPOOL/data/projects/rf1-sra-sharedreward/templates/L2_task-sharedreward_model-1_type-nppi.fsf: No such file or directory
+grep: /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10701/L2_task-sharedreward_model-1_type-nppi-dmn.fsf: No such file or directory
+    while executing
+"exec sh -c "grep -a 'fmri(inmelodic)' $filename | tail -n 1 | awk '{ print \$3 }'" "
+    (procedure "feat5:load" line 5)
+    invoked from within
+"feat5:load -1 1 ${fsfroot}.fsf"
+    (file "/usr/local/fsl/bin/feat" line 309)
+/ZPOOL/data/projects/rf1-sra-sharedreward/code/L2stats.sh: line 46: /ZPOOL/data/projects/rf1-sra-sharedreward/templates/L2_task-sharedreward_model-1_type-nppi.fsf: No such file or directory
+grep: /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10713/L2_task-sharedreward_model-1_type-nppi-dmn.fsf: No such file or directory
+    while executing
+"exec sh -c "grep -a 'fmri(inmelodic)' $filename | tail -n 1 | awk '{ print \$3 }'" "
+    (procedure "feat5:load" line 5)
+    invoked from within
+"feat5:load -1 1 ${fsfroot}.fsf"
+    (file "/usr/local/fsl/bin/feat" line 309)
+/ZPOOL/data/projects/rf1-sra-sharedreward/code/L2stats.sh: line 46: /ZPOOL/data/projects/rf1-sra-sharedreward/templates/L2_task-sharedreward_model-1_type-nppi.fsf: No such file or directory
+grep: /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10716/L2_task-sharedreward_model-1_type-nppi-dmn.fsf: No such file or directory
+    while executing
+"exec sh -c "grep -a 'fmri(inmelodic)' $filename | tail -n 1 | awk '{ print \$3 }'" "
+    (procedure "feat5:load" line 5)
+    invoked from within
+"feat5:load -1 1 ${fsfroot}.fsf"
+    (file "/usr/local/fsl/bin/feat" line 309)
+/ZPOOL/data/projects/rf1-sra-sharedreward/code/L2stats.sh: line 46: /ZPOOL/data/projects/rf1-sra-sharedreward/templates/L2_task-sharedreward_model-1_type-nppi.fsf: No such file or directory
+grep: /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10718/L2_task-sharedreward_model-1_type-nppi-dmn.fsf: No such file or directory
+    while executing
+"exec sh -c "grep -a 'fmri(inmelodic)' $filename | tail -n 1 | awk '{ print \$3 }'" "
+    (procedure "feat5:load" line 5)
+    invoked from within
+"feat5:load -1 1 ${fsfroot}.fsf"
+    (file "/usr/local/fsl/bin/feat" line 309)
+/ZPOOL/data/projects/rf1-sra-sharedreward/code/L2stats.sh: line 46: /ZPOOL/data/projects/rf1-sra-sharedreward/templates/L2_task-sharedreward_model-1_type-nppi.fsf: No such file or directory
+grep: /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10720/L2_task-sharedreward_model-1_type-nppi-dmn.fsf: No such file or directory
+    while executing
+"exec sh -c "grep -a 'fmri(inmelodic)' $filename | tail -n 1 | awk '{ print \$3 }'" "
+    (procedure "feat5:load" line 5)
+    invoked from within
+"feat5:load -1 1 ${fsfroot}.fsf"
+    (file "/usr/local/fsl/bin/feat" line 309)
+/ZPOOL/data/projects/rf1-sra-sharedreward/code/L2stats.sh: line 46: /ZPOOL/data/projects/rf1-sra-sharedreward/templates/L2_task-sharedreward_model-1_type-nppi.fsf: No such file or directory
+grep: /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10723/L2_task-sharedreward_model-1_type-nppi-dmn.fsf: No such file or directory
+    while executing
+"exec sh -c "grep -a 'fmri(inmelodic)' $filename | tail -n 1 | awk '{ print \$3 }'" "
+    (procedure "feat5:load" line 5)
+    invoked from within
+"feat5:load -1 1 ${fsfroot}.fsf"
+    (file "/usr/local/fsl/bin/feat" line 309)
+/ZPOOL/data/projects/rf1-sra-sharedreward/code/L2stats.sh: line 46: /ZPOOL/data/projects/rf1-sra-sharedreward/templates/L2_task-sharedreward_model-1_type-nppi.fsf: No such file or directory
+grep: /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10741/L2_task-sharedreward_model-1_type-nppi-dmn.fsf: No such file or directory
+    while executing
+"exec sh -c "grep -a 'fmri(inmelodic)' $filename | tail -n 1 | awk '{ print \$3 }'" "
+    (procedure "feat5:load" line 5)
+    invoked from within
+"feat5:load -1 1 ${fsfroot}.fsf"
+    (file "/usr/local/fsl/bin/feat" line 309)
+/ZPOOL/data/projects/rf1-sra-sharedreward/code/L2stats.sh: line 46: /ZPOOL/data/projects/rf1-sra-sharedreward/templates/L2_task-sharedreward_model-1_type-nppi.fsf: No such file or directory
+grep: /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10748/L2_task-sharedreward_model-1_type-nppi-dmn.fsf: No such file or directory
+    while executing
+"exec sh -c "grep -a 'fmri(inmelodic)' $filename | tail -n 1 | awk '{ print \$3 }'" "
+    (procedure "feat5:load" line 5)
+    invoked from within
+"feat5:load -1 1 ${fsfroot}.fsf"
+    (file "/usr/local/fsl/bin/feat" line 309)
+/ZPOOL/data/projects/rf1-sra-sharedreward/code/L2stats.sh: line 46: /ZPOOL/data/projects/rf1-sra-sharedreward/templates/L2_task-sharedreward_model-1_type-nppi.fsf: No such file or directory
+grep: /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10767/L2_task-sharedreward_model-1_type-nppi-dmn.fsf: No such file or directory
+    while executing
+"exec sh -c "grep -a 'fmri(inmelodic)' $filename | tail -n 1 | awk '{ print \$3 }'" "
+    (procedure "feat5:load" line 5)
+    invoked from within
+"feat5:load -1 1 ${fsfroot}.fsf"
+    (file "/usr/local/fsl/bin/feat" line 309)
+/ZPOOL/data/projects/rf1-sra-sharedreward/code/L2stats.sh: line 46: /ZPOOL/data/projects/rf1-sra-sharedreward/templates/L2_task-sharedreward_model-1_type-nppi.fsf: No such file or directory
+grep: /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10770/L2_task-sharedreward_model-1_type-nppi-dmn.fsf: No such file or directory
+    while executing
+"exec sh -c "grep -a 'fmri(inmelodic)' $filename | tail -n 1 | awk '{ print \$3 }'" "
+    (procedure "feat5:load" line 5)
+    invoked from within
+"feat5:load -1 1 ${fsfroot}.fsf"
+    (file "/usr/local/fsl/bin/feat" line 309)
+/ZPOOL/data/projects/rf1-sra-sharedreward/code/L2stats.sh: line 46: /ZPOOL/data/projects/rf1-sra-sharedreward/templates/L2_task-sharedreward_model-1_type-nppi.fsf: No such file or directory
+grep: /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10774/L2_task-sharedreward_model-1_type-nppi-dmn.fsf: No such file or directory
+    while executing
+"exec sh -c "grep -a 'fmri(inmelodic)' $filename | tail -n 1 | awk '{ print \$3 }'" "
+    (procedure "feat5:load" line 5)
+    invoked from within
+"feat5:load -1 1 ${fsfroot}.fsf"
+    (file "/usr/local/fsl/bin/feat" line 309)
+/ZPOOL/data/projects/rf1-sra-sharedreward/code/L2stats.sh: line 46: /ZPOOL/data/projects/rf1-sra-sharedreward/templates/L2_task-sharedreward_model-1_type-nppi.fsf: No such file or directory
+grep: /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10777/L2_task-sharedreward_model-1_type-nppi-dmn.fsf: No such file or directory
+    while executing
+"exec sh -c "grep -a 'fmri(inmelodic)' $filename | tail -n 1 | awk '{ print \$3 }'" "
+    (procedure "feat5:load" line 5)
+    invoked from within
+"feat5:load -1 1 ${fsfroot}.fsf"
+    (file "/usr/local/fsl/bin/feat" line 309)
+/ZPOOL/data/projects/rf1-sra-sharedreward/code/L2stats.sh: line 46: /ZPOOL/data/projects/rf1-sra-sharedreward/templates/L2_task-sharedreward_model-1_type-nppi.fsf: No such file or directory
+grep: /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10781/L2_task-sharedreward_model-1_type-nppi-dmn.fsf: No such file or directory
+    while executing
+"exec sh -c "grep -a 'fmri(inmelodic)' $filename | tail -n 1 | awk '{ print \$3 }'" "
+    (procedure "feat5:load" line 5)
+    invoked from within
+"feat5:load -1 1 ${fsfroot}.fsf"
+    (file "/usr/local/fsl/bin/feat" line 309)
+/ZPOOL/data/projects/rf1-sra-sharedreward/code/L2stats.sh: line 46: /ZPOOL/data/projects/rf1-sra-sharedreward/templates/L2_task-sharedreward_model-1_type-nppi.fsf: No such file or directory
+grep: /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10783/L2_task-sharedreward_model-1_type-nppi-dmn.fsf: No such file or directory
+    while executing
+"exec sh -c "grep -a 'fmri(inmelodic)' $filename | tail -n 1 | awk '{ print \$3 }'" "
+    (procedure "feat5:load" line 5)
+    invoked from within
+"feat5:load -1 1 ${fsfroot}.fsf"
+    (file "/usr/local/fsl/bin/feat" line 309)
+/ZPOOL/data/projects/rf1-sra-sharedreward/code/L2stats.sh: line 46: /ZPOOL/data/projects/rf1-sra-sharedreward/templates/L2_task-sharedreward_model-1_type-nppi.fsf: No such file or directory
+grep: /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10785/L2_task-sharedreward_model-1_type-nppi-dmn.fsf: No such file or directory
+    while executing
+"exec sh -c "grep -a 'fmri(inmelodic)' $filename | tail -n 1 | awk '{ print \$3 }'" "
+    (procedure "feat5:load" line 5)
+    invoked from within
+"feat5:load -1 1 ${fsfroot}.fsf"
+    (file "/usr/local/fsl/bin/feat" line 309)
+/ZPOOL/data/projects/rf1-sra-sharedreward/code/L2stats.sh: line 46: /ZPOOL/data/projects/rf1-sra-sharedreward/templates/L2_task-sharedreward_model-1_type-nppi.fsf: No such file or directory
+grep: /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10794/L2_task-sharedreward_model-1_type-nppi-dmn.fsf: No such file or directory
+    while executing
+"exec sh -c "grep -a 'fmri(inmelodic)' $filename | tail -n 1 | awk '{ print \$3 }'" "
+    (procedure "feat5:load" line 5)
+    invoked from within
+"feat5:load -1 1 ${fsfroot}.fsf"
+    (file "/usr/local/fsl/bin/feat" line 309)
+/ZPOOL/data/projects/rf1-sra-sharedreward/code/L2stats.sh: line 46: /ZPOOL/data/projects/rf1-sra-sharedreward/templates/L2_task-sharedreward_model-1_type-nppi.fsf: No such file or directory
+grep: /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10801/L2_task-sharedreward_model-1_type-nppi-dmn.fsf: No such file or directory
+    while executing
+"exec sh -c "grep -a 'fmri(inmelodic)' $filename | tail -n 1 | awk '{ print \$3 }'" "
+    (procedure "feat5:load" line 5)
+    invoked from within
+"feat5:load -1 1 ${fsfroot}.fsf"
+    (file "/usr/local/fsl/bin/feat" line 309)
+/ZPOOL/data/projects/rf1-sra-sharedreward/code/L2stats.sh: line 46: /ZPOOL/data/projects/rf1-sra-sharedreward/templates/L2_task-sharedreward_model-1_type-nppi.fsf: No such file or directory
+grep: /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10802/L2_task-sharedreward_model-1_type-nppi-dmn.fsf: No such file or directory
+    while executing
+"exec sh -c "grep -a 'fmri(inmelodic)' $filename | tail -n 1 | awk '{ print \$3 }'" "
+    (procedure "feat5:load" line 5)
+    invoked from within
+"feat5:load -1 1 ${fsfroot}.fsf"
+    (file "/usr/local/fsl/bin/feat" line 309)
+/ZPOOL/data/projects/rf1-sra-sharedreward/code/L2stats.sh: line 46: /ZPOOL/data/projects/rf1-sra-sharedreward/templates/L2_task-sharedreward_model-1_type-nppi.fsf: No such file or directory
+grep: /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10804/L2_task-sharedreward_model-1_type-nppi-dmn.fsf: No such file or directory
+    while executing
+"exec sh -c "grep -a 'fmri(inmelodic)' $filename | tail -n 1 | awk '{ print \$3 }'" "
+    (procedure "feat5:load" line 5)
+    invoked from within
+"feat5:load -1 1 ${fsfroot}.fsf"
+    (file "/usr/local/fsl/bin/feat" line 309)
+/ZPOOL/data/projects/rf1-sra-sharedreward/code/L2stats.sh: line 46: /ZPOOL/data/projects/rf1-sra-sharedreward/templates/L2_task-sharedreward_model-1_type-nppi.fsf: No such file or directory
+grep: /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10806/L2_task-sharedreward_model-1_type-nppi-dmn.fsf: No such file or directory
+    while executing
+"exec sh -c "grep -a 'fmri(inmelodic)' $filename | tail -n 1 | awk '{ print \$3 }'" "
+    (procedure "feat5:load" line 5)
+    invoked from within
+"feat5:load -1 1 ${fsfroot}.fsf"
+    (file "/usr/local/fsl/bin/feat" line 309)
+/ZPOOL/data/projects/rf1-sra-sharedreward/code/L2stats.sh: line 46: /ZPOOL/data/projects/rf1-sra-sharedreward/templates/L2_task-sharedreward_model-1_type-nppi.fsf: No such file or directory
+grep: /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10807/L2_task-sharedreward_model-1_type-nppi-dmn.fsf: No such file or directory
+    while executing
+"exec sh -c "grep -a 'fmri(inmelodic)' $filename | tail -n 1 | awk '{ print \$3 }'" "
+    (procedure "feat5:load" line 5)
+    invoked from within
+"feat5:load -1 1 ${fsfroot}.fsf"
+    (file "/usr/local/fsl/bin/feat" line 309)
+/ZPOOL/data/projects/rf1-sra-sharedreward/code/L2stats.sh: line 46: /ZPOOL/data/projects/rf1-sra-sharedreward/templates/L2_task-sharedreward_model-1_type-nppi.fsf: No such file or directory
+grep: /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10810/L2_task-sharedreward_model-1_type-nppi-dmn.fsf: No such file or directory
+    while executing
+"exec sh -c "grep -a 'fmri(inmelodic)' $filename | tail -n 1 | awk '{ print \$3 }'" "
+    (procedure "feat5:load" line 5)
+    invoked from within
+"feat5:load -1 1 ${fsfroot}.fsf"
+    (file "/usr/local/fsl/bin/feat" line 309)
+/ZPOOL/data/projects/rf1-sra-sharedreward/code/L2stats.sh: line 46: /ZPOOL/data/projects/rf1-sra-sharedreward/templates/L2_task-sharedreward_model-1_type-nppi.fsf: No such file or directory
+grep: /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10812/L2_task-sharedreward_model-1_type-nppi-dmn.fsf: No such file or directory
+    while executing
+"exec sh -c "grep -a 'fmri(inmelodic)' $filename | tail -n 1 | awk '{ print \$3 }'" "
+    (procedure "feat5:load" line 5)
+    invoked from within
+"feat5:load -1 1 ${fsfroot}.fsf"
+    (file "/usr/local/fsl/bin/feat" line 309)
+/ZPOOL/data/projects/rf1-sra-sharedreward/code/L2stats.sh: line 46: /ZPOOL/data/projects/rf1-sra-sharedreward/templates/L2_task-sharedreward_model-1_type-nppi.fsf: No such file or directory
+grep: /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10817/L2_task-sharedreward_model-1_type-nppi-dmn.fsf: No such file or directory
+    while executing
+"exec sh -c "grep -a 'fmri(inmelodic)' $filename | tail -n 1 | awk '{ print \$3 }'" "
+    (procedure "feat5:load" line 5)
+    invoked from within
+"feat5:load -1 1 ${fsfroot}.fsf"
+    (file "/usr/local/fsl/bin/feat" line 309)
+/ZPOOL/data/projects/rf1-sra-sharedreward/code/L2stats.sh: line 46: /ZPOOL/data/projects/rf1-sra-sharedreward/templates/L2_task-sharedreward_model-1_type-nppi.fsf: No such file or directory
+grep: /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10827/L2_task-sharedreward_model-1_type-nppi-dmn.fsf: No such file or directory
+    while executing
+"exec sh -c "grep -a 'fmri(inmelodic)' $filename | tail -n 1 | awk '{ print \$3 }'" "
+    (procedure "feat5:load" line 5)
+    invoked from within
+"feat5:load -1 1 ${fsfroot}.fsf"
+    (file "/usr/local/fsl/bin/feat" line 309)
+/ZPOOL/data/projects/rf1-sra-sharedreward/code/L2stats.sh: line 46: /ZPOOL/data/projects/rf1-sra-sharedreward/templates/L2_task-sharedreward_model-1_type-nppi.fsf: No such file or directory
+grep: /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10831/L2_task-sharedreward_model-1_type-nppi-dmn.fsf: No such file or directory
+    while executing
+"exec sh -c "grep -a 'fmri(inmelodic)' $filename | tail -n 1 | awk '{ print \$3 }'" "
+    (procedure "feat5:load" line 5)
+    invoked from within
+"feat5:load -1 1 ${fsfroot}.fsf"
+    (file "/usr/local/fsl/bin/feat" line 309)
+/ZPOOL/data/projects/rf1-sra-sharedreward/code/L2stats.sh: line 46: /ZPOOL/data/projects/rf1-sra-sharedreward/templates/L2_task-sharedreward_model-1_type-nppi.fsf: No such file or directory
+grep: /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10834/L2_task-sharedreward_model-1_type-nppi-dmn.fsf: No such file or directory
+    while executing
+"exec sh -c "grep -a 'fmri(inmelodic)' $filename | tail -n 1 | awk '{ print \$3 }'" "
+    (procedure "feat5:load" line 5)
+    invoked from within
+"feat5:load -1 1 ${fsfroot}.fsf"
+    (file "/usr/local/fsl/bin/feat" line 309)
+/ZPOOL/data/projects/rf1-sra-sharedreward/code/L2stats.sh: line 46: /ZPOOL/data/projects/rf1-sra-sharedreward/templates/L2_task-sharedreward_model-1_type-nppi.fsf: No such file or directory
+grep: /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10838/L2_task-sharedreward_model-1_type-nppi-dmn.fsf: No such file or directory
+    while executing
+"exec sh -c "grep -a 'fmri(inmelodic)' $filename | tail -n 1 | awk '{ print \$3 }'" "
+    (procedure "feat5:load" line 5)
+    invoked from within
+"feat5:load -1 1 ${fsfroot}.fsf"
+    (file "/usr/local/fsl/bin/feat" line 309)
+/ZPOOL/data/projects/rf1-sra-sharedreward/code/L2stats.sh: line 46: /ZPOOL/data/projects/rf1-sra-sharedreward/templates/L2_task-sharedreward_model-1_type-nppi.fsf: No such file or directory
+grep: /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10843/L2_task-sharedreward_model-1_type-nppi-dmn.fsf: No such file or directory
+    while executing
+"exec sh -c "grep -a 'fmri(inmelodic)' $filename | tail -n 1 | awk '{ print \$3 }'" "
+    (procedure "feat5:load" line 5)
+    invoked from within
+"feat5:load -1 1 ${fsfroot}.fsf"
+    (file "/usr/local/fsl/bin/feat" line 309)
+/ZPOOL/data/projects/rf1-sra-sharedreward/code/L2stats.sh: line 46: /ZPOOL/data/projects/rf1-sra-sharedreward/templates/L2_task-sharedreward_model-1_type-nppi.fsf: No such file or directory
+grep: /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10850/L2_task-sharedreward_model-1_type-nppi-dmn.fsf: No such file or directory
+    while executing
+"exec sh -c "grep -a 'fmri(inmelodic)' $filename | tail -n 1 | awk '{ print \$3 }'" "
+    (procedure "feat5:load" line 5)
+    invoked from within
+"feat5:load -1 1 ${fsfroot}.fsf"
+    (file "/usr/local/fsl/bin/feat" line 309)
+/ZPOOL/data/projects/rf1-sra-sharedreward/code/L2stats.sh: line 46: /ZPOOL/data/projects/rf1-sra-sharedreward/templates/L2_task-sharedreward_model-1_type-nppi.fsf: No such file or directory
+grep: /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10854/L2_task-sharedreward_model-1_type-nppi-dmn.fsf: No such file or directory
+    while executing
+"exec sh -c "grep -a 'fmri(inmelodic)' $filename | tail -n 1 | awk '{ print \$3 }'" "
+    (procedure "feat5:load" line 5)
+    invoked from within
+"feat5:load -1 1 ${fsfroot}.fsf"
+    (file "/usr/local/fsl/bin/feat" line 309)
+/ZPOOL/data/projects/rf1-sra-sharedreward/code/L2stats.sh: line 46: /ZPOOL/data/projects/rf1-sra-sharedreward/templates/L2_task-sharedreward_model-1_type-nppi.fsf: No such file or directory
+grep: /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10857/L2_task-sharedreward_model-1_type-nppi-dmn.fsf: No such file or directory
+    while executing
+"exec sh -c "grep -a 'fmri(inmelodic)' $filename | tail -n 1 | awk '{ print \$3 }'" "
+    (procedure "feat5:load" line 5)
+    invoked from within
+"feat5:load -1 1 ${fsfroot}.fsf"
+    (file "/usr/local/fsl/bin/feat" line 309)
+/ZPOOL/data/projects/rf1-sra-sharedreward/code/L2stats.sh: line 46: /ZPOOL/data/projects/rf1-sra-sharedreward/templates/L2_task-sharedreward_model-1_type-nppi.fsf: No such file or directory
+grep: /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10860/L2_task-sharedreward_model-1_type-nppi-dmn.fsf: No such file or directory
+    while executing
+"exec sh -c "grep -a 'fmri(inmelodic)' $filename | tail -n 1 | awk '{ print \$3 }'" "
+    (procedure "feat5:load" line 5)
+    invoked from within
+"feat5:load -1 1 ${fsfroot}.fsf"
+    (file "/usr/local/fsl/bin/feat" line 309)
+/ZPOOL/data/projects/rf1-sra-sharedreward/code/L2stats.sh: line 46: /ZPOOL/data/projects/rf1-sra-sharedreward/templates/L2_task-sharedreward_model-1_type-nppi.fsf: No such file or directory
+grep: /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10862/L2_task-sharedreward_model-1_type-nppi-dmn.fsf: No such file or directory
+    while executing
+"exec sh -c "grep -a 'fmri(inmelodic)' $filename | tail -n 1 | awk '{ print \$3 }'" "
+    (procedure "feat5:load" line 5)
+    invoked from within
+"feat5:load -1 1 ${fsfroot}.fsf"
+    (file "/usr/local/fsl/bin/feat" line 309)
+/ZPOOL/data/projects/rf1-sra-sharedreward/code/L2stats.sh: line 46: /ZPOOL/data/projects/rf1-sra-sharedreward/templates/L2_task-sharedreward_model-1_type-nppi.fsf: No such file or directory
+grep: /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10863/L2_task-sharedreward_model-1_type-nppi-dmn.fsf: No such file or directory
+    while executing
+"exec sh -c "grep -a 'fmri(inmelodic)' $filename | tail -n 1 | awk '{ print \$3 }'" "
+    (procedure "feat5:load" line 5)
+    invoked from within
+"feat5:load -1 1 ${fsfroot}.fsf"
+    (file "/usr/local/fsl/bin/feat" line 309)
+/ZPOOL/data/projects/rf1-sra-sharedreward/code/L2stats.sh: line 46: /ZPOOL/data/projects/rf1-sra-sharedreward/templates/L2_task-sharedreward_model-1_type-nppi.fsf: No such file or directory
+grep: /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10866/L2_task-sharedreward_model-1_type-nppi-dmn.fsf: No such file or directory
+    while executing
+"exec sh -c "grep -a 'fmri(inmelodic)' $filename | tail -n 1 | awk '{ print \$3 }'" "
+    (procedure "feat5:load" line 5)
+    invoked from within
+"feat5:load -1 1 ${fsfroot}.fsf"
+    (file "/usr/local/fsl/bin/feat" line 309)
+/ZPOOL/data/projects/rf1-sra-sharedreward/code/L2stats.sh: line 46: /ZPOOL/data/projects/rf1-sra-sharedreward/templates/L2_task-sharedreward_model-1_type-nppi.fsf: No such file or directory
+grep: /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10875/L2_task-sharedreward_model-1_type-nppi-dmn.fsf: No such file or directory
+    while executing
+"exec sh -c "grep -a 'fmri(inmelodic)' $filename | tail -n 1 | awk '{ print \$3 }'" "
+    (procedure "feat5:load" line 5)
+    invoked from within
+"feat5:load -1 1 ${fsfroot}.fsf"
+    (file "/usr/local/fsl/bin/feat" line 309)
+/ZPOOL/data/projects/rf1-sra-sharedreward/code/L2stats.sh: line 46: /ZPOOL/data/projects/rf1-sra-sharedreward/templates/L2_task-sharedreward_model-1_type-nppi.fsf: No such file or directory
+grep: /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10887/L2_task-sharedreward_model-1_type-nppi-dmn.fsf: No such file or directory
+    while executing
+"exec sh -c "grep -a 'fmri(inmelodic)' $filename | tail -n 1 | awk '{ print \$3 }'" "
+    (procedure "feat5:load" line 5)
+    invoked from within
+"feat5:load -1 1 ${fsfroot}.fsf"
+    (file "/usr/local/fsl/bin/feat" line 309)
+/ZPOOL/data/projects/rf1-sra-sharedreward/code/L2stats.sh: line 46: /ZPOOL/data/projects/rf1-sra-sharedreward/templates/L2_task-sharedreward_model-1_type-nppi.fsf: No such file or directory
+grep: /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10896/L2_task-sharedreward_model-1_type-nppi-dmn.fsf: No such file or directory
+    while executing
+"exec sh -c "grep -a 'fmri(inmelodic)' $filename | tail -n 1 | awk '{ print \$3 }'" "
+    (procedure "feat5:load" line 5)
+    invoked from within
+"feat5:load -1 1 ${fsfroot}.fsf"
+    (file "/usr/local/fsl/bin/feat" line 309)
+/ZPOOL/data/projects/rf1-sra-sharedreward/code/L2stats.sh: line 46: /ZPOOL/data/projects/rf1-sra-sharedreward/templates/L2_task-sharedreward_model-1_type-nppi.fsf: No such file or directory
+grep: /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10898/L2_task-sharedreward_model-1_type-nppi-dmn.fsf: No such file or directory
+    while executing
+"exec sh -c "grep -a 'fmri(inmelodic)' $filename | tail -n 1 | awk '{ print \$3 }'" "
+    (procedure "feat5:load" line 5)
+    invoked from within
+"feat5:load -1 1 ${fsfroot}.fsf"
+    (file "/usr/local/fsl/bin/feat" line 309)
+/ZPOOL/data/projects/rf1-sra-sharedreward/code/L2stats.sh: line 46: /ZPOOL/data/projects/rf1-sra-sharedreward/templates/L2_task-sharedreward_model-1_type-nppi.fsf: No such file or directory
+grep: /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10908/L2_task-sharedreward_model-1_type-nppi-dmn.fsf: No such file or directory
+    while executing
+"exec sh -c "grep -a 'fmri(inmelodic)' $filename | tail -n 1 | awk '{ print \$3 }'" "
+    (procedure "feat5:load" line 5)
+    invoked from within
+"feat5:load -1 1 ${fsfroot}.fsf"
+    (file "/usr/local/fsl/bin/feat" line 309)
+/ZPOOL/data/projects/rf1-sra-sharedreward/code/L2stats.sh: line 46: /ZPOOL/data/projects/rf1-sra-sharedreward/templates/L2_task-sharedreward_model-1_type-nppi.fsf: No such file or directory
+grep: /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10918/L2_task-sharedreward_model-1_type-nppi-dmn.fsf: No such file or directory
+    while executing
+"exec sh -c "grep -a 'fmri(inmelodic)' $filename | tail -n 1 | awk '{ print \$3 }'" "
+    (procedure "feat5:load" line 5)
+    invoked from within
+"feat5:load -1 1 ${fsfroot}.fsf"
+    (file "/usr/local/fsl/bin/feat" line 309)
+/ZPOOL/data/projects/rf1-sra-sharedreward/code/L2stats.sh: line 46: /ZPOOL/data/projects/rf1-sra-sharedreward/templates/L2_task-sharedreward_model-1_type-nppi.fsf: No such file or directory
+grep: /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10928/L2_task-sharedreward_model-1_type-nppi-dmn.fsf: No such file or directory
+    while executing
+"exec sh -c "grep -a 'fmri(inmelodic)' $filename | tail -n 1 | awk '{ print \$3 }'" "
+    (procedure "feat5:load" line 5)
+    invoked from within
+"feat5:load -1 1 ${fsfroot}.fsf"
+    (file "/usr/local/fsl/bin/feat" line 309)
+/ZPOOL/data/projects/rf1-sra-sharedreward/code/L2stats.sh: line 46: /ZPOOL/data/projects/rf1-sra-sharedreward/templates/L2_task-sharedreward_model-1_type-nppi.fsf: No such file or directory
+grep: /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10930/L2_task-sharedreward_model-1_type-nppi-dmn.fsf: No such file or directory
+    while executing
+"exec sh -c "grep -a 'fmri(inmelodic)' $filename | tail -n 1 | awk '{ print \$3 }'" "
+    (procedure "feat5:load" line 5)
+    invoked from within
+"feat5:load -1 1 ${fsfroot}.fsf"
+    (file "/usr/local/fsl/bin/feat" line 309)
+/ZPOOL/data/projects/rf1-sra-sharedreward/code/L2stats.sh: line 46: /ZPOOL/data/projects/rf1-sra-sharedreward/templates/L2_task-sharedreward_model-1_type-nppi.fsf: No such file or directory
+grep: /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10938/L2_task-sharedreward_model-1_type-nppi-dmn.fsf: No such file or directory
+    while executing
+"exec sh -c "grep -a 'fmri(inmelodic)' $filename | tail -n 1 | awk '{ print \$3 }'" "
+    (procedure "feat5:load" line 5)
+    invoked from within
+"feat5:load -1 1 ${fsfroot}.fsf"
+    (file "/usr/local/fsl/bin/feat" line 309)
+/ZPOOL/data/projects/rf1-sra-sharedreward/code/L2stats.sh: line 46: /ZPOOL/data/projects/rf1-sra-sharedreward/templates/L2_task-sharedreward_model-1_type-nppi.fsf: No such file or directory
+grep: /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10940/L2_task-sharedreward_model-1_type-nppi-dmn.fsf: No such file or directory
+    while executing
+"exec sh -c "grep -a 'fmri(inmelodic)' $filename | tail -n 1 | awk '{ print \$3 }'" "
+    (procedure "feat5:load" line 5)
+    invoked from within
+"feat5:load -1 1 ${fsfroot}.fsf"
+    (file "/usr/local/fsl/bin/feat" line 309)
+/ZPOOL/data/projects/rf1-sra-sharedreward/code/L2stats.sh: line 46: /ZPOOL/data/projects/rf1-sra-sharedreward/templates/L2_task-sharedreward_model-1_type-nppi.fsf: No such file or directory
+grep: /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10952/L2_task-sharedreward_model-1_type-nppi-dmn.fsf: No such file or directory
+    while executing
+"exec sh -c "grep -a 'fmri(inmelodic)' $filename | tail -n 1 | awk '{ print \$3 }'" "
+    (procedure "feat5:load" line 5)
+    invoked from within
+"feat5:load -1 1 ${fsfroot}.fsf"
+    (file "/usr/local/fsl/bin/feat" line 309)
+/ZPOOL/data/projects/rf1-sra-sharedreward/code/L2stats.sh: line 46: /ZPOOL/data/projects/rf1-sra-sharedreward/templates/L2_task-sharedreward_model-1_type-nppi.fsf: No such file or directory
+grep: /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10958/L2_task-sharedreward_model-1_type-nppi-dmn.fsf: No such file or directory
+    while executing
+"exec sh -c "grep -a 'fmri(inmelodic)' $filename | tail -n 1 | awk '{ print \$3 }'" "
+    (procedure "feat5:load" line 5)
+    invoked from within
+"feat5:load -1 1 ${fsfroot}.fsf"
+    (file "/usr/local/fsl/bin/feat" line 309)
+/ZPOOL/data/projects/rf1-sra-sharedreward/code/L2stats.sh: line 46: /ZPOOL/data/projects/rf1-sra-sharedreward/templates/L2_task-sharedreward_model-1_type-nppi.fsf: No such file or directory
+grep: /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-10977/L2_task-sharedreward_model-1_type-nppi-dmn.fsf: No such file or directory
+    while executing
+"exec sh -c "grep -a 'fmri(inmelodic)' $filename | tail -n 1 | awk '{ print \$3 }'" "
+    (procedure "feat5:load" line 5)
+    invoked from within
+"feat5:load -1 1 ${fsfroot}.fsf"
+    (file "/usr/local/fsl/bin/feat" line 309)
+complete 10977
