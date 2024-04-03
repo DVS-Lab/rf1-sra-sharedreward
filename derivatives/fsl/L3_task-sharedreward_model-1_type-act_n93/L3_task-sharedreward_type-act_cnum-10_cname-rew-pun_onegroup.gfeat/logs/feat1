@@ -1,0 +1,27 @@
+
+/bin/cp /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/L3_task-sharedreward_model-1_type-act_n93/L3_task-sharedreward_type-act_copenum-10.fsf design.fsf
+
+/usr/local/fsl/bin/feat_model design
+
+mkdir .files;cp /usr/local/fsl/doc/fsl.css .files;cp -r /usr/local/fsl/doc/images .files/images
+
+/usr/local/fsl/bin/fsl_sub -T 60 -l logs -N feat2_pre   /usr/local/fsl/bin/feat /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/L3_task-sharedreward_model-1_type-act_n93/L3_task-sharedreward_type-act_cnum-10_cname-rew-pun_onegroup.gfeat/design.fsf -D /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/L3_task-sharedreward_model-1_type-act_n93/L3_task-sharedreward_type-act_cnum-10_cname-rew-pun_onegroup.gfeat -gfeatprep
+2944866
+
+/usr/local/fsl/bin/fsl_sub -T 60 -l logs -N feat3a_flame -j 2944866  /usr/local/fsl/bin/feat /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/L3_task-sharedreward_model-1_type-act_n93/L3_task-sharedreward_type-act_cnum-10_cname-rew-pun_onegroup.gfeat/cope1.feat/design.fsf -D /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/L3_task-sharedreward_model-1_type-act_n93/L3_task-sharedreward_type-act_cnum-10_cname-rew-pun_onegroup.gfeat/cope1.feat -I 1 -flame1
+3175531
+
+/usr/local/fsl/bin/fsl_sub -T 60 -l logs -N feat3b_flame -j 3175531 -t ./.flame
+3181197
+
+/usr/local/fsl/bin/fsl_sub -T 60 -l logs -N feat3c_flame -j 3181197  /usr/local/fsl/bin/feat /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/L3_task-sharedreward_model-1_type-act_n93/L3_task-sharedreward_type-act_cnum-10_cname-rew-pun_onegroup.gfeat/cope1.feat/design.fsf -D /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/L3_task-sharedreward_model-1_type-act_n93/L3_task-sharedreward_type-act_cnum-10_cname-rew-pun_onegroup.gfeat/cope1.feat -flame3
+3184375
+
+/usr/local/fsl/bin/fsl_sub -T 60 -l logs -N feat4_post -j 3184375  /usr/local/fsl/bin/feat /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/L3_task-sharedreward_model-1_type-act_n93/L3_task-sharedreward_type-act_cnum-10_cname-rew-pun_onegroup.gfeat/cope1.feat/design.fsf -D /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/L3_task-sharedreward_model-1_type-act_n93/L3_task-sharedreward_type-act_cnum-10_cname-rew-pun_onegroup.gfeat/cope1.feat -poststats 1
+3187174
+
+/usr/local/fsl/bin/fsl_sub -T 1 -l logs -N feat5_stop -j 3187174  /usr/local/fsl/bin/feat /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/L3_task-sharedreward_model-1_type-act_n93/L3_task-sharedreward_type-act_cnum-10_cname-rew-pun_onegroup.gfeat/cope1.feat/design.fsf -D /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/L3_task-sharedreward_model-1_type-act_n93/L3_task-sharedreward_type-act_cnum-10_cname-rew-pun_onegroup.gfeat/cope1.feat -stop
+3194974
+
+/usr/local/fsl/bin/fsl_sub -T 1 -l logs -N feat5_stop -j 3194974  /usr/local/fsl/bin/feat /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/L3_task-sharedreward_model-1_type-act_n93/L3_task-sharedreward_type-act_cnum-10_cname-rew-pun_onegroup.gfeat/cope1.feat/design.fsf -D /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/L3_task-sharedreward_model-1_type-act_n93/L3_task-sharedreward_type-act_cnum-10_cname-rew-pun_onegroup.gfeat -stop
+3196629
