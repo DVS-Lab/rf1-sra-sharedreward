@@ -1,0 +1,164 @@
+---
+title: "sharereward_figures"
+author: "Jen Yang"
+date: "2025-10-29, last modified 2025-10-29"
+output:
+  word_document:
+    toc: true
+    toc_depth: '6'
+  html_document:
+    toc: true
+    toc_float:
+      collapsed: false
+      smooth_scroll: false
+    hightlight: zenburn
+    toc_depth: 6
+---
+
+```{r clean, include=FALSE}
+# clean environment
+rm(list = ls())
+```
+
+# Load libraries
+```{r libraries, message=FALSE, warning=TRUE, include=FALSE}
+library(car)
+library(plyr)
+library(foreign)
+library(pscl)
+library(boot)
+library(MASS)
+library(robust)
+library(sfsmisc)
+library(ggplot2)
+library(reshape2)
+library(ppcor)
+library(ggrepel)
+library(Hmisc)
+library(tidyverse)
+library(magrittr)
+library(sandwich)
+library(ggpubr)
+library(interactions)
+library(knitr)
+library(twowaytests)
+library(ggfortify)
+library(interactions)
+library(broom)
+library(patchwork)
+library(robustbase)
+library(lmtest)
+library(modelr)
+library(Rmisc)
+library(cowplot)
+library(readr)
+library(PupillometryR)
+library(ggpp)
+library(estimatr)
+library(skedastic)
+library(ggpubr)
+library(lubridate)
+library(readxl)
+library(gridExtra)
+library(scales)
+library(rstudioapi)
+library(jsonlite)
+library(rjson)
+library(readr)
+library(rstan)
+library(easystats)
+library(patchwork)
+library(brms)
+```
+
+# define dir and load data
+```{r}
+# gitrepo_path = here() # find repo path
+gitrepo_path = "/Users/momocco/Documents/GitHub/rf1-sra-sharedreward/blobs_jen"
+
+code_dir = paste(gitrepo_path, "code", sep = "/")
+data_dir = paste(gitrepo_path, "data", sep = "/")
+figure_dir = paste(gitrepo_path, "figure", sep = "/")
+```
+
+# Cooper's code, for model checking
+```{r}
+# ppi_VS-VS_c14_age-effect
+
+# DV = `ppi_VS.VS_c14_2mm_model.Fwin.Floss_Swin.Sloss_type.ppi_seed.VS_cope.14_cname.rew.pun_F.S`
+
+# IV focal = age_demeaned
+
+# IV control = 
+# avg_tsnr_demeaned
+# avg_fdmean_demeaned
+# flip_demeaned
+# study_demeaned
+# Fwin_minus_Floss_minus_Swin_minus_Sloss_z_demeaned
+# age_x_Fwin_minus_Floss_minus_Swin_minus_Sloss_z_demeaned
+
+# weights = `weights_var_ppi_VS-VS_c14_2mm_model.Fwin.Floss_Swin.Sloss_type.ppi_seed.VS_cope.14_cname.rew.pun_F.S`)
+```
+
+# load data
+```{r}
+csv_name = "jen-SRaging.csv"
+raw_df = read.csv(paste(data_dir, csv_name, sep = "/"),
+                   header = T) %>%
+
+plot_df = raw_df %>% 
+  mutate(weight = 1/`var_ppi_VS.VS_c14_2mm_model.Fwin.Floss_Swin.Sloss_type.ppi_seed.VS_cope.14_cname.rew.pun_F.S`) %>% 
+  rename(DV = `ppi_VS.VS_c14_2mm_model.Fwin.Floss_Swin.Sloss_type.ppi_seed.VS_cope.14_cname.rew.pun_F.S`,
+         IV_focal = age_demeaned,
+         ctrl_tsnr = avg_tsnr_demeaned,
+         ctrl_fdmean = avg_fdmean_demeaned,
+         ctrl_study = study_demeaned,
+         ctrl_flip = flip_demeaned,
+         )
+```
+
+
+# figure data prep
+```{r}
+# 3. Partial out the control variable 'A' from 'Y' using WLS
+model_y_on_a <- lm(Y ~ A, data = df, weights = C)
+df$y_resid <- residuals(model_y_on_a)
+
+# 4. Partial out the control variable 'A' from 'X' using WLS
+model_x_on_a <- lm(X ~ A, data = df, weights = C)
+df$x_resid <- residuals(model_x_on_a)
+
+# 5. Create the partial residual plot
+ggplot(df, aes(x = x_resid, y = y_resid)) +
+  # Plot the partial residuals. We can still map size to the original weights.
+  geom_point(aes(size = C), color = "darkgreen", alpha = 0.7) +
+  
+  # Add a weighted regression line through the partial residuals.
+  # The slope of this line is the partial coefficient of X.
+  geom_smooth(method = "lm", aes(weight = C), color = "black", se = FALSE) +
+  
+  labs(
+    title = "Partial Residual Plot for X",
+    subtitle = "Visualizing the weighted relationship between Y and X, after controlling for A",
+    x = "Residuals of X ~ A (X | A)",
+    y = "Residuals of Y ~ A (Y | A)",
+    size = "Weight (C)"
+  ) +
+  theme_minimal()
+
+# (Optional) Prove that the slope is identical to the coefficient in the full model
+full_wls_model <- lm(Y ~ X + A, data = df, weights = C)
+partial_plot_model <- lm(y_resid ~ x_resid, data = df, weights = C)
+
+print("Coefficient for X in full model:")
+print(coef(full_wls_model)["X"])
+
+print("Coefficient for x_resid in partial plot model:")
+print(coef(partial_plot_model)["x_resid"])
+
+```
+
+
+
+# end of code
+
