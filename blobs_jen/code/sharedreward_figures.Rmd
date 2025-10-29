@@ -104,60 +104,183 @@ figure_dir = paste(gitrepo_path, "figure", sep = "/")
 ```{r}
 csv_name = "jen-SRaging.csv"
 raw_df = read.csv(paste(data_dir, csv_name, sep = "/"),
-                   header = T) %>%
+                  header = T)
 
 plot_df = raw_df %>% 
-  mutate(weight = 1/`var_ppi_VS.VS_c14_2mm_model.Fwin.Floss_Swin.Sloss_type.ppi_seed.VS_cope.14_cname.rew.pun_F.S`) %>% 
-  rename(DV = `ppi_VS.VS_c14_2mm_model.Fwin.Floss_Swin.Sloss_type.ppi_seed.VS_cope.14_cname.rew.pun_F.S`,
-         IV_focal = age_demeaned,
-         ctrl_tsnr = avg_tsnr_demeaned,
-         ctrl_fdmean = avg_fdmean_demeaned,
-         ctrl_study = study_demeaned,
-         ctrl_flip = flip_demeaned,
-         )
+  mutate(weights = 1/`var_ppi_VS.VS_c14_2mm_model.Fwin.Floss_Swin.Sloss_type.ppi_seed.VS_cope.14_cname.rew.pun_F.S`) %>% 
+  rename(
+    DV = `ppi_VS.VS_c14_2mm_model.Fwin.Floss_Swin.Sloss_type.ppi_seed.VS_cope.14_cname.rew.pun_F.S`,
+    IV_focal = age_demeaned,
+    ctrl_tsnr = avg_tsnr_demeaned,
+    ctrl_fdmean = avg_fdmean_demeaned,
+    ctrl_study = study_demeaned,
+    ctrl_flip = flip_demeaned,
+    ctrl_z_1 = Fwin_minus_Floss_minus_Swin_minus_Sloss_z_demeaned,
+    ctrl_z_2 = age_x_Fwin_minus_Floss_minus_Swin_minus_Sloss_z_demeaned) %>% 
+  mutate(DV_norm = DV/sd(DV),
+         IV_focal_norm = IV_focal/sd(IV_focal)) %>% 
+  select(DV, DV_norm,
+         IV_focal, IV_focal_norm,
+         ctrl_tsnr, ctrl_fdmean, ctrl_study, ctrl_flip, ctrl_z_1, ctrl_z_2, 
+         weights) 
 ```
 
-
-# figure data prep
+# stats check
 ```{r}
-# 3. Partial out the control variable 'A' from 'Y' using WLS
-model_y_on_a <- lm(Y ~ A, data = df, weights = C)
-df$y_resid <- residuals(model_y_on_a)
+VS_VS_m_r_wls = lm(DV ~ IV_focal +
+                     ctrl_tsnr + ctrl_fdmean + ctrl_study + ctrl_flip + ctrl_z_1 + ctrl_z_2,
+                   data = plot_df, weights = plot_df$weights)
+summary(VS_VS_m_r_wls)
 
-# 4. Partial out the control variable 'A' from 'X' using WLS
-model_x_on_a <- lm(X ~ A, data = df, weights = C)
-df$x_resid <- residuals(model_x_on_a)
+# VS_VS_m_r_ols = lm(DV ~ IV_focal +
+#                      ctrl_tsnr + ctrl_fdmean + ctrl_study + ctrl_flip + ctrl_z_1 + ctrl_z_2,
+#                    data = plot_df)
+# summary(VS_VS_m_r_ols)
+```
 
-# 5. Create the partial residual plot
-ggplot(df, aes(x = x_resid, y = y_resid)) +
+# figure, without controls
+```{r}
+ggplot(plot_df, aes(x = IV_focal, y = DV)) +
   # Plot the partial residuals. We can still map size to the original weights.
-  geom_point(aes(size = C), color = "darkgreen", alpha = 0.7) +
-  
+  geom_point(aes(size = weights),
+             color = "darkgreen", alpha = 0.7) +
   # Add a weighted regression line through the partial residuals.
   # The slope of this line is the partial coefficient of X.
-  geom_smooth(method = "lm", aes(weight = C), color = "black", se = FALSE) +
-  
-  labs(
-    title = "Partial Residual Plot for X",
-    subtitle = "Visualizing the weighted relationship between Y and X, after controlling for A",
-    x = "Residuals of X ~ A (X | A)",
-    y = "Residuals of Y ~ A (Y | A)",
-    size = "Weight (C)"
-  ) +
-  theme_minimal()
+  geom_smooth(method = "lm", 
+              aes(weight = weights), 
+              color = "black", se = T)
+```
 
-# (Optional) Prove that the slope is identical to the coefficient in the full model
-full_wls_model <- lm(Y ~ X + A, data = df, weights = C)
-partial_plot_model <- lm(y_resid ~ x_resid, data = df, weights = C)
 
-print("Coefficient for X in full model:")
-print(coef(full_wls_model)["X"])
+# figure, with controls
+## data prep
+```{r}
+# Calculate the partial component from DV
+beta_IV_focal_wls = coef(VS_VS_m_r_wls)["IV_focal"]
+plot_df$DV_partial_component <- 
+  residuals(VS_VS_m_r_wls) + (beta_IV_focal_wls * plot_df$IV_focal)
+```
 
-print("Coefficient for x_resid in partial plot model:")
-print(coef(partial_plot_model)["x_resid"])
+## coef verification
+```{r}
+# verify coef
+verification_model <- lm(DV_partial_component ~ IV_focal, 
+                         data = plot_df, weights = weights)
+summary(verification_model)
+
+coef(VS_VS_m_r_wls)["IV_focal"] == coef(verification_model)["IV_focal"]
+
+# note that se, t, and p are all different! this is why the se is turned of in geom_smooth because it does not represent the correct se. only the slope is correct!
+```
+## prepare se
+```{r}
+# create simulated data
+sim_df <- data.frame(
+  IV_focal = seq(min(plot_df$IV_focal), max(plot_df$IV_focal), length.out = 100),
+  ctrl_tsnr = median(plot_df$ctrl_tsnr),
+  ctrl_fdmean = median(plot_df$ctrl_fdmean),
+  ctrl_study = median(plot_df$ctrl_study),
+  ctrl_flip = median(plot_df$ctrl_flip),
+  ctrl_z_1 = median(plot_df$ctrl_z_1),
+  ctrl_z_2 = median(plot_df$ctrl_z_2))
+
+sim_predictions <- predict(VS_VS_m_r_wls, newdata = sim_df, interval = "confidence")
+sim_df <- cbind(sim_df, as.data.frame(sim_predictions))
+```
+
+
+## plot using predicted y for correct slope and se. y axis is the original 
+(Adjusted Prediction Plot)
+```{r}
+ggplot() +
+  # original data points with weights represented by size
+  geom_point(data = plot_df, 
+             aes(x = IV_focal, y = DV, 
+                 size = weights,
+                 color = "darkgreen"),
+             alpha = 0.7) +
+  # se using simulated data
+  geom_ribbon(data = sim_df, 
+              aes(x = IV_focal, ymin = lwr, ymax = upr), 
+              fill = "skyblue", alpha = 0.4) +
+  # line with partial coef
+  geom_line(data = sim_df, aes(x = IV_focal, y = fit), color = "blue", linewidth = 1.1)
+```
+
+# plot using partial residual of DV as y axis and original IV_focal as x axis
+(Adjusted Prediction Plot)
+(in OLS the x axis should be partial residual of IV_focal, which is different from WSL)
+```{r}
+ggplot() +
+  # original data points with weights represented by size
+  geom_point(data = plot_df, 
+             aes(x = IV_focal, y = DV_partial_component, 
+                 size = weights,
+                 color = "darkgreen"),
+             alpha = 0.7) +
+  # line with partial coef
+  geom_smooth(data = plot_df,
+              aes(x = IV_focal, y = DV_partial_component,
+                  weight = weights),
+              color = "red",
+              method = "lm", 
+              se = F) +# this se is WRONG and therefore must be turned off!
+  # compare with the line generated from sim data
+  ## se using simulated data
+  geom_ribbon(data = sim_df,
+              aes(x = IV_focal, ymin = lwr, ymax = upr),
+              fill = "darkgreen", alpha = 0.4) +
+  geom_line(data = sim_df, aes(x = IV_focal, y = fit), color = "darkgreen", linewidth = 1.1)
+```
+
+# get the intercept change resultsed from controls
+```{r}
+beta_0 <- coef(VS_VS_m_r_wls)["(Intercept)"]
+beta_ctrl_tsnr = coef(VS_VS_m_r_wls)["ctrl_tsnr"]
+beta_ctrl_fdmean = coef(VS_VS_m_r_wls)["ctrl_fdmean"]
+beta_ctrl_study = coef(VS_VS_m_r_wls)["ctrl_study"]
+beta_ctrl_flip = coef(VS_VS_m_r_wls)["ctrl_flip"]
+beta_ctrl_z_1 = coef(VS_VS_m_r_wls)["ctrl_z_1"]
+beta_ctrl_z_2 = coef(VS_VS_m_r_wls)["ctrl_z_2"]
+
+diff_intercept = 
+  beta_0 +
+  beta_ctrl_tsnr * median(plot_df$ctrl_tsnr) + 
+  beta_ctrl_fdmean * median(plot_df$ctrl_fdmean) + 
+  beta_ctrl_study * median(plot_df$ctrl_study) + 
+  beta_ctrl_flip * median(plot_df$ctrl_flip) +
+  beta_ctrl_z_1 * median(plot_df$ctrl_z_1) + 
+  beta_ctrl_z_2 * median(plot_df$ctrl_z_2)
 
 ```
 
+# combining adjusted predicted value plot with partial residual plot
+(right slope, righte se, partial DV)
+```{r}
+ggplot() +
+  # original data points with weights represented by size
+  geom_point(data = plot_df, 
+             aes(x = IV_focal, y = DV_partial_component, 
+                 size = weights,
+                 color = "darkgreen"),
+             alpha = 0.7) +
+  # line with partial coef
+  geom_smooth(data = plot_df,
+              aes(x = IV_focal, y = DV_partial_component,
+                  weight = weights),
+              color = "red",
+              method = "lm", 
+              se = F) +# this se is WRONG and therefore must be turned off!
+  # compare with the line generated from sim data
+  ## se using simulated data
+  geom_ribbon(data = sim_df,
+              aes(x = IV_focal, 
+                  ymin = lwr - diff_intercept, 
+                  ymax = upr - diff_intercept),
+              fill = "darkgreen", alpha = 0.4)
+  # geom_line(data = sim_df, aes(x = IV_focal, y = fit), color = "darkgreen", linewidth = 1.1)
+```
+```
 
 
 # end of code
