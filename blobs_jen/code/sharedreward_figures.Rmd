@@ -320,9 +320,8 @@ vs_vs_p =
   # original data points with weights represented by size
   geom_point(data = plot_df, 
              aes(x = IV_focal, y = DV_partial_component, 
-                 size = weights),
-             color = "skyblue",
-             alpha = 0.5) +
+                 alpha = weights),
+             color = "darkblue") +
   # line with partial coef
   geom_smooth(data = plot_df,
               aes(x = IV_focal, y = DV_partial_component,
@@ -385,6 +384,7 @@ vs_vs_p_alpha =
        y = "brain, partial residual",
        color = NULL,
        fill = NULL) +
+  coord_cartesian(ylim = c(-10, 10)) +
   theme(axis.line = 
           element_line(linewidth = 1, 
                        colour = "black", 
@@ -406,15 +406,15 @@ vs_vs_p_alpha
 ```{r}
 ggsave(paste(figure_dir, "VS-VS_wls.png", sep = "/"),
        vs_vs_p, 
-       width = w*1.5, height = h,
+       width = w*1.2, height = h,
        unit = "in", dpi=300)
 ```
 
 # weight reflected in transparency
 ```{r}
-ggsave(paste(figure_dir, "VS-VS_wls_alpha.png", sep = "/"),
+ggsave(paste(figure_dir, "VS-VS_wls_alpha_ylim10.png", sep = "/"),
        vs_vs_p_alpha, 
-       width = w*1.5, height = h,
+       width = w*1.2, height = h,
        unit = "in", dpi=300)
 ```
 # end of code
