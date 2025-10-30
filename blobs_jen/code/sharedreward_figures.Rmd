@@ -357,7 +357,52 @@ vs_vs_p =
 vs_vs_p
 ```
 
+# plot that combines adjusted predicted value plot with partial residual plot
+(right slope, righte se, partial DV)
+```{r}
+vs_vs_p_alpha = 
+  ggplot() +
+  # original data points with weights represented by size
+  geom_point(data = plot_df, 
+             aes(x = IV_focal, y = DV_partial_component, 
+                 alpha = weights),
+             color = "darkblue") +
+  # line with partial coef
+  geom_smooth(data = plot_df,
+              aes(x = IV_focal, y = DV_partial_component,
+                  weight = weights),
+              color = "darkred",
+              method = "lm", 
+              se = F) +# this se is WRONG and therefore must be turned off!
+  # compare with the line generated from sim data
+  ## se using simulated data
+  geom_ribbon(data = sim_df,
+              aes(x = IV_focal, 
+                  ymin = lwr - diff_intercept, 
+                  ymax = upr - diff_intercept),
+              fill = "darkred", alpha = 0.4) + 
+  labs(x = "age (demeaned)", 
+       y = "brain, partial residual",
+       color = NULL,
+       fill = NULL) +
+  theme(axis.line = 
+          element_line(linewidth = 1, 
+                       colour = "black", 
+                       linetype=1),
+        axis.text.x = element_text(size = axis_text), 
+        axis.text.y = element_text(size = axis_text), 
+        axis.title.x = element_text(size = axis_title, face="bold"), 
+        axis.title.y = element_text(size = axis_title, face="bold"),
+        panel.grid.minor = element_blank()
+        # legend.position = c(0.8, 0.8)
+  )
+# geom_line(data = sim_df, aes(x = IV_focal, y = fit), color = "darkgreen", linewidth = 1.1)
+
+vs_vs_p_alpha
+```
+
 # save plot
+## weight reflected in size
 ```{r}
 ggsave(paste(figure_dir, "VS-VS_wls.png", sep = "/"),
        vs_vs_p, 
@@ -365,6 +410,12 @@ ggsave(paste(figure_dir, "VS-VS_wls.png", sep = "/"),
        unit = "in", dpi=300)
 ```
 
-
+# weight reflected in transparency
+```{r}
+ggsave(paste(figure_dir, "VS-VS_wls_alpha.png", sep = "/"),
+       vs_vs_p_alpha, 
+       width = w*1.5, height = h,
+       unit = "in", dpi=300)
+```
 # end of code
 
