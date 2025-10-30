@@ -1,7 +1,7 @@
 ---
 title: "sharereward_figures"
 author: "Jen Yang"
-date: "2025-10-29, last modified 2025-10-29"
+date: "2025-10-29, last modified 2025-10-30"
 output:
   word_document:
     toc: true
@@ -166,6 +166,7 @@ r2_reduced = reduced_summary$r.squared
 
 (r2_full-r2_reduced)/(1-r2_full)
 ```
+
 # figure, with controls
 ## data prep
 ```{r}
@@ -359,8 +360,8 @@ vs_vs_p
 # save plot
 ```{r}
 ggsave(paste(figure_dir, "VS-VS_wls.png", sep = "/"),
-       p_bs_In_Im, 
-       width = w*1.2, height = h/1.5,
+       vs_vs_p, 
+       width = w*1.5, height = h,
        unit = "in", dpi=300)
 ```
 
