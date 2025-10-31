@@ -142,22 +142,23 @@ full_summary = summary(VS_VS_m_r_ols)
 
 # WITH weight
 ## full model
-VS_VS_m_r_wls = lm(DV ~ IV_focal +
-                     ctrl_tsnr + ctrl_fdmean + ctrl_study + ctrl_flip + ctrl_z_1 + ctrl_z_2,
-                   data = plot_df, weights = plot_df$weights)
-summary(VS_VS_m_r_wls)
+m_wls = lm(DV ~ 
+             IV_focal +
+             ctrl_tsnr + ctrl_fdmean + ctrl_study + ctrl_flip + ctrl_z_1 + ctrl_z_2,
+           data = plot_df, weights = plot_df$weights)
+summary(m_wls)
 
-full_summary = summary(VS_VS_m_r_wls)
+full_summary = summary(m_wls)
 r2_full_adj = full_summary$adj.r.squared
 r2_full = full_summary$r.squared
 
 ## reduced model
-VS_VS_m_r_wls_null = lm(DV ~
-                          ctrl_tsnr + ctrl_fdmean + ctrl_study + ctrl_flip + ctrl_z_1 + ctrl_z_2,
-                        data = plot_df)
-# summary(VS_VS_m_r_wls_null)
+m_wls_null = lm(DV ~
+                  ctrl_tsnr + ctrl_fdmean + ctrl_study + ctrl_flip + ctrl_z_1 + ctrl_z_2,
+                data = plot_df, weights = plot_df$weights)
+# summary(m_wls_null)
 
-reduced_summary = summary(VS_VS_m_r_wls_null)
+reduced_summary = summary(m_wls_null)
 r2_reduced_adj = reduced_summary$adj.r.squared
 r2_reduced = reduced_summary$r.squared
 
@@ -168,58 +169,70 @@ r2_reduced = reduced_summary$r.squared
 ```
 
 # figure, with controls
-## data prep
+## residual data prep
 ```{r}
-# Calculate the partial component from DV
-beta_IV_focal_wls = coef(VS_VS_m_r_wls)["IV_focal"]
-plot_df$DV_partial_component <- 
-  residuals(VS_VS_m_r_wls) + (beta_IV_focal_wls * plot_df$IV_focal)
+# Residuals of Y, controlling for A (weighted)
+resid_DV_on_ctrl <- 
+  resid(lm(DV ~ 
+             ctrl_tsnr + ctrl_fdmean + ctrl_study + ctrl_flip + ctrl_z_1 + ctrl_z_2,
+           data = plot_df, weights = plot_df$weights))
+
+# Residuals of X, controlling for A (weighted)
+resid_IV_on_ctrl <- 
+  resid(lm(IV_focal ~
+             ctrl_tsnr + ctrl_fdmean + ctrl_study + ctrl_flip + ctrl_z_1 + ctrl_z_2,
+           data = plot_df, weights = plot_df$weights))
+
+partial_data <- data.frame(
+  DV_adj = resid_DV_on_ctrl,
+  IV_adj = resid_IV_on_ctrl,
+  weights = plot_df$weights)
 ```
 
-## coef verification
+## coef and se verification
 ```{r}
-# verify coef
-verification_model <- lm(DV_partial_component ~ IV_focal, 
-                         data = plot_df, weights = weights)
-summary(verification_model)
+m_wls = lm(DV ~ 
+             IV_focal +
+             ctrl_tsnr + ctrl_fdmean + ctrl_study + ctrl_flip + ctrl_z_1 + ctrl_z_2,
+           data = plot_df, weights = plot_df$weights)
 
-coef(VS_VS_m_r_wls)["IV_focal"] == coef(verification_model)["IV_focal"]
+partial_wls <- lm(DV_adj ~ IV_adj + 0, 
+                  data = partial_data, weights = partial_data$weights)
+summary(partial_wls)
+partial_wls_tidy <- tidy(partial_wls)
+coef_partial_wls_tidy <- partial_wls_tidy[partial_wls_tidy$term == "IV_adj", ]
 
-# note that se, t, and p are all different! this is why the se is turned of in geom_smooth because it does not represent the correct se. only the slope is correct!
+m_wls_tidy <- tidy(m_wls)
+coef_m_wls_tidy <- m_wls_tidy[m_wls_tidy$term == "IV_focal", ]
+
+print(coef_partial_wls_tidy)
+print(coef_m_wls_tidy)
+
 ```
 
-## prepare se
+## prepare line and se data
 ```{r}
-# create simulated data
-sim_df <- data.frame(
-  IV_focal = seq(min(plot_df$IV_focal), max(plot_df$IV_focal), length.out = 100),
-  ctrl_tsnr = median(plot_df$ctrl_tsnr),
-  ctrl_fdmean = median(plot_df$ctrl_fdmean),
-  ctrl_study = median(plot_df$ctrl_study),
-  ctrl_flip = median(plot_df$ctrl_flip),
-  ctrl_z_1 = median(plot_df$ctrl_z_1),
-  ctrl_z_2 = median(plot_df$ctrl_z_2))
+line_df <- data.frame(IV_adj = seq(min(partial_data$IV_adj), max(partial_data$IV_adj), length.out = 100))
 
-sim_predictions <- predict(VS_VS_m_r_wls, newdata = sim_df, interval = "confidence")
-sim_df <- cbind(sim_df, as.data.frame(sim_predictions))
+line_DV_pred <- predict(partial_wls, newdata = line_grid, interval = "confidence")
+line_df <- cbind(line_grid, as.data.frame(line_DV_pred))
 ```
 
 
-## plot using predicted y for correct slope and se. y axis is the original 
-(Adjusted Prediction Plot)
+# plot
 ```{r}
 ggplot() +
   # original data points with weights represented by size
-  geom_point(data = plot_df, 
-             aes(x = IV_focal, y = DV, 
-                 size = weights),
-             alpha = 0.7) +
+  geom_point(data = partial_data, 
+             aes(x = IV_adj, y = DV_adj, 
+                 alpha = weights),
+             color = "darkblue") +
   # se using simulated data
-  geom_ribbon(data = sim_df, 
-              aes(x = IV_focal, ymin = lwr, ymax = upr), 
-              fill = "skyblue", alpha = 0.4) +
+  geom_ribbon(data = line_df, 
+              aes(x = IV_adj, ymin = lwr, ymax = upr), 
+              fill = "darkred", alpha = 0.4) +
   # line with partial coef
-  geom_line(data = sim_df, aes(x = IV_focal, y = fit), color = "darkred", linewidth = 1.1)
+  geom_line(data = line_df, aes(x = IV_adj, y = fit), color = "darkred", linewidth = 1.1)
 ```
 
 ## plot using partial residual of DV as y axis and original IV_focal as x axis
@@ -247,15 +260,15 @@ ggplot() +
   geom_line(data = sim_df, aes(x = IV_focal, y = fit), color = "darkgreen", linewidth = 1.1)
 ```
 
-# get the intercept change resultsed from controls
+# intercept change resultsed from controls
 ```{r}
-beta_0 <- coef(VS_VS_m_r_wls)["(Intercept)"]
-beta_ctrl_tsnr = coef(VS_VS_m_r_wls)["ctrl_tsnr"]
-beta_ctrl_fdmean = coef(VS_VS_m_r_wls)["ctrl_fdmean"]
-beta_ctrl_study = coef(VS_VS_m_r_wls)["ctrl_study"]
-beta_ctrl_flip = coef(VS_VS_m_r_wls)["ctrl_flip"]
-beta_ctrl_z_1 = coef(VS_VS_m_r_wls)["ctrl_z_1"]
-beta_ctrl_z_2 = coef(VS_VS_m_r_wls)["ctrl_z_2"]
+beta_0 <- coef(m_wls)["(Intercept)"]
+beta_ctrl_tsnr = coef(m_wls)["ctrl_tsnr"]
+beta_ctrl_fdmean = coef(m_wls)["ctrl_fdmean"]
+beta_ctrl_study = coef(m_wls)["ctrl_study"]
+beta_ctrl_flip = coef(m_wls)["ctrl_flip"]
+beta_ctrl_z_1 = coef(m_wls)["ctrl_z_1"]
+beta_ctrl_z_2 = coef(m_wls)["ctrl_z_2"]
 
 diff_intercept = 
   beta_0 +
@@ -312,110 +325,34 @@ h = 3.4
 # color_In_Im = "#592e83"
 ```
 
-# plot that combines adjusted predicted value plot with partial residual plot
-(right slope, righte se, partial DV)
+# updated plot
 ```{r}
-vs_vs_p = 
-  ggplot() +
-  # original data points with weights represented by size
-  geom_point(data = plot_df, 
-             aes(x = IV_focal, y = DV_partial_component, 
-                 alpha = weights),
-             color = "darkblue") +
-  # line with partial coef
-  geom_smooth(data = plot_df,
-              aes(x = IV_focal, y = DV_partial_component,
-                  weight = weights),
-              color = "darkred",
-              method = "lm", 
-              se = F) +# this se is WRONG and therefore must be turned off!
-  # compare with the line generated from sim data
-  ## se using simulated data
-  geom_ribbon(data = sim_df,
-              aes(x = IV_focal, 
-                  ymin = lwr - diff_intercept, 
-                  ymax = upr - diff_intercept),
-              fill = "darkred", alpha = 0.4) + 
-  labs(x = "age (demeaned)", 
-       y = "brain, partial residual",
-       color = NULL,
-       fill = NULL) +
-  theme(axis.line = 
-          element_line(linewidth = 1, 
-                       colour = "black", 
-                       linetype=1),
-        axis.text.x = element_text(size = axis_text), 
-        axis.text.y = element_text(size = axis_text), 
-        axis.title.x = element_text(size = axis_title, face="bold"), 
-        axis.title.y = element_text(size = axis_title, face="bold"),
-        panel.grid.minor = element_blank()
-        # legend.position = c(0.8, 0.8)
-  )
-# geom_line(data = sim_df, aes(x = IV_focal, y = fit), color = "darkgreen", linewidth = 1.1)
 
-vs_vs_p
+# Get the correct CI using the partial model
+# We must include the weights in the prediction step indirectly via the model object.
+wls_preds <- predict(partial_wls_model, newdata = line_grid, interval = "confidence")
+line_grid <- cbind(line_grid, wls_preds)
+
+
+# --- 5. Build the Final Plot ---
+ggplot(partial_data, aes(x = IV_adj, y = Y_adj)) +
+  geom_point(alpha = 0.6, aes(color = sqrt(1/w))) + # Color points by variance for clarity
+  # Add the correctly calculated regression line and CI
+  geom_line(data = line_grid, aes(y = fit), color = "blue", linewidth = 1) +
+  geom_ribbon(data = line_grid, aes(y = fit, ymin = lwr, ymax = upr),
+              alpha = 0.2, fill = "blue") +
+  labs(
+    title = "Correct Partial Plot for WLS with Control Variable",
+    subtitle = paste("Slope =", round(partial_slope, 2), "(the partial coefficient of X)"),
+    x = "X, adjusted for A (weighted)",
+    y = "Y, adjusted for A (weighted)",
+    color = "Std. Dev. (sqrt(1/w))"
+  ) +
+  theme_minimal() +
+  scale_color_viridis_c() # A nice color scale for the points
 ```
 
-# plot that combines adjusted predicted value plot with partial residual plot
-(right slope, righte se, partial DV)
-```{r}
-vs_vs_p_alpha = 
-  ggplot() +
-  # original data points with weights represented by size
-  geom_point(data = plot_df, 
-             aes(x = IV_focal, y = DV_partial_component, 
-                 alpha = weights),
-             color = "darkblue") +
-  # line with partial coef
-  geom_smooth(data = plot_df,
-              aes(x = IV_focal, y = DV_partial_component,
-                  weight = weights),
-              color = "darkred",
-              method = "lm", 
-              se = F) +# this se is WRONG and therefore must be turned off!
-  # compare with the line generated from sim data
-  ## se using simulated data
-  geom_ribbon(data = sim_df,
-              aes(x = IV_focal, 
-                  ymin = lwr - diff_intercept, 
-                  ymax = upr - diff_intercept),
-              fill = "darkred", alpha = 0.4) + 
-  labs(x = "age (demeaned)", 
-       y = "brain, partial residual",
-       color = NULL,
-       fill = NULL) +
-  coord_cartesian(ylim = c(-10, 10)) +
-  theme(axis.line = 
-          element_line(linewidth = 1, 
-                       colour = "black", 
-                       linetype=1),
-        axis.text.x = element_text(size = axis_text), 
-        axis.text.y = element_text(size = axis_text), 
-        axis.title.x = element_text(size = axis_title, face="bold"), 
-        axis.title.y = element_text(size = axis_title, face="bold"),
-        panel.grid.minor = element_blank()
-        # legend.position = c(0.8, 0.8)
-  )
-# geom_line(data = sim_df, aes(x = IV_focal, y = fit), color = "darkgreen", linewidth = 1.1)
 
-vs_vs_p_alpha
-```
 
-# save plot
-## weight reflected in size
-```{r}
-ggsave(paste(figure_dir, "VS-VS_wls.png", sep = "/"),
-       vs_vs_p, 
-       width = w*1.2, height = h,
-       unit = "in", dpi=300)
-```
-
-# weight reflected in transparency
-```{r}
-ggsave(paste(figure_dir, "VS-VS_wls_alpha_ylim10.png", sep = "/"),
-       vs_vs_p_alpha, 
-       width = w*1.2, height = h,
-       unit = "in", dpi=300)
-```
 # end of code
 
