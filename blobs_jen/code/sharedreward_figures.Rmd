@@ -218,69 +218,6 @@ line_DV_pred <- predict(partial_wls, newdata = line_grid, interval = "confidence
 line_df <- cbind(line_grid, as.data.frame(line_DV_pred))
 ```
 
-
-# plot
-```{r}
-ggplot() +
-  # original data points with weights represented by size
-  geom_point(data = partial_data, 
-             aes(x = IV_adj, y = DV_adj, 
-                 alpha = weights),
-             color = "darkblue") +
-  # se using simulated data
-  geom_ribbon(data = line_df, 
-              aes(x = IV_adj, ymin = lwr, ymax = upr), 
-              fill = "darkred", alpha = 0.4) +
-  # line with partial coef
-  geom_line(data = line_df, aes(x = IV_adj, y = fit), color = "darkred", linewidth = 1.1)
-```
-
-## plot using partial residual of DV as y axis and original IV_focal as x axis
-(Adjusted Prediction Plot)
-(in OLS the x axis should be partial residual of IV_focal, which is different from WSL)
-```{r}
-ggplot() +
-  # original data points with weights represented by size
-  geom_point(data = plot_df, 
-             aes(x = IV_focal, y = DV_partial_component, 
-                 size = weights),
-             alpha = 0.7) +
-  # line with partial coef
-  geom_smooth(data = plot_df,
-              aes(x = IV_focal, y = DV_partial_component,
-                  weight = weights),
-              color = "red",
-              method = "lm", 
-              se = F) +# this se is WRONG and therefore must be turned off!
-  # compare with the line generated from sim data
-  ## se using simulated data
-  geom_ribbon(data = sim_df,
-              aes(x = IV_focal, ymin = lwr, ymax = upr),
-              fill = "darkgreen", alpha = 0.4) +
-  geom_line(data = sim_df, aes(x = IV_focal, y = fit), color = "darkgreen", linewidth = 1.1)
-```
-
-# intercept change resultsed from controls
-```{r}
-beta_0 <- coef(m_wls)["(Intercept)"]
-beta_ctrl_tsnr = coef(m_wls)["ctrl_tsnr"]
-beta_ctrl_fdmean = coef(m_wls)["ctrl_fdmean"]
-beta_ctrl_study = coef(m_wls)["ctrl_study"]
-beta_ctrl_flip = coef(m_wls)["ctrl_flip"]
-beta_ctrl_z_1 = coef(m_wls)["ctrl_z_1"]
-beta_ctrl_z_2 = coef(m_wls)["ctrl_z_2"]
-
-diff_intercept = 
-  beta_0 +
-  beta_ctrl_tsnr * median(plot_df$ctrl_tsnr) + 
-  beta_ctrl_fdmean * median(plot_df$ctrl_fdmean) + 
-  beta_ctrl_study * median(plot_df$ctrl_study) + 
-  beta_ctrl_flip * median(plot_df$ctrl_flip) +
-  beta_ctrl_z_1 * median(plot_df$ctrl_z_1) + 
-  beta_ctrl_z_2 * median(plot_df$ctrl_z_2)
-
-```
-
 # figure param setup
 ```{r}
 axis_title = 12
@@ -325,32 +262,46 @@ h = 3.4
 # color_In_Im = "#592e83"
 ```
 
-# updated plot
+# plot
 ```{r}
-
-# Get the correct CI using the partial model
-# We must include the weights in the prediction step indirectly via the model object.
-wls_preds <- predict(partial_wls_model, newdata = line_grid, interval = "confidence")
-line_grid <- cbind(line_grid, wls_preds)
-
-
-# --- 5. Build the Final Plot ---
-ggplot(partial_data, aes(x = IV_adj, y = Y_adj)) +
-  geom_point(alpha = 0.6, aes(color = sqrt(1/w))) + # Color points by variance for clarity
-  # Add the correctly calculated regression line and CI
-  geom_line(data = line_grid, aes(y = fit), color = "blue", linewidth = 1) +
-  geom_ribbon(data = line_grid, aes(y = fit, ymin = lwr, ymax = upr),
-              alpha = 0.2, fill = "blue") +
-  labs(
-    title = "Correct Partial Plot for WLS with Control Variable",
-    subtitle = paste("Slope =", round(partial_slope, 2), "(the partial coefficient of X)"),
-    x = "X, adjusted for A (weighted)",
-    y = "Y, adjusted for A (weighted)",
-    color = "Std. Dev. (sqrt(1/w))"
-  ) +
-  theme_minimal() +
-  scale_color_viridis_c() # A nice color scale for the points
+wls_p = 
+  ggplot() +
+  # original data points with weights represented by size
+  geom_point(data = partial_data, 
+             aes(x = IV_adj, y = DV_adj, 
+                 alpha = weights),
+             color = "darkblue") +
+  # se using simulated data
+  geom_ribbon(data = line_df, 
+              aes(x = IV_adj, 
+                  ymin = lwr, 
+                  ymax = upr), 
+              fill = "darkred", 
+              alpha = 0.4) +
+  # line with partial coef
+  geom_line(data = line_df, 
+            aes(x = IV_adj, y = fit), 
+            color = "darkred", linewidth = 1.1) +
+  labs(x = "age (demeaned)", 
+       y = "brain, partial residual",
+       color = NULL,
+       fill = NULL) +
+  coord_cartesian(ylim = c(-10, 10)) +
+  theme(axis.line = 
+          element_line(linewidth = 1, 
+                       colour = "black", 
+                       linetype=1),
+        axis.text.x = element_text(size = axis_text), 
+        axis.text.y = element_text(size = axis_text), 
+        axis.title.x = element_text(size = axis_title, face="bold"), 
+        axis.title.y = element_text(size = axis_title, face="bold"),
+        panel.grid.minor = element_blank()
+        # legend.position = c(0.8, 0.8)
+  )
+wls_p
 ```
+
+
 
 
 
