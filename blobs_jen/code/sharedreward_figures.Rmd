@@ -212,10 +212,20 @@ print(coef_m_wls_tidy)
 
 ## prepare line and se data
 ```{r}
-line_df <- data.frame(IV_adj = seq(min(partial_data$IV_adj), max(partial_data$IV_adj), length.out = 100))
+line_df <- data.frame(
+  IV_focal = seq(min(plot_df$IV_focal), max(plot_df$IV_focal), length.out = 100),
+  ctrl_tsnr = median(plot_df$ctrl_tsnr),
+  ctrl_fdmean = median(plot_df$ctrl_fdmean),
+  ctrl_study = median(plot_df$ctrl_study),
+  ctrl_flip = median(plot_df$ctrl_flip),
+  ctrl_z_1 = median(plot_df$ctrl_z_1),
+  ctrl_z_2 = median(plot_df$ctrl_z_2))
 
-line_DV_pred <- predict(partial_wls, newdata = line_grid, interval = "confidence")
-line_df <- cbind(line_grid, as.data.frame(line_DV_pred))
+line_DV_pred <- predict(m_wls, newdata = line_df, interval = "confidence")
+line_df <- cbind(line_df, as.data.frame(line_DV_pred)) %>% 
+  mutate(fit_dm = fit-mean(fit),
+         lwr_dm = lwr-mean(lwr),
+         )
 ```
 
 # figure param setup
@@ -301,9 +311,12 @@ wls_p =
 wls_p
 ```
 
-
-
-
+```{r}
+ggsave(paste(figure_dir, "wls.png", sep = "/"),
+       wls_p, 
+       width = w*1.2, height = h,
+       unit = "in", dpi=300)
+```
 
 # end of code
 
