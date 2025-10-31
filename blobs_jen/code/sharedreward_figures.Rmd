@@ -213,7 +213,7 @@ print(coef_m_wls_tidy)
 ## prepare line and se data
 ```{r}
 line_df <- data.frame(
-  IV_focal = seq(min(plot_df$IV_focal), max(plot_df$IV_focal), length.out = 100),
+  IV_focal = seq(min(partial_data$IV_adj), max(partial_data$IV_adj), length.out = 100),
   ctrl_tsnr = median(plot_df$ctrl_tsnr),
   ctrl_fdmean = median(plot_df$ctrl_fdmean),
   ctrl_study = median(plot_df$ctrl_study),
@@ -224,8 +224,8 @@ line_df <- data.frame(
 line_DV_pred <- predict(m_wls, newdata = line_df, interval = "confidence")
 line_df <- cbind(line_df, as.data.frame(line_DV_pred)) %>% 
   mutate(fit_dm = fit-mean(fit),
-         lwr_dm = lwr-mean(lwr),
-         )
+         lwr_dm = lwr-mean(fit),
+         upr_dm = upr-mean(fit))
 ```
 
 # figure param setup
@@ -283,14 +283,14 @@ wls_p =
              color = "darkblue") +
   # se using simulated data
   geom_ribbon(data = line_df, 
-              aes(x = IV_adj, 
-                  ymin = lwr, 
-                  ymax = upr), 
+              aes(x = IV_focal, 
+                  ymin = lwr_dm, 
+                  ymax = upr_dm), 
               fill = "darkred", 
               alpha = 0.4) +
   # line with partial coef
   geom_line(data = line_df, 
-            aes(x = IV_adj, y = fit), 
+            aes(x = IV_focal, y = fit_dm), 
             color = "darkred", linewidth = 1.1) +
   labs(x = "age (demeaned)", 
        y = "brain, partial residual",
