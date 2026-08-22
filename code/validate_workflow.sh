@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+set -euo pipefail
+ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.."&&pwd)";scripts=(project_config.sh BIDSto3col.sh gen3colfiles.sh run_gen3colfiles.sh measure_smoothness.sh smooth_to_target.sh L1stats.sh run_L1stats.sh L2stats.sh run_L2stats.sh run_logged.sh validate_workflow.sh);for s in "${scripts[@]}";do bash -n "$ROOT/code/$s";done;echo 'PASS: bash syntax'
+PYTHONPYCACHEPREFIX="${TMPDIR:-/tmp}/rf1-sharedreward-pycache" python3 -m py_compile "$ROOT"/code/{build_L1_manifest.py,build_L2_manifest.py,compute_tsnr.py,audit_rf1_grid.py,create_reference_grid.py,propose_smoothing_targets.py};echo 'PASS: Python syntax'
+if rg -n 'rf1-sra-data|fmriprep-24|confounds_tedana-24|featwatcher_yn\) 1|set fmri\(smooth\) [1-9]' "$ROOT/code/project_config.sh" "$ROOT/code/L1stats.sh" "$ROOT/templates/L1_task-sharedreward_model-1_type-act.fsf";then echo 'ERROR: obsolete dependency, watcher, or FEAT smoothing found' >&2;exit 1;fi;echo 'PASS: active dependency boundary';python3 -m unittest discover -s "$ROOT/tests" -v

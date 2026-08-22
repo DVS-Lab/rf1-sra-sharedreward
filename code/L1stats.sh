@@ -1,169 +1,35 @@
 #!/usr/bin/env bash
 
-# This script will perform Level 1 statistics in FSL.
-# Rather than having multiple scripts, we are merging three analyses
-# into this one script:
-#		1) activation
-#		2) seed-based ppi
-#		3) network-based ppi
-# Note that activation analysis must be performed first.
-# Seed-based PPI and Network PPI should follow activation analyses.
-
-# ensure paths are correct irrespective from where user runs the script
-scriptdir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
-maindir="$(dirname "$scriptdir")"
-rf1datadir=/ZPOOL/data/projects/rf1-sra-data
-
-# study-specific inputs
-#sm=5
-sm=6 # changed to 6 according to L1 design.fsf
-sub=$1
-run=$2
-ppi=$3 # 0 for activation, otherwise seed region or network
-TASK=$4
-
-# set inputs and general outputs (should not need to change across studies in Smith Lab)
-MAINOUTPUT=${maindir}/derivatives/fsl/sub-${sub}
-mkdir -p $MAINOUTPUT
-DATA=${rf1datadir}/derivatives/fmriprep/sub-${sub}/func/sub-${sub}_task-${TASK}_run-${run}_space-MNI152NLin6Asym_desc-preproc_bold.nii.gz
-NVOLUMES=`fslnvols $DATA`
-CONFOUNDEVS=${rf1datadir}/derivatives/fsl/confounds/sub-${sub}/sub-${sub}_task-${TASK}_run-${run}_desc-fslConfounds.tsv
-if [ ! -e $CONFOUNDEVS ]; then
-	echo "missing confounds: $CONFOUNDEVS " >> ${maindir}/re-runL1.log
-	exit # exiting to ensure nothing gets run without confounds
+# Render/run one authoritative RF1 Shared Reward activation model.
+set -euo pipefail
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null 2>&1 && pwd)"; source "${SCRIPT_DIR}/project_config.sh"
+usage(){ echo "Usage: L1stats.sh SUBJECT RUN 0 [--session 01] [--bold FILE] [--confounds FILE] [--dry-run|--render-only] [--overwrite]" >&2; }
+(( $#>=3 ))||{ usage;exit 2; };sub="$(normalize_subject "$1")";run="$2";ppi="$3";shift 3
+[[ "$ppi" == 0 || "$ppi" == act ]]||{ echo 'ERROR: Phase-0 authoritative worker currently validates activation only; PPI revalidation follows activation.' >&2;exit 2; }
+session=01;bold_override="";conf_override="";mode=run;overwrite=0
+while(( $# ));do case "$1" in --session)session="$2";shift 2;;--bold)bold_override="$2";shift 2;;--confounds)conf_override="$2";shift 2;;--dry-run)mode=dry-run;shift;;--render-only)mode=render-only;shift;;--overwrite)overwrite=1;shift;;-h|--help)usage;exit 0;;*)echo "ERROR: unknown argument: $1" >&2;exit 2;;esac;done
+session="$(normalize_session "$session")";require_target_fwhm;type=act
+stem="sub-${sub}_ses-${session}_task-sharedreward_run-${run}"
+data="${bold_override:-$(harmonized_bold "$sub" "$session" "$run")}";confounds="${conf_override:-${CONFOUNDS_ROOT}/sub-${sub}/${stem}_desc-TedanaPlusConfounds.tsv}"
+ev="$(sharedreward_ev_prefix "$sub" "$session" "$run")";template="${PROJECT_ROOT}/templates/L1_task-sharedreward_model-1_type-act.fsf";output="$(l1_output_base "$sub" "$session" "$run" act)";outdir="${FSL_DERIVATIVES_ROOT}/sub-${sub}/ses-${session}"
+required=(event_computer_punish event_computer_neutral event_computer_reward event_friend_punish event_friend_neutral event_friend_reward event_stranger_punish event_stranger_neutral event_stranger_reward computer_non-face friend_face stranger_face)
+for name in "${required[@]}";do [[ -s "${ev}_${name}.txt" ]]||{ echo "ERROR: required EV missing: ${ev}_${name}.txt" >&2;exit 1;};done
+[[ -f "$data" ]]||{ echo "ERROR: target-smoothed BOLD missing: $data" >&2;exit 1;};[[ -s "$confounds" ]]||{ echo "ERROR: confounds missing: $confounds" >&2;exit 1;};[[ -f "$template" ]]||{ echo "ERROR: template missing: $template" >&2;exit 1;}
+shape_dec=10;shape_out=10;[[ -s "${ev}_missed_decision.txt" ]]&&shape_dec=3;[[ -s "${ev}_missed_outcome.txt" ]]&&shape_out=3
+printf 'L1 activation plan\n  BOLD: %s\n  confounds: %s\n  EV prefix: %s\n  target FWHM: %s mm\n  FEAT smoothing: 0 mm\n  output: %s.feat\n' "$data" "$confounds" "$ev" "$TARGET_FWHM_MM" "$output"
+[[ "$mode" == dry-run ]]&&exit 0
+for cmd in fslnvols fslval;do command -v "$cmd">/dev/null||{ echo "ERROR: $cmd is unavailable; load FSL" >&2;exit 1;};done
+nvol="$(fslnvols "$data")";tr="$(fslval "$data" pixdim4)";[[ "$nvol" =~ ^[0-9]+$ ]]||{ echo 'ERROR: invalid nvolumes' >&2;exit 1;};awk -v x="$tr" 'BEGIN{exit !(x>0)}'||{ echo 'ERROR: invalid TR' >&2;exit 1;}
+featdir="${output}.feat"
+if [[ -e "$featdir" ]]; then
+  if (( ! overwrite )); then [[ -f "$featdir/cluster_mask_zstat1.nii.gz" && -f "$featdir/stats/cope34.nii.gz" ]] && { echo "Complete output exists; skipping: $featdir"; exit 0; }; echo "ERROR: incomplete output exists; use --overwrite: $featdir" >&2; exit 1; fi
+  case "$featdir" in "$FSL_DERIVATIVES_ROOT"/*) rm -rf -- "$featdir" ;; *) echo 'ERROR: refusing removal outside derivative root' >&2; exit 1 ;; esac
 fi
-EVDIR=${maindir}/derivatives/fsl/EVfiles/sub-${sub}/${TASK}/run-${run} #run-${run} #change to maindir TO FIX: no zero pad
-
-# empty EVs (specific to this study)
-EV_MISSED_TRIAL=${EVDIR}_decision-missed.txt
-if [ -e $EV_MISSED_TRIAL ]; then
-	SHAPE_MISSED_TRIAL=3
-else
-	SHAPE_MISSED_TRIAL=10
-fi
-# if network (ecn or dmn), do nppi; otherwise, do activation or seed-based ppi
-if [ "$ppi" == "ecn" -o  "$ppi" == "dmn" ]; then
-
-	# check for output and skip existing
-	OUTPUT=${MAINOUTPUT}/L1_task-${TASK}_model-1_type-nppi-${ppi}_run-${run}_sm-${sm}
-	if [ -e ${OUTPUT}.feat/cluster_mask_zstat1.nii.gz ]; then
-		exit
-	else
-		echo "missing feat output 1: $OUTPUT " >> ${maindir}/re-runL1.log
-		rm -rf ${OUTPUT}.feat
-	fi
-
-	# network extraction. need to ensure you have run Level 1 activation
-	MASK=${MAINOUTPUT}/L1_task-${TASK}_model-1_type-act_run-${run}_sm-${sm}.feat/mask
-	if [ ! -e ${MASK}.nii.gz ]; then
-		echo "cannot run nPPI because you're missing $MASK"
-		exit
-	fi
-	for net in `seq 0 9`; do
-#		NET=${maindir}/masks/nan_rPNAS_2mm_net000${net}.nii.gz
-		NET=${maindir}/masks/networkmasks/nan_rPNAS_2mm_net000${net}.nii.gz
-		TSFILE=${MAINOUTPUT}/ts_task-${TASK}_net000${net}_nppi-${ppi}_run-${run}.txt
-		fsl_glm -i $DATA -d $NET -o $TSFILE --demean -m $MASK
-		eval INPUT${net}=$TSFILE
-		echo "Successfully extracted ${sub} ${TASK} ${NET}"
-	done
-
-	# set names for network ppi (we generally only care about ECN and DMN)
-	DMN=$INPUT3
-	ECN=$INPUT7
-	if [ "$ppi" == "dmn" ]; then
-		MAINNET=$DMN
-		OTHERNET=$ECN
-	else
-		MAINNET=$ECN
-		OTHERNET=$DMN
-	fi
-
-	# create template and run analyses
-	ITEMPLATE=${maindir}/templates/L1_task-${TASK}_model-1_type-nppi.fsf
-#	OTEMPLATE=${MAINOUTPUT}/L1_task-${TASK}_model-0_seed-${ppi}_run-${run}.fsf
-	OTEMPLATE=${MAINOUTPUT}/L1_task-${TASK}_model-1_nppi-${ppi}_run-${run}.fsf
-	sed -e 's@OUTPUT@'$OUTPUT'@g' \
-	-e 's@DATA@'$DATA'@g' \
-	-e 's@EVDIR@'$EVDIR'@g' \
-	-e 's@EV_MISSED_TRIAL@'$EV_MISSED_TRIAL'@g' \
-	-e 's@SHAPE_MISSED_TRIAL@'$SHAPE_MISSED_TRIAL'@g' \
-	-e 's@CONFOUNDEVS@'$CONFOUNDEVS'@g' \
-	-e 's@MAINNET@'$MAINNET'@g' \
-	-e 's@OTHERNET@'$OTHERNET'@g' \
-	-e 's@INPUT0@'$INPUT0'@g' \
-	-e 's@INPUT1@'$INPUT1'@g' \
-	-e 's@INPUT2@'$INPUT2'@g' \
-	-e 's@INPUT4@'$INPUT4'@g' \
-	-e 's@INPUT5@'$INPUT5'@g' \
-	-e 's@INPUT6@'$INPUT6'@g' \
-	-e 's@INPUT8@'$INPUT8'@g' \
-	-e 's@INPUT9@'$INPUT9'@g' \
-	-e 's@NVOLUMES@'$NVOLUMES'@g' \
-	<$ITEMPLATE> $OTEMPLATE
-	feat $OTEMPLATE
-
-else # otherwise, do activation and seed-based ppi
-
-	# set output based in whether it is activation or ppi
-	if [ "$ppi" == "0" ]; then
-		TYPE=act
-		OUTPUT=${MAINOUTPUT}/L1_task-${TASK}_model-1_type-${TYPE}_run-${run}_sm-${sm}
-	else
-		TYPE=ppi
-#		OUTPUT=${MAINOUTPUT}/L1_task-${TASK}_model-2_type-${TYPE}_seed-${ppi}_run-${run}_sm-${sm}
-		OUTPUT=${MAINOUTPUT}/L1_task-${TASK}_model-0_type-${TYPE}_seed-${ppi}_run-${run}_sm-${sm}
-	fi
-
-	# check for output and skip existing
-	if [ -e ${OUTPUT}.feat/cluster_mask_zstat1.nii.gz ]; then
-		exit
-	else
-		echo "missing feat output 2: $OUTPUT " >> ${maindir}/re-runL1.log
-		rm -rf ${OUTPUT}.feat
-	fi
-
-	# create template and run analyses
-	ITEMPLATE=${maindir}/templates/L1_task-${TASK}_model-1_type-${TYPE}.fsf
-	OTEMPLATE=${MAINOUTPUT}/L1_sub-${sub}_task-${TASK}_model-1_type-${TYPE}_run-${run}.fsf
-	if [ "$ppi" == "0" ]; then
-			sed -e 's@OUTPUT@'$OUTPUT'@g' \
-			-e 's@DATA@'$DATA'@g' \
-			-e 's@EVDIR@'$EVDIR'@g' \
-			-e 's@EV_MISSED_TRIAL@'$EV_MISSED_TRIAL'@g' \
-			-e 's@SHAPE_MISSED_TRIAL@'$SHAPE_MISSED_TRIAL'@g' \
-			-e 's@SMOOTH@'$sm'@g' \
-			-e 's@CONFOUNDEVS@'$CONFOUNDEVS'@g' \
-			-e 's@NVOLUMES@'$NVOLUMES'@g' \
-			<$ITEMPLATE> $OTEMPLATE
-		else
-			PHYS=${MAINOUTPUT}/ts_task-${TASK}_mask-${ppi}_run-${run}.txt
-			MASK=${maindir}/masks/seed-${ppi}.nii.gz
-			fslmeants -i $DATA -o $PHYS -m $MASK --eig
-			sed -e 's@OUTPUT@'$OUTPUT'@g' \
-			-e 's@DATA@'$DATA'@g' \
-			-e 's@EVDIR@'$EVDIR'@g' \
-			-e 's@EV_MISSED_TRIAL@'$EV_MISSED_TRIAL'@g' \
-			-e 's@SHAPE_MISSED_TRIAL@'$SHAPE_MISSED_TRIAL'@g' \
-			-e 's@PHYS@'$PHYS'@g' \
-			-e 's@SMOOTH@'$sm'@g' \
-			-e 's@CONFOUNDEVS@'$CONFOUNDEVS'@g' \
-			-e 's@NVOLUMES@'$NVOLUMES'@g' \
-			<$ITEMPLATE> $OTEMPLATE
-		fi
-		feat $OTEMPLATE
-	fi
-
-	# fix registration as per NeuroStars post:
-	# https://neurostars.org/t/performing-full-glm-analysis-with-fsl-on-the-bold-images-preprocessed-by-fmriprep-without-re-registering-the-data-to-the-mni-space/784/3
-	mkdir -p ${OUTPUT}.feat/reg
-	ln -s $FSLDIR/etc/flirtsch/ident.mat ${OUTPUT}.feat/reg/example_func2standard.mat
-	ln -s $FSLDIR/etc/flirtsch/ident.mat ${OUTPUT}.feat/reg/standard2example_func.mat
-	ln -s ${OUTPUT}.feat/mean_func.nii.gz ${OUTPUT}.feat/reg/standard.nii.gz
-
-	# delete unused files
-	rm -rf ${OUTPUT}.feat/stats/res4d.nii.gz
-	rm -rf ${OUTPUT}.feat/stats/corrections.nii.gz
-	rm -rf ${OUTPUT}.feat/stats/threshac1.nii.gz
-	rm -rf ${OUTPUT}.feat/filtered_func_data.nii.gz
-#done
+mkdir -p "$outdir";rendered="${outdir}/L1_sub-${sub}_task-sharedreward_ses-${session}_model-1_type-act_run-${run}.fsf"
+esc(){ printf '%s' "$1"|sed 's/[&@\\]/\\&/g'; }
+sed -e "s@OUTPUT@$(esc "$output")@g" -e "s@DATA@$(esc "$data")@g" -e "s@CONFOUNDEVS@$(esc "$confounds")@g" -e "s@EVDIR@$(esc "$ev")@g" -e "s/NVOLUMES/$nvol/g" -e "s/TR_INFO/$tr/g" -e "s/SHAPE_MISSED_DECISION/$shape_dec/g" -e "s/SHAPE_MISSED_OUTCOME/$shape_out/g" "$template">"$rendered"
+if grep -En 'OUTPUT|DATA|CONFOUNDEVS|EVDIR|NVOLUMES|TR_INFO|SHAPE_MISSED' "$rendered">/dev/null;then echo "ERROR: unresolved placeholder: $rendered" >&2;exit 1;fi
+echo "Rendered: $rendered";[[ "$mode" == render-only ]]&&exit 0
+command -v feat>/dev/null||{ echo 'ERROR: feat unavailable' >&2;exit 1;};feat "$rendered"
+[[ -n "${FSLDIR:-}" && -f "$FSLDIR/etc/flirtsch/ident.mat" ]]||{ echo 'ERROR: FSLDIR identity matrix unavailable' >&2;exit 1;};mkdir -p "$featdir/reg";ln -sfn "$FSLDIR/etc/flirtsch/ident.mat" "$featdir/reg/example_func2standard.mat";ln -sfn "$FSLDIR/etc/flirtsch/ident.mat" "$featdir/reg/standard2example_func.mat";ln -sfn "$featdir/mean_func.nii.gz" "$featdir/reg/standard.nii.gz"
+rm -f -- "$featdir/stats/res4d.nii.gz" "$featdir/stats/corrections.nii.gz" "$featdir/stats/threshac1.nii.gz" "$featdir/filtered_func_data.nii.gz"

@@ -1,0 +1,35 @@
+contrast_name	authoritative_cope	old_rf1_cope	r01_soi_cope	sharedreward_aging_cope	notes
+C_pun	1	1	1	1	matches historical vectors
+C_rew	2	2	2	2	matches historical vectors
+F_pun	3	3	3	3	matches historical vectors
+F_rew	4	4	4	4	matches historical vectors
+S_pun	5	5	5	5	matches historical vectors
+S_rew	6	6	6	6	matches historical vectors
+C_neu	7	7	7	7	aging vector differs; historical template not authoritative; C_neu temporal-filter anomaly retained pending review
+F_neu	8	8	8	8	aging vector differs; historical template not authoritative
+S_neu	9	9	9	9	aging vector differs; historical template not authoritative
+rew-pun	10	10	10	10	matches historical vectors
+F-S	11	11	11	11	matches historical vectors
+F-C	12	12	12	12	matches historical vectors
+(F+S)-C	13	13	13	13	matches historical vectors
+F-S (rew-pun)	14	14	14	14	matches historical vectors
+S-C (rew-pun)	15	15	15	15	matches historical vectors
+F-C (rew-pun)	16	16	16	16	matches historical vectors
+F-S (rew)	17	17	17	17	matches historical vectors
+S-C (rew)	18	18	18	18	matches historical vectors
+F-C (rew)	19	19	19	19	matches historical vectors
+F-S (rew-neu)	20	20	20	20	aging vector differs; historical template not authoritative
+S-C (rew-neu)	21	21	21	21	aging vector differs; historical template not authoritative
+F-C (rew-neu)	22	22	22	22	aging vector differs; historical template not authoritative
+F-(S+C) all	23	23	23	23	matches historical vectors
+F-(S+C) rew	24	24	24	24	matches historical vectors
+F-(S+C) pun	25	25	25	25	matches historical vectors
+F-(S+C) rew-pun	26	26	26	26	matches historical vectors
+F_dec	27	27	27	27	aging vector differs; historical template not authoritative
+S_dec	28	28	28	28	aging vector differs; historical template not authoritative
+C_dec	29	29	29	29	aging vector differs; historical template not authoritative
+Face v Non-Face	30	30	30	30	aging vector differs; historical template not authoritative
+F-S (pun)	31	31	31	31	matches historical vectors
+F-C (pun)	32	32	32	32	matches historical vectors
+F-S (dec)	33	33	33		absent from 32-contrast aging template
+F-C (dec)	34	34	34		absent from 32-contrast aging template
