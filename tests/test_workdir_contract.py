@@ -16,6 +16,12 @@ class WorkdirContract(unittest.TestCase):
                 )
                 self.assertIn('${work_parent}/', script)
 
+    def test_target_smoothing_replaces_qc_atomically(self):
+        script = (ROOT / "code/smooth_to_target.sh").read_text()
+        self.assertIn('tmp_qc="$work/achieved-smoothness.tsv"', script)
+        self.assertIn('--output-tsv "$tmp_qc"', script)
+        self.assertIn('mv -f -- "$tmp_qc" "$qc"', script)
+
 
 if __name__ == "__main__":
     unittest.main()

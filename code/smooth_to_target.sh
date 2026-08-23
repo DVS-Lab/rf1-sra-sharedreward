@@ -36,5 +36,8 @@ start="$(date +%s)"
 [[ -s "$tmp_out" ]] || { echo "ERROR: AFNI did not create output" >&2; exit 1; }
 mv -f -- "$tmp_out" "$output_abs"; runtime=$(( $(date +%s) - start ))
 [[ -n "$qc" ]] || qc="${output_abs%.nii.gz}_smoothness.tsv"
-bash "${SCRIPT_DIR}/measure_smoothness.sh" --input "$output_abs" --mask "$mask_abs" --output-tsv "$qc" --work-dir "$work"
+mkdir -p "$(dirname "$qc")"
+tmp_qc="$work/achieved-smoothness.tsv"
+bash "${SCRIPT_DIR}/measure_smoothness.sh" --input "$output_abs" --mask "$mask_abs" --output-tsv "$tmp_qc" --work-dir "$work"
+mv -f -- "$tmp_qc" "$qc"
 printf 'Requested target: %s mm\nRuntime: %s seconds\nOutput: %s\nQC: %s\n' "$target" "$runtime" "$output_abs" "$qc"
