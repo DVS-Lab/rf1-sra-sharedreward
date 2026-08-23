@@ -6,7 +6,7 @@
 |---|---|---|
 | L1 readiness | `build_L1_manifest.py` | ready/missing TSVs from canonical Linux2 inputs |
 | Event conversion | `run_gen3colfiles.sh` → `gen3colfiles.sh` → `BIDSto3col.sh` | session/run-aware EV files |
-| RF1 grid audit | `audit_rf1_grid.py` | unique/modal-grid JSON and TSV |
+| RF1 grid audit | `audit_rf1_grid.py` | tolerance-based spatial-grid inventory plus qform/sform metadata QC |
 | Reference resource | `create_reference_grid.py` | zero-valued grid NIfTI + JSON |
 | Smoothness | `measure_smoothness.sh` | classic and ACF estimates |
 | Candidate targets | `propose_smoothing_targets.py` | feasibility/distribution TSV |
