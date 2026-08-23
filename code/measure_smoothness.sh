@@ -11,7 +11,13 @@ while (( $# )); do case "$1" in
 esac; done
 [[ -f "$input" && -f "$mask" && -n "$output" ]] || { usage; exit 2; }
 for cmd in 3dFWHMx afni; do command -v "$cmd" >/dev/null || { echo "ERROR: $cmd is unavailable" >&2; exit 1; }; done
-if [[ -n "$requested_work" ]]; then mkdir -p "$requested_work"; work="$(mktemp -d "${requested_work%/}/smoothness.XXXXXX")"; else work="$(mktemp -d "${TMPDIR:-/tmp}/sharedreward-smoothness.XXXXXX")"; fi
+if [[ -n "$requested_work" ]]; then
+  mkdir -p "$requested_work"
+  work_parent="$(cd "$requested_work" && pwd)"
+  work="$(mktemp -d "${work_parent}/smoothness.XXXXXX")"
+else
+  work="$(mktemp -d "${TMPDIR:-/tmp}/sharedreward-smoothness.XXXXXX")"
+fi
 trap 'rm -rf -- "$work"' EXIT
 input_abs="$(cd "$(dirname "$input")" && pwd)/$(basename "$input")"
 mask_abs="$(cd "$(dirname "$mask")" && pwd)/$(basename "$mask")"

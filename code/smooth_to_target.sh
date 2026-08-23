@@ -18,7 +18,13 @@ label="$(printf '%s' "$target" | sed 's/\.0*$//; s/\./p/g')"
 [[ "$output" != "$input" ]] || { echo "ERROR: input will not be overwritten" >&2; exit 2; }
 if [[ -e "$output" && "$overwrite" -ne 1 ]]; then echo "ERROR: output exists; use --overwrite: $output" >&2; exit 1; fi
 for cmd in 3dBlurToFWHM 3dFWHMx; do command -v "$cmd" >/dev/null || { echo "ERROR: $cmd is unavailable" >&2; exit 1; }; done
-if [[ -n "$requested_work" ]]; then mkdir -p "$requested_work"; work="$(mktemp -d "${requested_work%/}/blur.XXXXXX")"; else work="$(mktemp -d "${TMPDIR:-/tmp}/sharedreward-blur.XXXXXX")"; fi
+if [[ -n "$requested_work" ]]; then
+  mkdir -p "$requested_work"
+  work_parent="$(cd "$requested_work" && pwd)"
+  work="$(mktemp -d "${work_parent}/blur.XXXXXX")"
+else
+  work="$(mktemp -d "${TMPDIR:-/tmp}/sharedreward-blur.XXXXXX")"
+fi
 trap 'rm -rf -- "$work"' EXIT
 input_abs="$(cd "$(dirname "$input")" && pwd)/$(basename "$input")"; mask_abs="$(cd "$(dirname "$mask")" && pwd)/$(basename "$mask")"
 mkdir -p "$(dirname "$output")"; output_abs="$(cd "$(dirname "$output")" && pwd)/$(basename "$output")"; tmp_out="$work/smoothed.nii.gz"
