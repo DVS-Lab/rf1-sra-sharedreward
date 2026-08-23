@@ -16,7 +16,7 @@
 | L2 fixed effects | `build_L2_manifest.py`, `run_L2stats.sh` → `L2stats.sh` | two-run fixed-effects GFEAT directories |
 | Run records | `run_logged.sh` | local raw log + tracked compact record |
 
-All active paths and naming functions live in `project_config.sh`. Linux2 is the sole RF1 upstream. `TARGET_FWHM_MM` has no default and is required by target smoothing and L1/L2 naming.
+All active paths and naming functions live in `project_config.sh`. Linux2 is the sole RF1 upstream. `TARGET_FWHM_MM` defaults to the approved 6-mm total classic-FWHM target and is encoded in smoothed BOLD and L1/L2 names.
 
 ## Example Phase 0 commands on Linux2
 
@@ -43,7 +43,7 @@ python3 code/create_reference_grid.py \
   --json-output resources/rf1_MNI152NLin6Asym_reference_grid.json
 ```
 
-Run baseline measurements through `run_logged.sh` and place compact summary tables under `logs/records/`. Do not export `TARGET_FWHM_MM`, run target smoothing, or launch FEAT until the Phase 0 report is reviewed.
+Run major smoothing and FEAT steps through `run_logged.sh` and place compact summary tables under `logs/records/`. Phase 0 approved `TARGET_FWHM_MM=6` on 2026-08-23; achieved-smoothness QC remains mandatory before FEAT.
 
 ## Scientific constraints
 

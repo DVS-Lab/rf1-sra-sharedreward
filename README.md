@@ -21,7 +21,7 @@ rf1-sra-sharedreward
   L2 fixed effects across runs 1 + 2
 ```
 
-Spatial smoothing is performed outside FEAT with AFNI `3dBlurToFWHM` to an explicitly approved, measured target FWHM. FEAT spatial smoothing is disabled. `TARGET_FWHM_MM` is deliberately unset until Phase 0 harmonization review is complete; production smoothing and L1 therefore fail instead of guessing a 5- or 6-mm target.
+Spatial smoothing is performed outside FEAT with AFNI `3dBlurToFWHM` to the approved 6-mm total classic-FWHM target. FEAT spatial smoothing is disabled. The target was selected on 2026-08-23 after complete RF1/ds003745 characterization; it is not an added 6-mm Gaussian kernel.
 
 The reusable RF1 workflow does not contain ds003745 or pooled-aging logic. Those analyses live in [`sharedreward-aging`](https://github.com/DVS-Lab/sharedreward-aging), which references RF1 outputs rather than copying them.
 
@@ -39,17 +39,17 @@ export FSL_DERIVATIVES_ROOT="$PWD/derivatives/fsl"
 
 The canonical RF1 event model retains separate decision and outcome phases. The authoritative activation design has 14 EVs: nine outcome conditions, `missed_decision`, `missed_outcome`, and three partner decision conditions. Miss EVs are optional nuisance regressors and receive zero weight in every substantive contrast.
 
-## Phase 0 hard gate
+## Phase 0 smoothing decision
 
-The repository currently supports characterization and pilot work. Before any production L1 launch:
+Phase 0 established the following production contract:
 
-1. create and verify the zero-valued RF1 reference-grid resource from the modal Linux2 Shared Reward grid;
-2. measure baseline smoothness in both datasets;
-3. evaluate candidate targets and pilot achieved-versus-requested smoothing;
-4. review tSNR, motion, coverage, and outliers;
-5. explicitly approve and export `TARGET_FWHM_MM`.
+1. use the verified RF1 `MNI152NLin6Asym` reference grid;
+2. use identity-grid `wsinc5` resampling for ds003745 continuous BOLD and nearest-neighbor resampling for masks;
+3. target 6 mm total classic FWHM with `3dBlurToFWHM` inside each run's fMRIPrep whole-brain mask;
+4. retain ACF estimates as diagnostics and estimate inferential ACF from model residuals when needed;
+5. keep FEAT smoothing at zero to prevent double smoothing.
 
-Do not select a production target from the historical FEAT kernel values.
+The measured classic-FWHM maximum was 4.619 mm across 765 analysis-ready runs, so every run can be blurred upward to 6 mm. See [docs/SMOOTHING_HARMONIZATION.md](docs/SMOOTHING_HARMONIZATION.md).
 
 ## Validation and provenance
 

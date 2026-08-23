@@ -12,15 +12,16 @@ FSL_DERIVATIVES_ROOT="${FSL_DERIVATIVES_ROOT:-${PROJECT_ROOT}/derivatives/fsl}"
 HARMONIZED_ROOT="${HARMONIZED_ROOT:-${PROJECT_ROOT}/derivatives/harmonized}"
 QC_ROOT="${QC_ROOT:-${PROJECT_ROOT}/derivatives/qc}"
 REFERENCE_GRID="${REFERENCE_GRID:-${PROJECT_ROOT}/resources/rf1_MNI152NLin6Asym_reference_grid.nii.gz}"
-# No default is intentional. Phase 0 must precede production smoothing/L1.
-TARGET_FWHM_MM="${TARGET_FWHM_MM:-}"
+# Approved 2026-08-23 after cross-dataset Phase 0 characterization.
+# This is total measured classic FWHM, not an added 6-mm Gaussian kernel.
+TARGET_FWHM_MM="${TARGET_FWHM_MM:-6}"
 
 normalize_subject() { printf '%s\n' "${1#sub-}"; }
 normalize_session() { printf '%s\n' "${1#ses-}"; }
 
 require_target_fwhm() {
     [[ -n "$TARGET_FWHM_MM" ]] || {
-        echo "ERROR: TARGET_FWHM_MM is unset; Phase 0 target approval is required." >&2
+        echo "ERROR: TARGET_FWHM_MM is unset." >&2
         return 1
     }
     [[ "$TARGET_FWHM_MM" =~ ^[0-9]+([.][0-9]+)?$ ]] || {
