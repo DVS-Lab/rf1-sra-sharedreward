@@ -22,6 +22,11 @@ class WorkdirContract(unittest.TestCase):
         self.assertIn('--output-tsv "$tmp_qc"', script)
         self.assertIn('mv -f -- "$tmp_qc" "$qc"', script)
 
+    def test_target_smoothing_can_use_all_blurmaster_subbricks(self):
+        script = (ROOT / "code/smooth_to_target.sh").read_text()
+        self.assertIn("--all-blurmaster", script)
+        self.assertIn("blur_options+=(-bmall)", script)
+
 
 if __name__ == "__main__":
     unittest.main()
