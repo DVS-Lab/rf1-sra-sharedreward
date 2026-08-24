@@ -11,7 +11,7 @@
 | Smoothness | `measure_smoothness.sh` | classic and ACF estimates |
 | Candidate targets | `propose_smoothing_targets.py` | feasibility/distribution TSV |
 | Target smoothing | `smooth_to_target.sh` | target-encoded BOLD + achieved-smoothness QC |
-| tSNR | `compute_tsnr.py` | voxel map and JSON summary |
+| tSNR | `compute_tsnr.py` | voxel map and JSON summary; optional fixed-reference-mask intersection and coverage |
 | L1 activation | `run_L1stats.sh` → `L1stats.sh` | 14-EV/34-contrast FEAT directories |
 | L2 fixed effects | `build_L2_manifest.py`, `run_L2stats.sh` → `L2stats.sh` | two-run fixed-effects GFEAT directories |
 | Run records | `run_logged.sh` | local raw log + tracked compact record |
