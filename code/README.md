@@ -50,7 +50,7 @@ Run major smoothing and FEAT steps through `run_logged.sh` and place compact sum
 - canonical BIDS timing is copied exactly into three-column files;
 - `missed_decision` and `missed_outcome` are distinct optional nuisance EVs;
 - FEAT smoothing is 0;
-- `C_neu` retains the inherited per-EV temporal-filter flag pending an explicit decision;
+- every task EV, including `C_neu`, has per-EV temporal filtering disabled;
 - L2 is fixed effects and requires complete runs 1 and 2;
 - connectivity templates are not yet revalidated;
 - L3 is not standardized in this pass.

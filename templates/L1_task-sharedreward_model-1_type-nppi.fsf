@@ -1184,7 +1184,7 @@ set fmri(convolve7) 3
 set fmri(convolve_phase7) 0
 
 # Apply temporal filtering (EV 7)
-set fmri(tempfilt_yn7) 1
+set fmri(tempfilt_yn7) 0
 
 # Add temporal derivative (EV 7)
 set fmri(deriv_yn7) 0
@@ -2203,7 +2203,7 @@ set fmri(convolve14) 0
 set fmri(convolve_phase14) 0
 
 # Apply temporal filtering (EV 14)
-set fmri(tempfilt_yn14) 1
+set fmri(tempfilt_yn14) 0
 
 # Add temporal derivative (EV 14)
 set fmri(deriv_yn14) 1
@@ -2349,7 +2349,7 @@ set fmri(convolve15) 0
 set fmri(convolve_phase15) 0
 
 # Apply temporal filtering (EV 15)
-set fmri(tempfilt_yn15) 1
+set fmri(tempfilt_yn15) 0
 
 # Add temporal derivative (EV 15)
 set fmri(deriv_yn15) 1
@@ -2495,7 +2495,7 @@ set fmri(convolve16) 0
 set fmri(convolve_phase16) 0
 
 # Apply temporal filtering (EV 16)
-set fmri(tempfilt_yn16) 1
+set fmri(tempfilt_yn16) 0
 
 # Add temporal derivative (EV 16)
 set fmri(deriv_yn16) 1
@@ -2641,7 +2641,7 @@ set fmri(convolve17) 0
 set fmri(convolve_phase17) 0
 
 # Apply temporal filtering (EV 17)
-set fmri(tempfilt_yn17) 1
+set fmri(tempfilt_yn17) 0
 
 # Add temporal derivative (EV 17)
 set fmri(deriv_yn17) 1
@@ -2787,7 +2787,7 @@ set fmri(convolve18) 0
 set fmri(convolve_phase18) 0
 
 # Apply temporal filtering (EV 18)
-set fmri(tempfilt_yn18) 1
+set fmri(tempfilt_yn18) 0
 
 # Add temporal derivative (EV 18)
 set fmri(deriv_yn18) 1
@@ -2933,7 +2933,7 @@ set fmri(convolve19) 0
 set fmri(convolve_phase19) 0
 
 # Apply temporal filtering (EV 19)
-set fmri(tempfilt_yn19) 1
+set fmri(tempfilt_yn19) 0
 
 # Add temporal derivative (EV 19)
 set fmri(deriv_yn19) 1
@@ -3079,7 +3079,7 @@ set fmri(convolve20) 0
 set fmri(convolve_phase20) 0
 
 # Apply temporal filtering (EV 20)
-set fmri(tempfilt_yn20) 1
+set fmri(tempfilt_yn20) 0
 
 # Add temporal derivative (EV 20)
 set fmri(deriv_yn20) 1
@@ -3225,7 +3225,7 @@ set fmri(convolve21) 0
 set fmri(convolve_phase21) 0
 
 # Apply temporal filtering (EV 21)
-set fmri(tempfilt_yn21) 1
+set fmri(tempfilt_yn21) 0
 
 # Add temporal derivative (EV 21)
 set fmri(deriv_yn21) 1
@@ -3371,7 +3371,7 @@ set fmri(convolve22) 0
 set fmri(convolve_phase22) 0
 
 # Apply temporal filtering (EV 22)
-set fmri(tempfilt_yn22) 1
+set fmri(tempfilt_yn22) 0
 
 # Add temporal derivative (EV 22)
 set fmri(deriv_yn22) 1
@@ -3517,7 +3517,7 @@ set fmri(convolve23) 0
 set fmri(convolve_phase23) 0
 
 # Apply temporal filtering (EV 23)
-set fmri(tempfilt_yn23) 1
+set fmri(tempfilt_yn23) 0
 
 # Add temporal derivative (EV 23)
 set fmri(deriv_yn23) 1
@@ -3663,7 +3663,7 @@ set fmri(convolve24) 0
 set fmri(convolve_phase24) 0
 
 # Apply temporal filtering (EV 24)
-set fmri(tempfilt_yn24) 1
+set fmri(tempfilt_yn24) 0
 
 # Add temporal derivative (EV 24)
 set fmri(deriv_yn24) 1
@@ -3944,7 +3944,7 @@ set fmri(convolve25) 0
 set fmri(convolve_phase25) 0
 
 # Apply temporal filtering (EV 25)
-set fmri(tempfilt_yn25) 1
+set fmri(tempfilt_yn25) 0
 
 # Add temporal derivative (EV 25)
 set fmri(deriv_yn25) 1
@@ -4231,7 +4231,7 @@ set fmri(convolve26) 0
 set fmri(convolve_phase26) 0
 
 # Apply temporal filtering (EV 26)
-set fmri(tempfilt_yn26) 1
+set fmri(tempfilt_yn26) 0
 
 # Add temporal derivative (EV 26)
 set fmri(deriv_yn26) 1
@@ -4524,7 +4524,7 @@ set fmri(convolve27) 0
 set fmri(convolve_phase27) 0
 
 # Apply temporal filtering (EV 27)
-set fmri(tempfilt_yn27) 1
+set fmri(tempfilt_yn27) 0
 
 # Add temporal derivative (EV 27)
 set fmri(deriv_yn27) 1
@@ -4823,7 +4823,7 @@ set fmri(convolve28) 0
 set fmri(convolve_phase28) 0
 
 # Apply temporal filtering (EV 28)
-set fmri(tempfilt_yn28) 1
+set fmri(tempfilt_yn28) 0
 
 # Add temporal derivative (EV 28)
 set fmri(deriv_yn28) 1
@@ -5128,7 +5128,7 @@ set fmri(convolve29) 0
 set fmri(convolve_phase29) 0
 
 # Apply temporal filtering (EV 29)
-set fmri(tempfilt_yn29) 1
+set fmri(tempfilt_yn29) 0
 
 # Add temporal derivative (EV 29)
 set fmri(deriv_yn29) 1
@@ -5439,7 +5439,7 @@ set fmri(convolve30) 0
 set fmri(convolve_phase30) 0
 
 # Apply temporal filtering (EV 30)
-set fmri(tempfilt_yn30) 1
+set fmri(tempfilt_yn30) 0
 
 # Add temporal derivative (EV 30)
 set fmri(deriv_yn30) 1
@@ -5756,7 +5756,7 @@ set fmri(convolve31) 0
 set fmri(convolve_phase31) 0
 
 # Apply temporal filtering (EV 31)
-set fmri(tempfilt_yn31) 1
+set fmri(tempfilt_yn31) 0
 
 # Add temporal derivative (EV 31)
 set fmri(deriv_yn31) 1
@@ -6079,7 +6079,7 @@ set fmri(convolve32) 0
 set fmri(convolve_phase32) 0
 
 # Apply temporal filtering (EV 32)
-set fmri(tempfilt_yn32) 1
+set fmri(tempfilt_yn32) 0
 
 # Add temporal derivative (EV 32)
 set fmri(deriv_yn32) 1
@@ -6408,7 +6408,7 @@ set fmri(convolve33) 0
 set fmri(convolve_phase33) 0
 
 # Apply temporal filtering (EV 33)
-set fmri(tempfilt_yn33) 1
+set fmri(tempfilt_yn33) 0
 
 # Add temporal derivative (EV 33)
 set fmri(deriv_yn33) 1
@@ -6743,7 +6743,7 @@ set fmri(convolve34) 0
 set fmri(convolve_phase34) 0
 
 # Apply temporal filtering (EV 34)
-set fmri(tempfilt_yn34) 1
+set fmri(tempfilt_yn34) 0
 
 # Add temporal derivative (EV 34)
 set fmri(deriv_yn34) 1
@@ -7084,7 +7084,7 @@ set fmri(convolve35) 0
 set fmri(convolve_phase35) 0
 
 # Apply temporal filtering (EV 35)
-set fmri(tempfilt_yn35) 1
+set fmri(tempfilt_yn35) 0
 
 # Add temporal derivative (EV 35)
 set fmri(deriv_yn35) 1
@@ -7431,7 +7431,7 @@ set fmri(convolve36) 0
 set fmri(convolve_phase36) 0
 
 # Apply temporal filtering (EV 36)
-set fmri(tempfilt_yn36) 1
+set fmri(tempfilt_yn36) 0
 
 # Add temporal derivative (EV 36)
 set fmri(deriv_yn36) 1

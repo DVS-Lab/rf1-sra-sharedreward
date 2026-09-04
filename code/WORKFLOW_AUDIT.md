@@ -20,9 +20,14 @@ The inspected current RF1 and `r01-soi` activation templates are scientifically 
 
 The historical aging template is not a safe scientific source. Besides omitting the two decision contrasts that occupy RF1 copes 33–34, it contains malformed vectors for neutral and several decision/neutral comparisons: weights appear in the first column while the named condition columns are zero. Its generic miss EV also has `convolve10 = 0`, unlike ordinary task regressors. It is retained as historical provenance, not promoted.
 
-### Retained anomaly
+### Resolved temporal-filter anomaly
 
-Historical RF1 and `r01-soi` apply temporal filtering to `C_neu` (`tempfilt_yn7 = 1`) while neighboring task EVs use 0. Global temporal high-pass filtering is disabled (`temphp_yn = 0`), so the practical effect needs confirmation from rendered FEAT designs. Because intent is unknown, the authoritative template retains this setting and the contract test identifies it explicitly. David should decide whether a later model version normalizes it.
+Historical RF1 and `r01-soi` applied temporal filtering only to `C_neu`
+(`tempfilt_yn7 = 1`) while neighboring task EVs used 0. The active RF1
+templates now set every task EV, including `C_neu`, to 0. This implements the
+2026-09-04 decision to remove the isolated inherited setting and is protected
+by the template contract test. Archived templates remain unchanged as
+historical provenance.
 
 ### Approved modernization
 
@@ -71,5 +76,5 @@ FEAT smoothing is now zero. AFNI target smoothing is a separate measured derivat
 - Generate the zero-valued grid resource on Linux2 from the verified modal Shared Reward grid.
 - Run full RF1 baseline smoothness/tSNR characterization and a small modern ds003745 pilot.
 - Review candidate smoothing targets; none is currently selected.
-- Decide whether to retain or normalize the `C_neu` per-EV temporal-filter flag in a future explicit model version.
+- The isolated `C_neu` per-EV temporal-filter flag was normalized to 0 in the active templates on 2026-09-04.
 - Revalidate seed/network PPI provenance and templates after activation is stable.
