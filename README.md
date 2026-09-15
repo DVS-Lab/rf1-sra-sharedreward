@@ -23,7 +23,11 @@ rf1-sra-sharedreward
 
 Spatial smoothing is performed outside FEAT with AFNI `3dBlurToFWHM` to the approved 6-mm total classic-FWHM target. FEAT spatial smoothing is disabled. The target was selected on 2026-08-23 after complete RF1/ds003745 characterization; it is not an added 6-mm Gaussian kernel.
 
-The reusable RF1 workflow does not contain ds003745 or pooled-aging logic. Those analyses live in [`sharedreward-aging`](https://github.com/DVS-Lab/sharedreward-aging), which references RF1 outputs rather than copying them.
+The reusable RF1 workflow does not contain ds003745 or pooled-aging logic. Those
+analyses live in [`sharedreward-aging`](https://github.com/DVS-Lab/sharedreward-aging),
+which references RF1 canonical data and shared grid/smoothed-BOLD resources,
+then fits RF1 again under its common full-trial model. It must **not** use this
+repository's phase-resolved L1/L2 COPEs as the RF1 half of the pooled analysis.
 
 ## Inputs
 
