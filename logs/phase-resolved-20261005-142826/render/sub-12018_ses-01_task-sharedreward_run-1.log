@@ -1,0 +1,8 @@
+L1 activation plan
+  BOLD: /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/harmonized/sub-12018/ses-01/func/sub-12018_ses-01_task-sharedreward_run-1_space-MNI152NLin6Asym_desc-smoothToFWHM6_bold.nii.gz
+  confounds: /ZPOOL/data/projects/rf1-sra-linux2/derivatives/fsl/confounds_tedana/sub-12018/sub-12018_ses-01_task-sharedreward_run-1_desc-TedanaPlusConfounds.tsv
+  EV prefix: /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/EVfiles/sub-12018/ses-01/sharedreward/run-1
+  target FWHM: 6 mm
+  FEAT smoothing: 0 mm
+  output: /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-12018/ses-01/L1_task-sharedreward_ses-01_model-1_type-act_run-1_smTo-6.feat
+Rendered: /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-12018/ses-01/L1_sub-12018_task-sharedreward_ses-01_model-1_type-act_run-1.fsf
