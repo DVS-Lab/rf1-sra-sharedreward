@@ -30,9 +30,9 @@ trap 'rm -rf -- "$tmp"' EXIT
 tmp_prefix="${tmp}/run-${run}"
 bash "${SCRIPT_DIR}/BIDSto3col.sh" "$events" "$tmp_prefix"
 required=(
- event_computer_punish event_computer_neutral event_computer_reward
- event_friend_punish event_friend_neutral event_friend_reward
- event_stranger_punish event_stranger_neutral event_stranger_reward
+ event_computer_punish event_computer_reward
+ event_friend_punish event_friend_reward
+ event_stranger_punish event_stranger_reward
  computer_non-face friend_face stranger_face
 )
 missing=(); for ev in "${required[@]}"; do [[ -s "${tmp_prefix}_${ev}.txt" ]] || missing+=("$ev"); done
@@ -40,6 +40,10 @@ if (( ${#missing[@]} )); then
     printf 'ERROR: required non-miss EV categories are absent: %s\n' "${missing[*]}" >&2
     echo "The workflow will not invent task conditions." >&2; exit 1
 fi
+# Neutral and miss EVs retain their slots but may be genuinely empty.
+for ev in event_computer_neutral event_friend_neutral event_stranger_neutral missed_decision missed_outcome; do
+    [[ -e "${tmp_prefix}_${ev}.txt" ]] || touch "${tmp_prefix}_${ev}.txt"
+done
 mkdir -p "$target_dir"; rm -f -- "${prefix}"_*.txt
 for generated in "${tmp_prefix}"_*.txt; do mv -- "$generated" "$target_dir/"; done
 echo "Wrote Shared Reward EVs: $target_dir"

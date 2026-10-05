@@ -27,7 +27,20 @@ The reusable RF1 workflow does not contain ds003745 or pooled-aging logic. Those
 analyses live in [`sharedreward-aging`](https://github.com/DVS-Lab/sharedreward-aging),
 which references RF1 canonical data and shared grid/smoothed-BOLD resources,
 then fits RF1 again under its common full-trial model. It must **not** use this
-repository's phase-resolved L1/L2 COPEs as the RF1 half of the pooled analysis.
+repository's phase-resolved L1/L2 COPEs as the RF1 half of that full-trial analysis.
+The separate, parallel `phase-resolved-outcome-v1` aging analysis may consume
+verified canonical RF1 phase-resolved estimates by contrast name/vector.
+It does not replace or overwrite the completed full-trial analysis.
+
+## First phase-resolved production run (2026-10-05)
+
+The Linux2 inventory and PI confirmation establish that canonical RF1 L1/L2
+has not yet run here. `code/phase_resolved_activation.py` now coordinates
+canonical EV generation, rendering, an audited two-subject pilot, activation
+L1, fixed-effects L2, and final verification. Outputs belong under this
+repository's `derivatives/fsl/`, not the pooled full-trial tree.
+
+See [docs/PHASE_RESOLVED_PRODUCTION.md](docs/PHASE_RESOLVED_PRODUCTION.md).
 
 ## Inputs
 

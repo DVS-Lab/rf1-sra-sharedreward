@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 set -euo pipefail
 # Prevent local fsl_sub from expanding one FEAT unit into a machine-sized pool.
-export FSLSUB_PARALLEL="${FSLSUB_PARALLEL:-1}"
+export FSLSUB_PARALLEL=1
+export OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1 NUMEXPR_NUM_THREADS=1
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null 2>&1 && pwd)";source "$SCRIPT_DIR/project_config.sh"
 usage(){ echo "Usage: L2stats.sh SUBJECT act [--session 01] [--dry-run|--render-only] [--overwrite]" >&2; }
 (( $#>=2 ))||{ usage;exit 2;};sub="$(normalize_subject "$1")";type="$2";shift 2;[[ "$type" == act ]]||{ echo 'ERROR: only validated activation L2 is enabled' >&2;exit 2;};session=01;mode=run;overwrite=0

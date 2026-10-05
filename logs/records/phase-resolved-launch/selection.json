@@ -1,0 +1,15 @@
+{
+  "status": "planned_not_executed",
+  "source_repository": "DVS-Lab/sharedreward-aging",
+  "source_checkout_commit": "323902ca9dd11871d04219a2f89c40ddb3bfa5d3",
+  "source_manifest": "logs/records/full-analysis-20260930-203949-441196/L1-task-ready.tsv",
+  "source_manifest_sha256": "1d46f25516e389f9f902401a46b69b68983e33ea8be32af504c9a140f0cfc425",
+  "selection": "dataset == rf1; project subject/session/run, normalize run to integer; no additional QC or ratings exclusions",
+  "runs": 655,
+  "subject_sessions": 346,
+  "two_run_subject_sessions": 309,
+  "one_run_subject_sessions": 37,
+  "model": "canonical RF1 phase-resolved activation, 14 EVs / 34 contrasts",
+  "output_root": "/ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl",
+  "local_validation": "25 tests passed; real FEAT pilot required on Linux2 before full batch"
+}
