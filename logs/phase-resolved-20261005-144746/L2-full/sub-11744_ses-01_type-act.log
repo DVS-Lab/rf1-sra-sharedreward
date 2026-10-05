@@ -1,0 +1,7 @@
+L2 plan (fixed effects across runs 1 + 2)
+  run 1: /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-11744/ses-01/L1_task-sharedreward_ses-01_model-1_type-act_run-1_smTo-6.feat
+  run 2: /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-11744/ses-01/L1_task-sharedreward_ses-01_model-1_type-act_run-2_smTo-6.feat
+  output: /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-11744/ses-01/L2_task-sharedreward_ses-01_model-1_type-act_smTo-6.gfeat
+  FSLSUB_PARALLEL: 1
+Rendered: /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-11744/ses-01/L2_sub-11744_task-sharedreward_ses-01_model-1_type-act.fsf
+To view the FEAT progress and final report, point your web browser at /ZPOOL/data/projects/rf1-sra-sharedreward/derivatives/fsl/sub-11744/ses-01/L2_task-sharedreward_ses-01_model-1_type-act_smTo-6.gfeat/report_log.html
