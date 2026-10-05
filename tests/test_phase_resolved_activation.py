@@ -8,6 +8,7 @@ import shutil
 import subprocess
 import tempfile
 import unittest
+from unittest.mock import patch
 
 import nibabel as nib
 import numpy as np
@@ -132,6 +133,73 @@ class PhaseResolved(unittest.TestCase):
         self.write_matrix(path, c, original.split("/Matrix")[0])
         with self.assertRaisesRegex(ValueError, "Actual matrix differs"):
             phase.check_l1(self.p, self.contrasts, self.ref)
+
+    def test_fsl_empty_neutral_zeroing_accepted_only_for_empty_neutral(self):
+        self.l1_fixture()
+        path = self.p["feat"] / "design.con"
+        prefix = path.read_text().split("/Matrix")[0]
+        c = phase.matrix(path)
+        c[6:9] = 0
+        self.write_matrix(path, c, prefix)
+        self.assertEqual(phase.check_l1(self.p, self.contrasts, self.ref), [7, 8, 9])
+        for index in (0, 19):  # Primary and mixed neutral hypotheses remain strict.
+            altered = c.copy()
+            altered[index] = 0
+            self.write_matrix(path, altered, prefix)
+            with self.assertRaisesRegex(ValueError, "Actual matrix differs"):
+                phase.check_l1(self.p, self.contrasts, self.ref)
+        self.write_matrix(path, c, prefix)
+        design = self.p["feat"] / "design.mat"
+        x = phase.matrix(design)
+        x[:, 8] = np.arange(64)
+        self.write_matrix(design, x)
+        with self.assertRaisesRegex(ValueError, "Actual matrix differs: COPE9"):
+            phase.check_l1(self.p, self.contrasts, self.ref)
+
+    @unittest.skipUnless((Path(os.environ.get("FSLDIR", "/missing")) / "bin/feat_model").is_file(),
+                         "FSL feat_model unavailable")
+    def test_real_feat_model_empty_neutral_behavior(self):
+        self.render()
+        subprocess.run([str(Path(os.environ["FSLDIR"]) / "bin/feat_model"),
+                        str(self.p["rendered"].with_suffix("")), str(self.p["confounds"])],
+                       env=self.env, capture_output=True, text=True, check=True)
+        self.p["feat"].mkdir()
+        for source, target in ((self.p["rendered"], "design.fsf"),
+                               (self.p["rendered"].with_suffix(".mat"), "design.mat"),
+                               (self.p["rendered"].with_suffix(".con"), "design.con")):
+            shutil.copyfile(source, self.p["feat"] / target)
+        c = phase.matrix(self.p["feat"] / "design.con")
+        self.assertTrue(np.all(c[6:9] == 0))
+        self.maps(self.p["feat"], [i for i, _, v in self.contrasts if not v[6:9].any()])
+        self.assertEqual(phase.check_l1(self.p, self.contrasts, self.ref), [7, 8, 9])
+
+    def test_scoped_resume_checks_manifest_sources_and_stage(self):
+        record = self.root / "logs/records/previous"
+        record.mkdir(parents=True)
+        keys = [("12345", "01", "1")]
+        for name in ("L1-all.tsv", "L1-pilot.tsv"):
+            phase.write_tsv(record / name, ["subject", "session", "run"], keys)
+        sources = [phase.fingerprint(phase.TEMPLATE)]
+        for relative in ("templates/CONTRAST_CROSSWALK.tsv", "code/L1stats.sh", "code/L2stats.sh"):
+            path = self.root / relative
+            path.parent.mkdir(exist_ok=True)
+            path.write_text("original")
+            sources.append(phase.fingerprint(path))
+        event = self.p["events"]
+        sources.append(phase.fingerprint(event))
+        (record / "provenance.json").write_text(json.dumps(dict(
+            model="RF1-phase-resolved-14EV-34cope", sources=sources, repo_commit="previous")))
+        with patch.object(phase, "ROOT", self.root):
+            self.assertEqual(phase.validate_pilot_resume(record, keys), (keys, "previous"))
+            with self.assertRaisesRegex(ValueError, "manifest changed"):
+                phase.validate_pilot_resume(record, [("99999", "01", "1")])
+            (record / "pilot-passed.json").write_text("{}")
+            with self.assertRaisesRegex(ValueError, "already passed"):
+                phase.validate_pilot_resume(record, keys)
+            (record / "pilot-passed.json").unlink()
+            event.write_text(event.read_text() + "100\t1\tunused\n")
+            with self.assertRaisesRegex(ValueError, "source changed"):
+                phase.validate_pilot_resume(record, keys)
 
     def test_nonestimable_substantive_contrast_rejected(self):
         self.l1_fixture()

@@ -29,6 +29,10 @@ must be reviewed explicitly, not silently discovered during this launch.
 - Every per-EV temporal filter remains off. The existing high-pass setting,
   prewhitening, and zero additional FEAT smoothing remain unchanged.
 - Contrast identity checks cover all 34 actual FSF/design.con vectors and names.
+  FSL may zero a pure-neutral `design.con` row when its EV is explicitly empty.
+  The audit accepts this only when the corresponding design column is also
+  zero; the FSF vector, contrast name, and number must remain canonical.
+  Mixed neutral/outcome vectors and every non-neutral vector remain exact checks.
   Neutral-weighted COPEs 7–9 and 20–22 are retained but do not drive
   estimability/map-quality acceptance. No neutral inference is approved.
 - Existing 6-mm total-target BOLD and canonical nuisance matrices are reused.
@@ -70,6 +74,23 @@ Existing FEAT/GFEAT directories cause an initial refusal, not deletion or
 silent reuse. If execution stops after producing partial outputs, preserve
 them and review the logs before constructing a scoped resume. Do not add
 `--overwrite` or delete the full tree to bypass that check.
+
+For the 2026-10-05 pilot audit stop at COPE9, the supported scoped resume is:
+
+```bash
+"$IMAGING_PYTHON" code/phase_resolved_activation.py \
+  --manifest logs/records/phase-resolved-launch/L1-ready.tsv \
+  --resume-pilot-from logs/records/phase-resolved-20261005-142826 \
+  --jobs 50 --l2-jobs 5 --confirm-idle
+```
+
+Wrap it in the same detached run logger. It verifies the original input,
+template, and worker fingerprints (only the coordinator/audit may change),
+requires the same pilot and full run lists, and rejects pre-existing non-pilot
+L1 or any L2 outputs. It re-audits all rendered EV timings and the four pilot
+FEAT outputs, without regenerating EVs or rerunning those pilots. Only after
+passing does it continue with pilot L2 and the full batch. This is not a
+general-purpose restart for an interrupted full batch.
 
 ## Outputs and evidence
 

@@ -166,14 +166,28 @@ def check_l1(p, contrasts, reference):
     names = dict(re.findall(r"^/ContrastName(\d+)\s+(.+)$", con_text, re.M))
     projection = np.linalg.pinv(x) @ x
     primary = []
+    neutral_zeroed = []
     for number, name, vector in contrasts:
         require(names.get(str(number), "").strip().strip('"') == name, f"design.con name mismatch COPE{number}")
         intended = np.pad(vector, (0, x.shape[1]-14))
-        require(np.allclose(c[number-1], intended, atol=1e-6, rtol=0), f"Actual matrix differs: COPE{number}")
+        # feat_model zeroes a contrast whose modeled time course is empty.
+        # Permit this only for pure neutral contrasts with explicitly empty EVs;
+        # never waive altered outcome/decision or mixed neutral contrast weights.
+        support = np.flatnonzero(vector)
+        empty_neutral = (len(support) > 0 and set(support) <= {6, 7, 8}
+                         and all(s[f"fmri(shape{i+1})"] == "10" for i in support)
+                         and np.all(x[:, support] == 0) and np.all(c[number-1] == 0))
+        require(np.allclose(c[number-1], intended, atol=1e-6, rtol=0) or empty_neutral,
+                f"Actual matrix differs: COPE{number}; expected={intended.tolist()}; actual={c[number-1].tolist()}")
+        if empty_neutral:
+            neutral_zeroed.append(number)
         if not vector[6:9].any():
             require(np.max(np.abs(intended - intended @ projection)) < 1e-5, f"Non-neutral contrast not estimable: {name}")
             primary.append(number)
     check_maps(p["feat"], primary, reference)
+    if neutral_zeroed:
+        print(f"ACCEPTED FSL empty-neutral zeroing: {p['feat']} COPEs {neutral_zeroed}", flush=True)
+    return neutral_zeroed
 
 
 def check_l2(directory, parents, contrasts, reference):
@@ -205,12 +219,37 @@ def fingerprint(path, image=False):
     return result
 
 
+def validate_pilot_resume(record, keys):
+    """Resume this failed pre-L2 gate only; no generic reuse of arbitrary outputs."""
+    require(record.resolve().is_relative_to((ROOT / "logs/records").resolve()),
+            "Resume record must be inside this repository's logs/records")
+    require(not (record / "pilot-passed.json").exists(), "Pilot already passed; this is not a pre-L2 resume")
+    require(read_manifest(record / "L1-all.tsv") == keys, "Resume manifest changed")
+    prior = json.loads((record / "provenance.json").read_text())
+    require(prior.get("model") == "RF1-phase-resolved-14EV-34cope", "Wrong resume model")
+    previous_sources = {s["path"]: s for s in prior["sources"]}
+    required = [TEMPLATE, ROOT / "templates/CONTRAST_CROSSWALK.tsv",
+                ROOT / "code/L1stats.sh", ROOT / "code/L2stats.sh"]
+    require(all(str(p.resolve()) in previous_sources for p in required), "Incomplete resume provenance")
+    for source in previous_sources.values():
+        path = Path(source["path"])
+        if path.resolve() == Path(__file__).resolve():
+            continue  # This explicit resume permits the audit/coordinator fix only.
+        require(fingerprint(path, "sha256" not in source) == source,
+                f"Resume source changed: {path}; stop for review")
+    pilot = read_manifest(record / "L1-pilot.tsv")
+    require(set(pilot) <= set(keys), "Resume pilot is outside selected manifest")
+    return pilot, prior["repo_commit"]
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--manifest", required=True, type=Path)
     parser.add_argument("--jobs", type=int, default=50)
     parser.add_argument("--l2-jobs", type=int, default=5)
     parser.add_argument("--confirm-idle", action="store_true")
+    parser.add_argument("--resume-pilot-from", type=Path,
+                        help="Prior records directory stopped at L1 audit; verify/reuse its pilot, never overwrite")
     args = parser.parse_args()
     require(args.confirm_idle, "Confirm no other RF1 model/input writers with --confirm-idle")
     require(1 <= args.jobs <= 50 and 1 <= args.l2_jobs <= 10, "Unsafe concurrency")
@@ -228,6 +267,9 @@ def main():
     _, contrasts = contract()
     reference = nib.load(str(ROOT / "resources/rf1_MNI152NLin6Asym_reference_grid.nii.gz"))
     units = {key: paths(key, env) for key in keys}
+    resume_pilot, pilot_commit = ([], None)
+    if args.resume_pilot_from:
+        resume_pilot, pilot_commit = validate_pilot_resume(args.resume_pilot_from, keys)
     groups = defaultdict(list)
     sources = [fingerprint(args.manifest), fingerprint(TEMPLATE)]
     for relative in ("templates/CONTRAST_CROSSWALK.tsv", "templates/L2_task-sharedreward_model-1_type-act.fsf",
@@ -241,7 +283,7 @@ def main():
         for name in ("feat", "l2", "ev", "rendered"):
             require(p[name].resolve().is_relative_to(ROOT.resolve() / "derivatives/fsl"),
                     f"Output redirected outside RF1 derivatives/fsl: {p[name]}")
-        require(not p["feat"].exists() and not p["l2"].exists(),
+        require((p["feat"].is_dir() if key in resume_pilot else not p["feat"].exists()) and not p["l2"].exists(),
                 f"Existing model at {p['feat']} or {p['l2']}; stop for a scoped audit/resume, never overwrite")
         expected = event_rows(p["events"])
         bold = nib.load(str(p["bold"]))
@@ -263,13 +305,16 @@ def main():
     pairs.sort(key=lambda k: (k not in neutral_pairs, k))
     pilot_subjects = pairs[:2]
     pilot = sorted(key for subject in pilot_subjects for key in groups[subject])
+    if args.resume_pilot_from:
+        require(pilot == resume_pilot, "Selected pilot differs from prior run")
     stamp = datetime.now(timezone.utc).strftime("%Y%m%d-%H%M%S")
     report = ROOT / f"logs/records/phase-resolved-{stamp}"
     report.mkdir(parents=True, exist_ok=False)
     logs = ROOT / f"logs/phase-resolved-{stamp}"
     sha = subprocess.check_output(["git", "-C", str(ROOT), "rev-parse", "HEAD"], text=True).strip()
     (report / "provenance.json").write_text(json.dumps(dict(model="RF1-phase-resolved-14EV-34cope",
-        repo_commit=sha, sources=sources, contrast_map=[dict(cope=i, name=n, vector=v.tolist(),
+        repo_commit=sha, resume_from=str(args.resume_pilot_from) if args.resume_pilot_from else None,
+        pilot_source_commit=pilot_commit, sources=sources, contrast_map=[dict(cope=i, name=n, vector=v.tolist(),
         nonneutral=not v[6:9].any()) for i,n,v in contrasts]), indent=2)+"\n")
     for name, rows in (("L1-all", keys), ("L1-pilot", pilot)):
         write_tsv(report / f"{name}.tsv", ["subject", "session", "run"], rows)
@@ -295,12 +340,16 @@ def main():
                     f"Input changed during run: {source['path']}")
 
     print(f"Preflight passed: {len(keys)} runs, {len(groups)} subjects; pilot {pilot_subjects}; activation only", flush=True)
-    run("run_gen3colfiles.sh", "--manifest", report / "L1-all.tsv", "--jobs", 8, "--overwrite")
-    run("run_L1stats.sh", "--manifest", report / "L1-all.tsv", "--jobs", 8, "--render-only", "--log-dir", logs / "render")
+    if not args.resume_pilot_from:
+        run("run_gen3colfiles.sh", "--manifest", report / "L1-all.tsv", "--jobs", 8, "--overwrite")
+        run("run_L1stats.sh", "--manifest", report / "L1-all.tsv", "--jobs", 8, "--render-only", "--log-dir", logs / "render")
     for p in units.values():
         check_rendered(p["rendered"], p, contrasts)
     unchanged()
-    run("run_L1stats.sh", "--manifest", report / "L1-pilot.tsv", "--jobs", 2, "--log-dir", logs / "L1-pilot")
+    if not args.resume_pilot_from:
+        run("run_L1stats.sh", "--manifest", report / "L1-pilot.tsv", "--jobs", 2, "--log-dir", logs / "L1-pilot")
+    else:
+        print("RESUME: auditing completed pilot L1; no EV regeneration or pilot refit.", flush=True)
     for key in pilot:
         check_l1(units[key], contrasts, reference)
     run("run_L2stats.sh", "--manifest", report / "L2-pilot.tsv", "--type", "act", "--jobs", 1, "--log-dir", logs / "L2-pilot")
